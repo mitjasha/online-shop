@@ -1,8 +1,9 @@
 import React from "react";
+import "./CartPage.css";
 
 const CartPage: React.FC = () => {
   return (
-    <div>
+    <div className="cart-page-container">
       <div>CartPage</div>
     </div>
   );
