@@ -1,8 +1,9 @@
 import React from "react";
+import "./MainPage.css";
 
 const MainPage: React.FC = () => {
   return (
-    <div>
+    <div className="main-page-container">
       <div>MainPage</div>
     </div>
   );
