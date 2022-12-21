@@ -1,42 +1,28 @@
 import React from "react";
 import "./Header.css";
+import heartIcon from "../../../assets/img/heart-icon.svg";
+import cartIcon from "../../../assets/img/cart-icon.svg";
+import logo from "../../../assets/img/logo.svg";
 
 const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="header__wrapper">
-        <img
-          // eslint-disable-next-line global-require
-          src={require("../../../assets/img/logo.svg")}
-          alt="online store logo"
-        />
+        <img src={logo} alt="online store logo" />
         <div className="wrapper__items">
-          <div className="search">
-            <img
-              // eslint-disable-next-line global-require
-              src={require("../../../assets/img/search-icon.png")}
-              alt="search"
-              className="search-button"
-            />
+          <form className="search">
+            <input type="submit" className="search__submit" value="" />
             <input
               type="search"
-              className="search-input"
+              className="search__input"
               id="site-search"
               placeholder="Search"
             />
-          </div>
+          </form>
           <div className="icons">
-            <div>Total: $0.00</div>
-            <img // eslint-disable-next-line global-require
-              src={require("../../../assets/img/heart-icon.png")}
-              alt="heart"
-              className="heart-button"
-            />
-            <img // eslint-disable-next-line global-require
-              src={require("../../../assets/img/cart-icon.png")}
-              alt="cart"
-              className="cart-button"
-            />
+            <div className="icons__total">Total: $0.00</div>
+            <img src={heartIcon} alt="heart" className="icons__heart" />
+            <img src={cartIcon} alt="cart" className="icons__cart" />
           </div>
         </div>
       </div>
@@ -51,4 +37,5 @@ const Header: React.FC = () => {
     </header>
   );
 };
+
 export default Header;
