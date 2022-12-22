@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProductCardPage.css";
+import "./ProductCardPage.scss";
 
 const ProductCardPage: React.FC = () => {
   return (
