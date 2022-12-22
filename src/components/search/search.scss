@@ -1,0 +1,27 @@
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.search__submit {
+  background: url(../../assets/img/svg/search-icon.svg) no-repeat center;
+  height: 25px;
+  width: 25px;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+.search__input {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-left-style: none;
+  border-right-style: none;
+  border-top-style: none;
+  width: 300px;
+  color: #ffffff;
+  height: 30px;
+  font-size: 16px;
+}

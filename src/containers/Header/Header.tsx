@@ -3,6 +3,7 @@ import "./Header.scss";
 import heartIcon from "../../assets/img/svg/heart-icon.svg";
 import cartIcon from "../../assets/img/svg/cart-icon.svg";
 import logo from "../../assets/img/svg/logo.svg";
+import Search from "../../components/search/search";
 
 const Header: React.FC = () => {
   return (
@@ -10,15 +11,7 @@ const Header: React.FC = () => {
       <div className="header__wrapper">
         <img src={logo} alt="online store logo" />
         <div className="wrapper__items">
-          <form className="search">
-            <input type="submit" className="search__submit" value="" />
-            <input
-              type="search"
-              className="search__input"
-              id="site-search"
-              placeholder="Search"
-            />
-          </form>
+          <Search />
           <div className="shopping-info">
             <div className="total-sum">Total: $0.00</div>
             <img src={heartIcon} alt="favorities" className="favorities" />
