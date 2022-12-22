@@ -26,7 +26,7 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-      <nav className="header__nav">
+      <nav className="nav">
         <ul className="nav__list">
           <li className="list__item">HOME</li>
           <li className="list__item">CATALOGUE</li>
