@@ -1,7 +1,7 @@
 import React from "react";
-import "./search.scss";
+import "./SearchComponent.scss";
 
-const Search: React.FC = () => {
+const SearchComponent: React.FC = () => {
   return (
     <form className="search">
       <input type="submit" className="search__submit" value="" />
@@ -15,4 +15,4 @@ const Search: React.FC = () => {
   );
 };
 
-export default Search;
+export default SearchComponent;
