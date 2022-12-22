@@ -6,7 +6,7 @@ import logo from "../../../assets/img/logo.svg";
 
 const Header: React.FC = () => {
   return (
-    <header className="header">
+    <header className="header container">
       <div className="header__wrapper">
         <img src={logo} alt="online store logo" />
         <div className="wrapper__items">
