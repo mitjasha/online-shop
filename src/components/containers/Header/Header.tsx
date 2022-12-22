@@ -19,10 +19,10 @@ const Header: React.FC = () => {
               placeholder="Search"
             />
           </form>
-          <div className="icons">
-            <div className="icons__total">Total: $0.00</div>
-            <img src={heartIcon} alt="heart" className="icons__heart" />
-            <img src={cartIcon} alt="cart" className="icons__cart" />
+          <div className="shopping-info">
+            <div className="total-sum">Total: $0.00</div>
+            <img src={heartIcon} alt="favorities" className="favorities" />
+            <img src={cartIcon} alt="cart" className="cart" />
           </div>
         </div>
       </div>

@@ -50,7 +50,7 @@
   font-size: 16px;
 }
 
-.icons {
+.shopping-info {
   display: flex;
   margin-top: auto;
   font-family: "Marcellus";
@@ -60,14 +60,14 @@
   height: 25px;
 }
 
-.icons__heart,
-.icons__cart {
+.favorities,
+.cart {
   cursor: pointer;
   width: 25px;
   height: 25px;
 }
 
-.icons__total {
+.total-sum {
   display: flex;
   align-items: flex-end;
 }
