@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "./components/containers/Header/Header";
-import Footer from "./components/containers/Footer/Footer";
-import MainPage from "./components/containers/MainPage/MainPage";
-import CataloguePage from "./components/containers/CataloguePage/CataloguePage";
-import ProductCardPage from "./components/containers/ProductCardPage/ProductCardPage";
-import CartPage from "./components/containers/CartPage/CartPage";
-import Page404 from "./components/containers/Page404/Page404";
+import Header from "./containers/Header/Header";
+import Footer from "./containers/Footer/Footer";
+import MainPage from "./pages/MainPage/MainPage";
+import CataloguePage from "./pages/CataloguePage/CataloguePage";
+import ProductCardPage from "./pages/ProductCardPage/ProductCardPage";
+import CartPage from "./pages/CartPage/CartPage";
+import Page404 from "./pages/Page404/Page404";
 
 const App: React.FC = () => (
   <div className="App">

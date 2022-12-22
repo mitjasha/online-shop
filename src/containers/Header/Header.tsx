@@ -1,8 +1,8 @@
 import React from "react";
 import "./Header.css";
-import heartIcon from "../../../assets/img/heart-icon.svg";
-import cartIcon from "../../../assets/img/cart-icon.svg";
-import logo from "../../../assets/img/logo.svg";
+import heartIcon from "../../assets/img/svg/heart-icon.svg";
+import cartIcon from "../../assets/img/svg/cart-icon.svg";
+import logo from "../../assets/img/svg/logo.svg";
 
 const Header: React.FC = () => {
   return (
