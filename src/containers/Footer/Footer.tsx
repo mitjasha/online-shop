@@ -40,6 +40,9 @@ const Footer: React.FC = () => {
             <i aria-hidden="true" />
           </a>
         </div>
+        <div className="athors-wrapper">
+          <div>© LITTLE BUMBLEBEES</div>
+        </div>
       </div>
     </footer>
   );

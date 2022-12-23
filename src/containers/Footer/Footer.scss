@@ -18,7 +18,8 @@
 
 .logo-wrapper,
 .phone-wrapper,
-.media-wrapper {
+.media-wrapper,
+.athors-wrapper {
   width: 274px;
   border: 1.5px solid rgba(255, 255, 255, 0.8);
   border-left-style: none;
@@ -48,4 +49,8 @@
   background: url(../../assets/img/svg/facebook-icon.svg) no-repeat center;
   width: 41px;
   height: 34px;
+}
+
+.athors-wrapper {
+  border-right-style: none;
 }
