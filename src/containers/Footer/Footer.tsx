@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer container">
       <MainMenuNavigation />
-      <div className="footer__wrapper">
+      <div className="footer__info">
         <div className="logo-wrapper">
           <img src={logo} alt="online store logo" />
         </div>
