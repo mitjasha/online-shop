@@ -2,6 +2,9 @@ import React from "react";
 import "./Footer.scss";
 import logo from "../../assets/img/svg/logo.svg";
 import MainMenuNavigation from "../../components/MainMenuNavigation/MainMenuNavigation";
+import youtubeIcon from "../../assets/img/svg/youtube-icon.svg";
+import vkIcon from "../../assets/img/svg/vk-icon.svg";
+import fbIcon from "../../assets/img/svg/facebook-icon.svg";
 
 const Footer: React.FC = () => {
   return (
@@ -19,25 +22,18 @@ const Footer: React.FC = () => {
             href="https://www.youtube.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="youtube"
           >
-            <i aria-hidden="true" />
+            <img src={youtubeIcon} alt="youtube" />
           </a>
-          <a
-            href="http://vk.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="vk"
-          >
-            <i aria-hidden="true" />
+          <a href="http://vk.com/" target="_blank" rel="noopener noreferrer">
+            <img src={vkIcon} alt="vkontakte" />
           </a>
           <a
             href="https://www.facebook.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="facebook"
           >
-            <i aria-hidden="true" />
+            <img src={fbIcon} alt="facebook" />
           </a>
         </div>
         <div className="athors-wrapper">
