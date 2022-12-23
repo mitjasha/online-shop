@@ -1,5 +1,5 @@
 import React from "react";
-import "./CataloguePage.css";
+import "./CataloguePage.scss";
 
 const CataloguePage: React.FC = () => {
   return (

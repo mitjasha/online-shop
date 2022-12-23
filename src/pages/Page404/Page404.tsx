@@ -1,5 +1,5 @@
 import React from "react";
-import "./Page404.css";
+import "./Page404.scss";
 
 const Page404: React.FC = () => {
   return (

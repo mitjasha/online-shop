@@ -1,5 +1,5 @@
 import React from "react";
-import "./CartPage.css";
+import "./CartPage.scss";
 
 const CartPage: React.FC = () => {
   return (
