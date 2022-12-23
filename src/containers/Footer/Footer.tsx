@@ -11,6 +11,9 @@ const Footer: React.FC = () => {
         <div className="logo-wrapper">
           <img src={logo} alt="online store logo" />
         </div>
+        <div className="phone-wrapper">
+          <div className="phone">+375 (25) 123-45-67</div>
+        </div>
       </div>
     </footer>
   );
