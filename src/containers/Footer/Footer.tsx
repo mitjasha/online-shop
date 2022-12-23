@@ -19,18 +19,25 @@ const Footer: React.FC = () => {
             href="https://www.youtube.com/"
             target="_blank"
             rel="noopener noreferrer"
+            className="youtube"
           >
-            a
+            <i aria-hidden="true" />
           </a>
-          <a href="http://vk.com/" target="_blank" rel="noopener noreferrer">
-            a
+          <a
+            href="http://vk.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="vk"
+          >
+            <i aria-hidden="true" />
           </a>
           <a
             href="https://www.facebook.com/"
             target="_blank"
             rel="noopener noreferrer"
+            className="facebook"
           >
-            a
+            <i aria-hidden="true" />
           </a>
         </div>
       </div>
