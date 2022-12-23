@@ -8,7 +8,9 @@ const Footer: React.FC = () => {
     <footer className="footer container">
       <MainMenuNavigation />
       <div className="footer__wrapper">
-        <img src={logo} alt="online store logo" />
+        <div className="logo-wrapper">
+          <img src={logo} alt="online store logo" />
+        </div>
       </div>
     </footer>
   );
