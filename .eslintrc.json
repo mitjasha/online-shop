@@ -40,6 +40,7 @@
     ],
     "no-console": 0,
     "arrow-body-style": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off"
   }
 }
