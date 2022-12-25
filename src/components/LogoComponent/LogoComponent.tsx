@@ -1,8 +1,12 @@
 import React from "react";
 import logo from "../../assets/img/svg/logo.svg";
 
-const LogoComponent: React.FC = () => {
-  return <img src={logo} alt="online store logo" />;
+interface LogoProps {
+  className?: string;
+}
+
+const LogoComponent: React.FC<LogoProps> = ({ className }) => {
+  return <img src={logo} alt="online store logo" className={className} />;
 };
 
 export default LogoComponent;

@@ -13,9 +13,7 @@ const Footer: React.FC = () => {
       <div className="container">
         <MainMenuNavigation />
         <div className="footer__info">
-          <div className="footer__logo">
-            <LogoComponent />
-          </div>
+          <LogoComponent className="footer__logo" />
           <a href="tel:+375291234567" className="footer__phone">
             +375 (25) 123-45-67
           </a>
