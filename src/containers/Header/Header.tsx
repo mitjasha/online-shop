@@ -8,19 +8,21 @@ import MainMenuNavigation from "../../components/MainMenuNavigation/MainMenuNavi
 
 const Header: React.FC = () => {
   return (
-    <header className="header container">
-      <div className="header__wrapper">
-        <img src={logo} alt="online store logo" />
-        <div className="wrapper__items">
-          <SearchComponent />
-          <div className="shopping-info">
-            <div className="total-sum">Total: $0.00</div>
-            <img src={heartIcon} alt="favorities" className="favorities" />
-            <img src={cartIcon} alt="cart" className="cart" />
+    <header className="header">
+      <div className="container">
+        <div className="header__wrapper">
+          <img src={logo} alt="online store logo" />
+          <div className="wrapper__items">
+            <SearchComponent />
+            <div className="shopping-info">
+              <div className="total-sum">Total: $0.00</div>
+              <img src={heartIcon} alt="favorities" className="favorities" />
+              <img src={cartIcon} alt="cart" className="cart" />
+            </div>
           </div>
         </div>
+        <MainMenuNavigation />
       </div>
-      <MainMenuNavigation />
     </header>
   );
 };
