@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
             </a>
           </div>
           <div className="athors-wrapper">
-            <div>© LITTLE BUMBLEBEES</div>
+            <p>© LITTLE BUMBLEBEES</p>
           </div>
         </div>
       </div>
