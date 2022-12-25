@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.scss";
-import logo from "../../assets/img/svg/logo.svg";
+import LogoComponent from "../../components/LogoComponent/LogoComponent";
 import MainMenuNavigation from "../../components/MainMenuNavigation/MainMenuNavigation";
 import MediaLinks from "../../components/MediaLinks/MediaLinks";
 import youtubeIcon from "../../assets/img/svg/youtube-icon.svg";
@@ -13,7 +13,9 @@ const Footer: React.FC = () => {
       <div className="container">
         <MainMenuNavigation />
         <div className="footer__info">
-          <img src={logo} alt="online store logo" className="footer__logo" />
+          <div className="footer__logo">
+            <LogoComponent />
+          </div>
           <a href="tel:+375291234567" className="footer__phone-number">
             +375 (25) 123-45-67
           </a>

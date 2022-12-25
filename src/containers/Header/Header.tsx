@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.scss";
 import heartIcon from "../../assets/img/svg/heart-icon.svg";
 import cartIcon from "../../assets/img/svg/cart-icon.svg";
-import logo from "../../assets/img/svg/logo.svg";
+import LogoComponent from "../../components/LogoComponent/LogoComponent";
 import SearchComponent from "../../components/SearchComponent/SearchComponent";
 import MainMenuNavigation from "../../components/MainMenuNavigation/MainMenuNavigation";
 
@@ -11,7 +11,7 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="container">
         <div className="header__wrapper">
-          <img src={logo} alt="online store logo" />
+          <LogoComponent />
           <div className="wrapper__items">
             <SearchComponent />
             <div className="shopping-info">
