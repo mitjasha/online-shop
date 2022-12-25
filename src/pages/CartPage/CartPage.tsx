@@ -9,7 +9,7 @@ const CartPage: React.FC = () => {
     <div className="cart-page">
       <div className="container">
         <div className="cart-page__title">
-          <span className="cart-page__title-text">Shopping Cart ({0})</span>
+          <span className="cart-page__title-text">Shopping Cart ({4})</span>
         </div>
         <div className="purchases">
           <table className="purchases-table">
@@ -18,7 +18,7 @@ const CartPage: React.FC = () => {
                 <th colSpan={2}>Product</th>
                 <th>Price</th>
                 <th>Quantity</th>
-                <th>Subtotal</th>
+                <th colSpan={2}>Subtotal</th>
               </tr>
             </thead>
             <tbody className="purchases-table__body">

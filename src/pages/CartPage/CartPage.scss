@@ -30,9 +30,22 @@
     border-spacing: 0;
     border: 1px solid #7d7d7d;
 
-    & th:nth-child(1) {
-      width: 50%;
-      padding-left: 15px;
+    & th {
+      width: 16%;
+
+      &:nth-child(1) {
+        width: 50%;
+        padding-left: 25px;
+      }
+
+      &:nth-child(2) {
+        width: 10%;
+      }
+
+      &:nth-child(3) {
+        text-align: center;
+        width: 22%;
+      }
     }
 
     &__header {
@@ -60,6 +73,10 @@
       height: 60px;
 
       &-input {
+        font-family: Marcellus;
+        font-size: 16px;
+        line-height: 20px;
+        padding-left: 20px;
         width: 260px;
         height: 40px;
         margin-left: 22px;

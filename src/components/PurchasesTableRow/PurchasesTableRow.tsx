@@ -2,12 +2,13 @@ import React from "react";
 import { WineInfo } from "../../utils/helpers/interfaces";
 import QuantityInput from "../QuantityInput/QuantityInput";
 import "./PurchasesTableRow.scss";
+import trashIcon from "../../assets/img/svg/trash-icon.svg";
 
 const PurchasesTableRow: React.FC<WineInfo> = ({ title, image2, price }) => {
   return (
     <tr className="table-row">
-      <td className="">
-        <img src={image2} alt="wine pic" />
+      <td className="table-row__img-cell">
+        <img src={image2} alt="wine pic" className="table-row__img" />
       </td>
       <td>
         <p>{title}</p>
@@ -15,11 +16,14 @@ const PurchasesTableRow: React.FC<WineInfo> = ({ title, image2, price }) => {
       <td>
         <p>{price}</p>
       </td>
-      <td>
+      <td className="table-row__quantity">
         <QuantityInput />
       </td>
       <td>
         <p>{price}</p>
+      </td>
+      <td className="table-row__trash-icon">
+        <img src={trashIcon} alt="trash" />
       </td>
     </tr>
   );
