@@ -11,6 +11,14 @@ const MainPage: React.FC = () => {
             <br />I know things
           </h2>
           <p className="quote-author">Tyrion Lannister</p>
+          <div className="preview__buttons">
+            <button type="button" className="preview__button">
+              CATALOGUE
+            </button>
+            <button type="button" className="preview__button">
+              CART
+            </button>
+          </div>
         </div>
       </div>
     </main>
