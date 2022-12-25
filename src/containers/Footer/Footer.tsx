@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
           <div className="footer__logo">
             <LogoComponent />
           </div>
-          <a href="tel:+375291234567" className="footer__phone-number">
+          <a href="tel:+375291234567" className="footer__phone">
             +375 (25) 123-45-67
           </a>
           <div className="footer__media">
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
               alt="facebook"
             />
           </div>
-          <p className="footer__authors-info">© LITTLE BUMBLEBEES</p>
+          <p className="footer__authors">© LITTLE BUMBLEBEES</p>
         </div>
       </div>
     </footer>
