@@ -18,7 +18,7 @@
 }
 
 .footer__logo,
-.footer__phone-number,
+.footer__phone,
 .footer__media,
 .footer__authors-info {
   display: flex;
@@ -31,7 +31,7 @@
   font-weight: 600;
 }
 
-.footer__phone-number {
+.footer__phone {
   text-decoration: none;
   color: inherit;
 }
@@ -40,7 +40,7 @@
   gap: 35px;
 }
 
-.footer__authors-info {
+.footer__authors {
   border-right-style: none;
   margin: 0;
 }
