@@ -9,17 +9,13 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
 
-.footer {
   &__info {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     height: 85px;
   }
-}
 
-.footer {
   &__logo,
   &__phone,
   &__media,
@@ -33,22 +29,16 @@
     height: 100%;
     font-weight: 600;
   }
-}
 
-.footer {
   &__phone {
     text-decoration: none;
     color: inherit;
   }
-}
 
-.footer {
   &__media {
     gap: 35px;
   }
-}
 
-.footer {
   &__authors {
     border-right-style: none;
     margin: 0;
