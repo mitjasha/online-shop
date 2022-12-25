@@ -12,14 +12,10 @@ const Footer: React.FC = () => {
       <div className="container">
         <MainMenuNavigation />
         <div className="footer__info">
-          <div className="logo-wrapper">
-            <img src={logo} alt="online store logo" />
-          </div>
-          <div className="phone-wrapper">
-            <a href="tel:+375291234567" className="phone">
-              +375 (25) 123-45-67
-            </a>
-          </div>
+          <img src={logo} alt="online store logo" className="footer__logo" />
+          <a href="tel:+375291234567" className="phone">
+            +375 (25) 123-45-67
+          </a>
           <div className="media-wrapper">
             <a
               href="https://www.youtube.com/"
@@ -39,9 +35,7 @@ const Footer: React.FC = () => {
               <img src={fbIcon} alt="facebook" />
             </a>
           </div>
-          <div className="athors-wrapper">
-            <p>© LITTLE BUMBLEBEES</p>
-          </div>
+          <p className="authors-info">© LITTLE BUMBLEBEES</p>
         </div>
       </div>
     </footer>
