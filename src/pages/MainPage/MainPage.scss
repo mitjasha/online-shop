@@ -55,3 +55,19 @@
   border: 1px solid white;
   transition: 0.3s;
 }
+
+.categories {
+  height: 475px;
+  background-color: #333333;
+}
+
+.categories__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categories__image {
+  width: 268px;
+  height: 395px;
+}
