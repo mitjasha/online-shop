@@ -4,6 +4,8 @@
 
 .container {
   max-width: 1100px;
+  width: 100%;
+  margin: auto;
 }
 
 .preview {
@@ -11,6 +13,8 @@
   font-family: "Marcellus";
   color: white;
   font-weight: 400;
+  width: 700px;
+  margin: auto;
 }
 
 .preview__quote {
@@ -26,4 +30,28 @@
   margin: 0;
   font-size: 35px;
   text-align: right;
+  margin-top: 10%;
+}
+
+.preview__buttons {
+  width: 700px;
+  display: flex;
+  gap: 250px;
+  margin-top: 15%;
+  justify-content: center;
+}
+
+.preview__button {
+  width: 170px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  background-color: #998431;
+  color: white;
+}
+
+.preview__button:hover {
+  background-color: transparent;
+  border: 1px solid white;
+  transition: 0.3s;
 }
