@@ -16,7 +16,9 @@ const Footer: React.FC = () => {
             <img src={logo} alt="online store logo" />
           </div>
           <div className="phone-wrapper">
-            <div>+375 (25) 123-45-67</div>
+            <a href="tel:+375291234567" className="phone">
+              +375 (25) 123-45-67
+            </a>
           </div>
           <div className="media-wrapper">
             <a
