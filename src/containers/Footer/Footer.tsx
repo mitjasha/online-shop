@@ -13,10 +13,10 @@ const Footer: React.FC = () => {
         <MainMenuNavigation />
         <div className="footer__info">
           <img src={logo} alt="online store logo" className="footer__logo" />
-          <a href="tel:+375291234567" className="phone">
+          <a href="tel:+375291234567" className="footer__phone-number">
             +375 (25) 123-45-67
           </a>
-          <div className="media-wrapper">
+          <div className="footer__media">
             <a
               href="https://www.youtube.com/"
               target="_blank"
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               <img src={fbIcon} alt="facebook" />
             </a>
           </div>
-          <p className="authors-info">© LITTLE BUMBLEBEES</p>
+          <p className="footer__authors-info">© LITTLE BUMBLEBEES</p>
         </div>
       </div>
     </footer>

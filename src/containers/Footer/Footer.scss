@@ -18,9 +18,9 @@
 }
 
 .footer__logo,
-.phone,
-.media-wrapper,
-.authors-info {
+.footer__phone-number,
+.footer__media,
+.footer__authors-info {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,16 +31,16 @@
   font-weight: 600;
 }
 
-.phone {
+.footer__phone-number {
   text-decoration: none;
   color: inherit;
 }
 
-.media-wrapper {
+.footer__media {
   gap: 35px;
 }
 
-.authors-info {
+.footer__authors-info {
   border-right-style: none;
   margin: 0;
 }
