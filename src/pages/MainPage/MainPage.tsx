@@ -5,11 +5,11 @@ const MainPage: React.FC = () => {
   return (
     <main className="main">
       <div className="container">
-        <div className="preview">
-          <h2 className="preview__quote">
+        <section className="preview">
+          <h1 className="preview__quote">
             I drink wine and
             <br />I know things
-          </h2>
+          </h1>
           <p className="quote-author">Tyrion Lannister</p>
           <div className="preview__buttons">
             <button type="button" className="preview__button">
@@ -19,7 +19,7 @@ const MainPage: React.FC = () => {
               CART
             </button>
           </div>
-        </div>
+        </section>
       </div>
     </main>
   );
