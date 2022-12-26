@@ -34,7 +34,7 @@ const MainPage: React.FC = () => {
               </p>
               <p className="coupon__text">
                 GET <span className="text__bold">10%</span> OFF WITH OUR
-                CHRISTMAS COUPON.
+                CHRISTMAS COUPON
               </p>
               <Button className="coupon__button">COPY COUPON</Button>
             </div>
