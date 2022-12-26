@@ -27,6 +27,16 @@ const MainPage: React.FC = () => {
         <div className="container">
           <div className="coupon__wrapper">
             <img src={couponImg} alt="sparkling wine" className="coupon__img" />
+            <div className="coupon__info">
+              <p className="coupon__text">
+                MAKE THE MOST MAGICAL NIGHT OF THE YEAR MEMORABLE WITH OUR WINE
+                COLLECTION!
+              </p>
+              <p className="coupon__text">
+                GET <span className="text__bold">10%</span> OFF WITH OUR
+                CHRISTMAS COUPON.
+              </p>
+            </div>
           </div>
         </div>
       </section>
