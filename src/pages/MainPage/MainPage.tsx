@@ -6,6 +6,7 @@ import sparklingWine from "../../assets/img/jpg/sparkling-main.jpg";
 import roseWine from "../../assets/img/jpg/rose-main.jpg";
 import Button from "../../components/Buttons/Button/Button";
 import couponImg from "../../assets/img/jpg/christmas-coupon.jpg";
+import harvestImg from "../../assets/img/jpg/harvest-2021.jpg";
 
 const MainPage: React.FC = () => {
   return (
@@ -119,6 +120,34 @@ const MainPage: React.FC = () => {
               </Button>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="harvest">
+        <div className="container">
+          <div className="harvest__info">
+            <h2 className="harvest__title">
+              The 2021 Wine Harvests - The good and the bad
+            </h2>
+            <p className="harvest__text">
+              Making an over-arching statement on something as complex as the
+              wine harvest in one country is a tall order, let alone making such
+              a statement on the harvest around the world. Different harvesting
+              times, a distinct set of environmental factors and contrasting
+              rules for each grape variety makes the job of a winemaker a real
+              (but definitively rewarding) struggle. However, we can certainly
+              have a look at some of the highlights for the 2021 harvest.
+            </p>
+            <Button
+              className="harvest__button"
+              style={{
+                backgroundColor: "#e5e5e5",
+                border: "none",
+              }}
+            >
+              LEARN MORE
+            </Button>
+          </div>
+          <img src={harvestImg} alt="glasses of wine" />
         </div>
       </section>
     </main>
