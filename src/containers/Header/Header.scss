@@ -29,6 +29,7 @@
   text-align: right;
   font-size: 18px;
   height: 25px;
+  position: relative;
 }
 
 .favorities,
@@ -36,6 +37,22 @@
   cursor: pointer;
   width: 25px;
   height: 25px;
+}
+
+.shopping-info::after {
+  content: "0";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto";
+  font-size: 11px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #999999;
+  border-radius: 50%;
+  left: 95%;
+  top: 60%;
 }
 
 .total-sum {
