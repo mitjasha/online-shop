@@ -8,6 +8,7 @@
   color: white;
   font-weight: 400;
   margin: auto;
+  padding-top: 14%;
 
   &__quote {
     margin: 0;
@@ -15,14 +16,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 300px;
   }
 
   &__buttons {
-    width: 700px;
     display: flex;
     gap: 250px;
     margin-top: 15%;
+    padding-bottom: 10%;
     justify-content: center;
   }
 
