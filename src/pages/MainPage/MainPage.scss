@@ -8,15 +8,15 @@
   color: white;
   font-weight: 400;
   margin: auto;
-}
 
-.preview__quote {
-  margin: 0;
-  font-size: 96px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 300px;
+  &__quote {
+    margin: 0;
+    font-size: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 300px;
+  }
 }
 
 .quote-author {
