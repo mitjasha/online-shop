@@ -36,6 +36,7 @@ const MainPage: React.FC = () => {
                 GET <span className="text__bold">10%</span> OFF WITH OUR
                 CHRISTMAS COUPON.
               </p>
+              <Button className="coupon__button">COPY COUPON</Button>
             </div>
           </div>
         </div>

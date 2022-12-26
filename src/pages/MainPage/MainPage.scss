@@ -64,9 +64,33 @@
     height: 600px;
   }
 
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__text {
     font-size: 33px;
     text-align: center;
+  }
+
+  &__button {
+    width: 260px;
+    height: 70px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #998431;
+    color: white;
+  }
+
+  &__button:hover {
+    background-color: transparent;
+    border: 1px solid #333333;
+    color: #333333;
+    transition: 0.3s;
   }
 }
 
