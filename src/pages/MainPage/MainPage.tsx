@@ -144,7 +144,7 @@ const MainPage: React.FC = () => {
               <Button
                 className="harvest__button"
                 style={{
-                  backgroundColor: "#e5e5e5",
+                  backgroundColor: "#998431",
                   border: "none",
                 }}
               >
