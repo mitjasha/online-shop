@@ -107,15 +107,15 @@
 .categories {
   height: 670px;
   background-color: #333333;
-}
 
-.categories__wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.categories__image {
-  width: 268px;
-  height: 395px;
+  &__image {
+    width: 268px;
+    height: 395px;
+  }
 }
