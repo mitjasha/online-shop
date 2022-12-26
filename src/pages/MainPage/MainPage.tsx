@@ -124,11 +124,13 @@ const MainPage: React.FC = () => {
       </section>
       <section className="harvest">
         <div className="container">
+          <hr className="break-line" />
           <div className="harvest__wrapper">
             <div className="harvest__info">
               <h2 className="harvest__title">
                 The 2021 Wine Harvests - The good and the bad
               </h2>
+              <hr className="title__line" />
               <p className="harvest__text">
                 Making an over-arching statement on something as complex as the
                 wine harvest in one country is a tall order, let alone making
@@ -155,6 +157,7 @@ const MainPage: React.FC = () => {
               className="harvest__image"
             />
           </div>
+          <hr className="break-line" />
         </div>
       </section>
     </main>
