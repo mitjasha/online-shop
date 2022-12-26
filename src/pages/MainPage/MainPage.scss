@@ -169,12 +169,31 @@
     width: 100%;
     height: 665px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+  }
+
+  &__info {
+    width: 520px;
+  }
+
+  &__title {
+    font-size: 36px;
+  }
+
+  &__text {
+    line-height: 1.5;
   }
 
   &__image {
     width: 450px;
     height: 665px;
   }
+}
+
+.title__line {
+  width: 320px;
+  height: 1px;
+  border-style: none;
+  background-color: #333333;
 }
