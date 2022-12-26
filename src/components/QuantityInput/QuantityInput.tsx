@@ -31,7 +31,7 @@ const QuantityInput: React.FC = () => {
         className="quantity__input"
         min="0"
         name="quantity"
-        value="1"
+        defaultValue={1}
         type="number"
       />
       <button
