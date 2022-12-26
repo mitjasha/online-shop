@@ -75,6 +75,44 @@ const MainPage: React.FC = () => {
                 className="categories__image"
               />
             </div>
+            <div className="categories__buttons">
+              <Button
+                className="categories__button"
+                style={{
+                  backgroundColor: "#e5e5e5",
+                  border: "1px solid black",
+                }}
+              >
+                RED WINE
+              </Button>
+              <Button
+                className="categories__button"
+                style={{
+                  backgroundColor: "#e5e5e5",
+                  border: "1px solid black",
+                }}
+              >
+                WHITE WINE
+              </Button>
+              <Button
+                className="categories__button"
+                style={{
+                  backgroundColor: "#e5e5e5",
+                  border: "1px solid black",
+                }}
+              >
+                SPARKLING WINE
+              </Button>
+              <Button
+                className="categories__button"
+                style={{
+                  backgroundColor: "#e5e5e5",
+                  border: "1px solid black",
+                }}
+              >
+                ROSÉ WINE
+              </Button>
+            </div>
           </div>
         </div>
       </section>
