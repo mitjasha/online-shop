@@ -127,6 +127,12 @@
   &__image {
     width: 260px;
     height: 384px;
+    cursor: pointer;
+  }
+
+  &__image:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
   }
 
   &__images {
