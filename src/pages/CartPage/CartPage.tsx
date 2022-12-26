@@ -7,7 +7,7 @@ import data from "../../assets/data/data.json";
 const CartPage: React.FC = () => {
   return (
     <div className="cart-page">
-      <div className="container">
+      <div className="container cart-page__container">
         <div className="cart-page__title">
           <span className="cart-page__title-text">Shopping Cart ({4})</span>
         </div>
