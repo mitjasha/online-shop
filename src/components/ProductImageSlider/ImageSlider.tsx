@@ -1,8 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 
-export type ImageType = { id: number; url: string };
+export type ImageType = {
+  id: number;
+  url: string;
+};
 
-const ImageCarousel: React.FC<{ images?: ImageType[] }> = ({ images }) => {
+const ImageCarousel: React.FC<{
+  images?: ImageType[];
+  className?: string;
+}> = ({ images, className }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState<ImageType>();
   const carouselItemsRef = useRef<HTMLDivElement[] | null[]>([]);
@@ -33,11 +39,13 @@ const ImageCarousel: React.FC<{ images?: ImageType[] }> = ({ images }) => {
   };
 
   return (
-    <div className="carousel-container">
-      <div
-        className="selected-image"
-        style={{ backgroundImage: `url(${selectedImage?.url})` }}
-      />
+    <div className={className}>
+      <div className="selected-image__container">
+        <div
+          className="selected-image"
+          style={{ backgroundImage: `url(${selectedImage?.url})` }}
+        />
+      </div>
       <div className="carousel">
         <div className="carousel__images">
           {images &&
