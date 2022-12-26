@@ -46,6 +46,7 @@ const MainPage: React.FC = () => {
       <section className="categories">
         <div className="container">
           <div className="categories__wrapper">
+            <h2 className="categories__title">SHOP BY CATEGORY</h2>
             <div className="categories__images">
               <img src={redWine} alt="red wine" className="categories__image" />
               <img

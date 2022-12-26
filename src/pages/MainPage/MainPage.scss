@@ -6,7 +6,6 @@
 .preview {
   background: url(../../assets/img/jpg/main-bg.jpg) no-repeat center;
   color: white;
-  font-weight: 400;
   margin: auto;
   padding-top: 14%;
 
@@ -110,8 +109,17 @@
 
   &__wrapper {
     display: flex;
+    flex-direction: column;
+    height: 100%;
     justify-content: center;
     align-items: center;
+  }
+
+  &__title {
+    font-size: 46px;
+    color: white;
+    text-align: center;
+    margin-top: 0;
   }
 
   &__image {
@@ -121,6 +129,8 @@
 
   &__images {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     justify-content: space-between;
   }
