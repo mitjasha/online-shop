@@ -17,6 +17,29 @@
     align-items: center;
     padding-top: 300px;
   }
+
+  &__buttons {
+    width: 700px;
+    display: flex;
+    gap: 250px;
+    margin-top: 15%;
+    justify-content: center;
+  }
+
+  &__button {
+    width: 170px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    background-color: #998431;
+    color: white;
+  }
+
+  &__button:hover {
+    background-color: transparent;
+    border: 1px solid white;
+    transition: 0.3s;
+  }
 }
 
 .quote-author {
@@ -24,29 +47,6 @@
   font-size: 35px;
   text-align: right;
   margin-top: 10%;
-}
-
-.preview__buttons {
-  width: 700px;
-  display: flex;
-  gap: 250px;
-  margin-top: 15%;
-  justify-content: center;
-}
-
-.preview__button {
-  width: 170px;
-  height: 40px;
-  border: none;
-  cursor: pointer;
-  background-color: #998431;
-  color: white;
-}
-
-.preview__button:hover {
-  background-color: transparent;
-  border: 1px solid white;
-  transition: 0.3s;
 }
 
 .categories {
