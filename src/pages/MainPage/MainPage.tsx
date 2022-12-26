@@ -25,6 +25,7 @@ const MainPage: React.FC = () => {
       </section>
       <section className="coupon">
         <div className="container">
+          <hr className="break-line" />
           <div className="coupon__wrapper">
             <img src={couponImg} alt="sparkling wine" className="coupon__img" />
             <div className="coupon__info">
@@ -39,6 +40,7 @@ const MainPage: React.FC = () => {
               <Button className="coupon__button">COPY COUPON</Button>
             </div>
           </div>
+          <hr className="break-line" />
         </div>
       </section>
       <section className="categories">
