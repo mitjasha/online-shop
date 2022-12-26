@@ -47,7 +47,12 @@ const MainPage: React.FC = () => {
                 GET <span className="text__bold">10%</span> OFF WITH OUR
                 CHRISTMAS COUPON
               </p>
-              <Button className="coupon__button">COPY COUPON</Button>
+              <Button
+                className="coupon__button"
+                style={{ backgroundColor: "#998431", border: "none" }}
+              >
+                COPY COUPON
+              </Button>
             </div>
           </div>
           <hr className="break-line" />
