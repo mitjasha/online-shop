@@ -5,6 +5,7 @@ import whiteWine from "../../assets/img/jpg/white-main.jpg";
 import sparklingWine from "../../assets/img/jpg/sparkling-main.jpg";
 import roseWine from "../../assets/img/jpg/rose-main.jpg";
 import Button from "../../components/Buttons/Button/Button";
+import couponImg from "../../assets/img/jpg/christmas-coupon.jpg";
 
 const MainPage: React.FC = () => {
   return (
@@ -19,6 +20,13 @@ const MainPage: React.FC = () => {
           <div className="preview__buttons">
             <Button className="preview__button">CATALOGUE</Button>
             <Button className="preview__button">CART</Button>
+          </div>
+        </div>
+      </section>
+      <section className="coupon">
+        <div className="container">
+          <div className="coupon__wrapper">
+            <img src={couponImg} alt="sparkling wine" className="coupon__img" />
           </div>
         </div>
       </section>
