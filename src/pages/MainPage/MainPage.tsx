@@ -9,18 +9,20 @@ const MainPage: React.FC = () => {
   return (
     <main className="main">
       <section className="preview">
-        <h1 className="preview__quote">
-          I drink wine and
-          <br />I know things
-        </h1>
-        <p className="quote-author">Tyrion Lannister</p>
-        <div className="preview__buttons">
-          <button type="button" className="preview__button">
-            CATALOGUE
-          </button>
-          <button type="button" className="preview__button">
-            CART
-          </button>
+        <div className="container">
+          <h1 className="preview__quote">
+            I drink wine and
+            <br />I know things
+          </h1>
+          <p className="quote-author">Tyrion Lannister</p>
+          <div className="preview__buttons">
+            <button type="button" className="preview__button">
+              CATALOGUE
+            </button>
+            <button type="button" className="preview__button">
+              CART
+            </button>
+          </div>
         </div>
       </section>
       <section className="categories">
