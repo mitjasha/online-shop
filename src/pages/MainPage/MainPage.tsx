@@ -18,8 +18,18 @@ const MainPage: React.FC = () => {
           </h1>
           <p className="quote-author">Tyrion Lannister</p>
           <div className="preview__buttons">
-            <Button className="preview__button">CATALOGUE</Button>
-            <Button className="preview__button">CART</Button>
+            <Button
+              className="preview__button"
+              style={{ backgroundColor: "#998431", border: "none" }}
+            >
+              CATALOGUE
+            </Button>
+            <Button
+              className="preview__button"
+              style={{ backgroundColor: "#998431", border: "none" }}
+            >
+              CART
+            </Button>
           </div>
         </div>
       </section>
