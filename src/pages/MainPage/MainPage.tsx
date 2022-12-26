@@ -4,6 +4,7 @@ import redWine from "../../assets/img/jpg/red-main.jpg";
 import whiteWine from "../../assets/img/jpg/white-main.jpg";
 import sparklingWine from "../../assets/img/jpg/sparkling-main.jpg";
 import roseWine from "../../assets/img/jpg/rose-main.jpg";
+import Button from "../../components/Buttons/Button/Button";
 
 const MainPage: React.FC = () => {
   return (
@@ -16,12 +17,8 @@ const MainPage: React.FC = () => {
           </h1>
           <p className="quote-author">Tyrion Lannister</p>
           <div className="preview__buttons">
-            <button type="button" className="preview__button">
-              CATALOGUE
-            </button>
-            <button type="button" className="preview__button">
-              CART
-            </button>
+            <Button className="preview__button">CATALOGUE</Button>
+            <Button className="preview__button">CART</Button>
           </div>
         </div>
       </section>
