@@ -44,20 +44,26 @@ const MainPage: React.FC = () => {
         </div>
       </section>
       <section className="categories">
-        <div className="categories__wrapper">
-          <div>
-            <img src={redWine} alt="red wine" className="categories__image" />
-            <img
-              src={whiteWine}
-              alt="white wine"
-              className="categories__image"
-            />
-            <img
-              src={sparklingWine}
-              alt="sparkling wine"
-              className="categories__image"
-            />
-            <img src={roseWine} alt="rose wine" className="categories__image" />
+        <div className="container">
+          <div className="categories__wrapper">
+            <div>
+              <img src={redWine} alt="red wine" className="categories__image" />
+              <img
+                src={whiteWine}
+                alt="white wine"
+                className="categories__image"
+              />
+              <img
+                src={sparklingWine}
+                alt="sparkling wine"
+                className="categories__image"
+              />
+              <img
+                src={roseWine}
+                alt="rose wine"
+                className="categories__image"
+              />
+            </div>
           </div>
         </div>
       </section>
