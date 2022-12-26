@@ -115,7 +115,13 @@
   }
 
   &__image {
-    width: 268px;
-    height: 395px;
+    width: 260px;
+    height: 384px;
+  }
+
+  &__images {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
   }
 }
