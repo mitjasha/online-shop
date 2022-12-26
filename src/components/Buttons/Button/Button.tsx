@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import "./Buttom.scss";
 
 export interface ButtonProps {
@@ -7,6 +7,7 @@ export interface ButtonProps {
   className?: string;
   disabled?: boolean;
   onClick?: () => void;
+  style?: CSSProperties;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -15,11 +16,18 @@ const Button: React.FC<ButtonProps> = ({
   className,
   disabled,
   onClick,
+  style,
   ...attrs
 }) => {
   const classes = `${"button"} ${className}`;
   return (
-    <a href="/" rel="noopener noreferrer" className={classes} {...attrs}>
+    <a
+      href="/"
+      rel="noopener noreferrer"
+      className={classes}
+      style={style}
+      {...attrs}
+    >
       {children}
     </a>
   );
