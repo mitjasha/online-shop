@@ -17,7 +17,7 @@ const PurchasesTableRow: React.FC<WineInfo> = ({ title, image2, price }) => {
         <p>{price}</p>
       </td>
       <td className="table-row__quantity">
-        <QuantityInput />
+        <QuantityInput cartValue={1} />
       </td>
       <td>
         <p>{price}</p>
