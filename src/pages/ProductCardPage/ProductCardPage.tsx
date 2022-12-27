@@ -42,7 +42,7 @@ const ProductCardPage: React.FC = () => {
           <Button className="product-info__buy-now">BUY NOW</Button>
         </div>
       </div>
-      <div className="container">
+      <div className="container related-products__container">
         <h2 className="related-products__title">Related Products</h2>
         <div className="related-products__cards"> </div>
       </div>
