@@ -29,7 +29,7 @@ const ProductCardPage: React.FC = () => {
             {data.goods[1].description}
           </div>
           <div className="product-info__actions">
-            <QuantityInput />
+            <QuantityInput cartValue={1} />
             <Button className="product-info__add-button">Add to cart</Button>
             <Button className="product-info__favourites">
               <img
