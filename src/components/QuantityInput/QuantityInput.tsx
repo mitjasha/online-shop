@@ -1,7 +1,18 @@
 import React from "react";
+import cn from "classnames";
 import "./QuantityInput.scss";
 
-const QuantityInput: React.FC = () => {
+interface QuantityInputProps {
+  className?: string;
+  cartValue: number;
+}
+
+const QuantityInput: React.FC<QuantityInputProps> = ({
+  className,
+  cartValue,
+}) => {
+  const classes = cn("quantity", className);
+
   const increaseQuantity = () => {
     const value: HTMLInputElement | null =
       document.querySelector(".quantity__input");
@@ -19,7 +30,7 @@ const QuantityInput: React.FC = () => {
   };
 
   return (
-    <div className="quantity">
+    <div className={classes}>
       <button
         type="button"
         onClick={decreaseQuantity}
@@ -31,7 +42,7 @@ const QuantityInput: React.FC = () => {
         className="quantity__input"
         min="0"
         name="quantity"
-        defaultValue={1}
+        defaultValue={cartValue}
         type="number"
       />
       <button

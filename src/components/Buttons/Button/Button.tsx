@@ -1,4 +1,5 @@
 import React from "react";
+import cn from "classnames";
 import "./Buttom.scss";
 
 export interface ButtonProps {
@@ -17,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   ...attrs
 }) => {
-  const classes = `${"button"} ${className}`;
+  const classes = cn("button", className);
   return (
     <a href="/" rel="noopener noreferrer" className={classes} {...attrs}>
       {children}
