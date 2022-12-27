@@ -16,7 +16,7 @@ const ProductImageSlider: React.FC<ProductImageSliderProps> = ({
     setImages(
       Array.from({ length: 3 }, (_, i) => i + 1).map((id) => ({
         id,
-        url: `https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/${id}.jpg`,
+        url: `https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/${id}.0.jpg`,
       })),
     );
   }, []);

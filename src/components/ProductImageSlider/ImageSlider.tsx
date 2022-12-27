@@ -29,12 +29,6 @@ const ImageCarousel: React.FC<{
     if (images && images.length > 0) {
       setSelectedImage(images[newIdx]);
       setSelectedImageIndex(newIdx);
-      if (carouselItemsRef?.current[newIdx]) {
-        carouselItemsRef?.current[newIdx]?.scrollIntoView({
-          inline: "center",
-          behavior: "smooth",
-        });
-      }
     }
   };
 
@@ -52,10 +46,7 @@ const ImageCarousel: React.FC<{
             images.map((image, idx) => (
               <div
                 onClick={() => handleSelectedImageChange(idx)}
-                onKeyDown={() => handleSelectedImageChange(idx)}
-                role="button"
-                aria-label=" "
-                tabIndex={0}
+                role="presentation"
                 style={{ backgroundImage: `url(${image.url})` }}
                 key={image.id}
                 className={`carousel__image ${
