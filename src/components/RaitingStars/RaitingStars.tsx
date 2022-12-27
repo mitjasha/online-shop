@@ -3,13 +3,14 @@ import "./RaitingStars.scss";
 
 interface RaitingStarsProps {
   stars: number;
+  className?: string;
 }
 
-const RaitingStars: React.FC<RaitingStarsProps> = ({ stars }) => {
+const RaitingStars: React.FC<RaitingStarsProps> = ({ stars, className }) => {
   const MAX_RAITING_STARS = 5;
 
   return (
-    <div>
+    <div className={className}>
       {[...Array(Math.floor(stars) || MAX_RAITING_STARS)].map(
         (star: string, index) => {
           return (
