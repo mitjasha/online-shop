@@ -5,8 +5,7 @@ export interface WineInfo {
   region?: string;
   grapes?: string;
   rating?: number;
-  image1?: string;
-  image2?: string;
+  images?: string[];
   price: string;
   quantity?: number;
   year?: Years;
