@@ -4,7 +4,7 @@
   margin-bottom: 8px;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   border: 1px solid #d6d6d6;
 
   &__container {
@@ -25,7 +25,7 @@
   &__images {
     display: flex;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: auto;
   }
 
   &__image-selected {
@@ -39,10 +39,10 @@
     border: 1px solid #d6d6d6;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
   }
 
-  &__image:nth-child(3) {
+  &__image:last-child {
     margin-right: 0;
   }
 }

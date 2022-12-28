@@ -14,7 +14,7 @@ const ProductCardPage: React.FC = () => {
       <div className="container product-page__container">
         <ProductImageSlider
           className="product__images-slider"
-          imagesData={data.goods[10].images}
+          imagesData={data.goods[21].images}
         />
         <div className="product-info">
           <Breadcrumbs

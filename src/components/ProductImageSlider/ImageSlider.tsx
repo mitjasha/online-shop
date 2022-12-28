@@ -20,8 +20,8 @@ const ImageCarousel: React.FC<{
         images.length,
       );
 
-      setSelectedImageIndex(0);
-      setSelectedImage(images[0]);
+      setSelectedImageIndex(1);
+      setSelectedImage(images[1]);
     }
   }, [images]);
 
