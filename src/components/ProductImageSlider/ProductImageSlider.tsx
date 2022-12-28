@@ -3,20 +3,21 @@ import ImageCarousel, { ImageType } from "./ImageSlider";
 import "./ProductImageSlider.scss";
 
 export interface ProductImageSliderProps {
-  //   images?: ImageType[];
+  imagesData: string[];
   className?: string;
 }
 
 const ProductImageSlider: React.FC<ProductImageSliderProps> = ({
+  imagesData,
   className,
 }) => {
   const [images, setImages] = useState<ImageType[]>();
 
   useEffect(() => {
     setImages(
-      Array.from({ length: 3 }, (_, i) => i + 1).map((id) => ({
+      Array.from(Array(imagesData.length).keys()).map((id) => ({
         id,
-        url: `https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/${id}.0.jpg`,
+        url: imagesData[id],
       })),
     );
   }, []);

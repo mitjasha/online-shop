@@ -12,7 +12,10 @@ const ProductCardPage: React.FC = () => {
   return (
     <main className="product-page">
       <div className="container product-page__container">
-        <ProductImageSlider className="product__images-slider" />
+        <ProductImageSlider
+          className="product__images-slider"
+          imagesData={data.goods[10].images}
+        />
         <div className="product-info">
           <Breadcrumbs
             className="product-info__breadcrumbs"
