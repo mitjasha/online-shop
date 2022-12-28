@@ -1,12 +1,12 @@
 import React from "react";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import ProductImageSlider from "../../components/ProductImageSlider/ProductImageSlider";
-import "./ProductCardPage.scss";
 import data from "../../assets/data/data.json";
 import RaitingStars from "../../components/RaitingStars/RaitingStars";
 import QuantityInput from "../../components/QuantityInput/QuantityInput";
 import Button from "../../components/Buttons/Button/Button";
 import heartIcon from "../../assets/img/svg/heart-icon.svg";
+import "./ProductCardPage.scss";
 
 const ProductCardPage: React.FC = () => {
   return (
@@ -32,7 +32,7 @@ const ProductCardPage: React.FC = () => {
             {data.goods[1].description}
           </div>
           <div className="product-info__actions">
-            <QuantityInput cartValue={1} />
+            <QuantityInput className="product-info__quantity" cartValue={1} />
             <Button className="product-info__add-button">Add to cart</Button>
             <Button className="product-info__favourites">
               <img
