@@ -4,11 +4,15 @@ import QuantityInput from "../QuantityInput/QuantityInput";
 import "./PurchasesTableRow.scss";
 import trashIcon from "../../assets/img/svg/trash-icon.svg";
 
-const PurchasesTableRow: React.FC<WineInfo> = ({ title, image2, price }) => {
+const PurchasesTableRow: React.FC<WineInfo> = ({ title, images, price }) => {
   return (
     <tr className="table-row">
       <td className="table-row__img-cell">
-        <img src={image2} alt="wine pic" className="table-row__img" />
+        <img
+          src={images ? images[1] : ""}
+          alt="wine pic"
+          className="table-row__img"
+        />
       </td>
       <td>
         <p>{title}</p>

@@ -24,22 +24,22 @@ const CartPage: React.FC = () => {
             <tbody className="purchases-table__body">
               <PurchasesTableRow
                 title={data.goods[0].title}
-                image2={data.goods[0].image2}
+                images={data.goods[0].images}
                 price={data.goods[0].price}
               />
               <PurchasesTableRow
                 title={data.goods[1].title}
-                image2={data.goods[1].image2}
+                images={data.goods[1].images}
                 price={data.goods[1].price}
               />
               <PurchasesTableRow
                 title={data.goods[2].title}
-                image2={data.goods[2].image2}
+                images={data.goods[2].images}
                 price={data.goods[2].price}
               />
               <PurchasesTableRow
                 title={data.goods[3].title}
-                image2={data.goods[3].image2}
+                images={data.goods[3].images}
                 price={data.goods[3].price}
               />
             </tbody>
