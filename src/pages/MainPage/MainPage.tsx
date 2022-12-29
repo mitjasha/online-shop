@@ -6,6 +6,7 @@ import sparklingWine from "../../assets/img/jpg/sparkling-main.jpg";
 import roseWine from "../../assets/img/jpg/rose-main.jpg";
 import couponImg from "../../assets/img/jpg/christmas-coupon.jpg";
 import harvestImg from "../../assets/img/jpg/harvest-2021.jpg";
+import couponBtnImg from "../../assets/img/svg/gift-coupon.svg";
 import "./MainPage.scss";
 
 const categoryImageArray = [
@@ -45,7 +46,9 @@ const MainPage: React.FC = () => {
                 GET <span className="text__bold">10%</span> OFF WITH OUR
                 CHRISTMAS COUPON
               </p>
-              <Button className="coupon__button">COPY COUPON</Button>
+              <Button className="coupon__button">
+                <img src={couponBtnImg} alt="coupon" />
+              </Button>
             </div>
           </div>
           <hr className="break-line" />
