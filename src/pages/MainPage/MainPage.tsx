@@ -8,6 +8,13 @@ import couponImg from "../../assets/img/jpg/christmas-coupon.jpg";
 import harvestImg from "../../assets/img/jpg/harvest-2021.jpg";
 import "./MainPage.scss";
 
+const categoryImageArray = [
+  { url: redWine, alt: "red wine" },
+  { url: whiteWine, alt: "white wine" },
+  { url: sparklingWine, alt: "sparkling wine" },
+  { url: roseWine, alt: "rose wine" },
+];
+
 const MainPage: React.FC = () => {
   return (
     <main className="main">
@@ -49,7 +56,18 @@ const MainPage: React.FC = () => {
           <div className="categories__wrapper">
             <h2 className="categories__title">SHOP BY CATEGORY</h2>
             <div className="categories__images">
-              <img src={redWine} alt="red wine" className="categories__image" />
+              {categoryImageArray.map((elem) => (
+                <img
+                  key={elem.alt}
+                  src={elem.url}
+                  alt={elem.alt}
+                  className="categories__image"
+                />
+              ))}
+              {/* {for (let i = 0; i < categoryImageArray.length; i++) {
+                  showCategoryImages(categoryImageArray, i)
+              }} */}
+              {/* <img src={redWine} alt="red wine" className="categories__image" />
               <img
                 src={whiteWine}
                 alt="white wine"
@@ -64,7 +82,7 @@ const MainPage: React.FC = () => {
                 src={roseWine}
                 alt="rose wine"
                 className="categories__image"
-              />
+              /> */}
             </div>
             <div className="categories__buttons">
               <Button className="categories__button">RED WINE</Button>
