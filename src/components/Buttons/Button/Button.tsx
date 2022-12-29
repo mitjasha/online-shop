@@ -8,7 +8,6 @@ export interface ButtonProps {
   className?: string;
   disabled?: boolean;
   onClick?: () => void;
-  style?: CSSProperties;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -17,18 +16,11 @@ const Button: React.FC<ButtonProps> = ({
   className,
   disabled,
   onClick,
-  style,
   ...attrs
 }) => {
   const classes = cn("button", className);
   return (
-    <a
-      href="/"
-      rel="noopener noreferrer"
-      className={classes}
-      style={style}
-      {...attrs}
-    >
+    <a href="/" rel="noopener noreferrer" className={classes} {...attrs}>
       {children}
     </a>
   );
