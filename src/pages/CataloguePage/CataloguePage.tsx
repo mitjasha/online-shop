@@ -15,7 +15,10 @@ const CataloguePage: React.FC = () => {
           <label htmlFor="sorting">
             <select id="sorting">
               <option value="">Sort options</option>
-              <option value="dog">Sort by price</option>
+              <option value="">Sort by price</option>
+              <option value="">Sort by rating</option>
+              <option value="">Sort by quantity</option>
+              <option value="">Sort by year</option>
             </select>
           </label>
         </div>
