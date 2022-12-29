@@ -2,7 +2,7 @@ import React from "react";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import ProductImageSlider from "../../components/ProductImageSlider/ProductImageSlider";
 import data from "../../assets/data/data.json";
-import RaitingStars from "../../components/RaitingStars/RaitingStars";
+import RaitingStars from "../../components/RatingStars/RatingStars";
 import QuantityInput from "../../components/QuantityInput/QuantityInput";
 import Button from "../../components/Buttons/Button/Button";
 import heartIcon from "../../assets/img/svg/heart-icon.svg";
