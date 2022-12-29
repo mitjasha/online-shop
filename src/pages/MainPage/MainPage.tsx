@@ -1,12 +1,12 @@
 import React from "react";
-import "./MainPage.scss";
+import Button from "../../components/Buttons/Button/Button";
 import redWine from "../../assets/img/jpg/red-main.jpg";
 import whiteWine from "../../assets/img/jpg/white-main.jpg";
 import sparklingWine from "../../assets/img/jpg/sparkling-main.jpg";
 import roseWine from "../../assets/img/jpg/rose-main.jpg";
-import Button from "../../components/Buttons/Button/Button";
 import couponImg from "../../assets/img/jpg/christmas-coupon.jpg";
 import harvestImg from "../../assets/img/jpg/harvest-2021.jpg";
+import "./MainPage.scss";
 
 const MainPage: React.FC = () => {
   return (
