@@ -64,25 +64,6 @@ const MainPage: React.FC = () => {
                   className="categories__image"
                 />
               ))}
-              {/* {for (let i = 0; i < categoryImageArray.length; i++) {
-                  showCategoryImages(categoryImageArray, i)
-              }} */}
-              {/* <img src={redWine} alt="red wine" className="categories__image" />
-              <img
-                src={whiteWine}
-                alt="white wine"
-                className="categories__image"
-              />
-              <img
-                src={sparklingWine}
-                alt="sparkling wine"
-                className="categories__image"
-              />
-              <img
-                src={roseWine}
-                alt="rose wine"
-                className="categories__image"
-              /> */}
             </div>
             <div className="categories__buttons">
               <Button className="categories__button">RED WINE</Button>
