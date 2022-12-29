@@ -1,5 +1,6 @@
 import React from "react";
 import data from "../../assets/data/data.json";
+import Button from "../../components/Buttons/Button/Button";
 import "./CataloguePage.scss";
 
 const wineTypes = ["Red wine", "White wine", "Sparkling wine", "Rosé wine"];
@@ -8,7 +9,16 @@ const CataloguePage: React.FC = () => {
   return (
     <div className="catalogue">
       <div className="container">
-        <div className="settings">1</div>
+        <div className="settings">
+          <Button className="settings__reset">Reset Filters</Button>
+          <div className="settings__found">Found 0 items</div>
+          <label htmlFor="sorting">
+            <select id="sorting">
+              <option value="">Sort options</option>
+              <option value="dog">Sort by price</option>
+            </select>
+          </label>
+        </div>
         <div className="filters-goods-wrapper">
           <div className="filters">
             <fieldset className="filters__checkbox">
