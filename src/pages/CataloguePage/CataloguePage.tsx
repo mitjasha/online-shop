@@ -73,7 +73,17 @@ const CataloguePage: React.FC = () => {
               </label>
             </div>
           </div>
-          <div className="goods">1</div>
+          <div className="goods">
+            {data.goods.map((elem) => (
+              <div className="goods__item">
+                <img
+                  src={elem.images[0]}
+                  alt={elem.title}
+                  className="goods__image"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

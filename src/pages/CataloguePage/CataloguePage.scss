@@ -66,3 +66,15 @@
 .filters__checkbox_brand {
   height: 200px;
 }
+
+.goods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: calc(68px / 3);
+}
+
+.goods__image {
+  width: 260px;
+  height: 384px;
+  cursor: pointer;
+}
