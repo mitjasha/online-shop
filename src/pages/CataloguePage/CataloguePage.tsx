@@ -22,7 +22,7 @@ const CataloguePage: React.FC = () => {
                 </div>
               ))}
             </fieldset>
-            <fieldset className="filters__checkbox">
+            <fieldset className="filters__checkbox filters__checkbox_brand">
               <legend>BRAND</legend>
               {data.goods.map((elem) => (
                 <div className="option">
@@ -33,6 +33,30 @@ const CataloguePage: React.FC = () => {
                 </div>
               ))}
             </fieldset>
+            <div className="filters__radio">
+              <p>Price</p>
+              <label htmlFor="price">
+                <input
+                  type="range"
+                  id="price"
+                  name="price"
+                  min="5.99"
+                  max="56"
+                />
+              </label>
+            </div>
+            <div className="filters__radio">
+              <p>Quantity</p>
+              <label htmlFor="quantity">
+                <input
+                  type="range"
+                  id="quantity"
+                  name="quantity"
+                  min="4"
+                  max="22"
+                />
+              </label>
+            </div>
           </div>
           <div className="goods">1</div>
         </div>
