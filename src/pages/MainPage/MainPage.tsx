@@ -19,18 +19,8 @@ const MainPage: React.FC = () => {
           </h1>
           <p className="quote-author">Tyrion Lannister</p>
           <div className="preview__buttons">
-            <Button
-              className="preview__button"
-              style={{ backgroundColor: "#998431", border: "none" }}
-            >
-              CATALOGUE
-            </Button>
-            <Button
-              className="preview__button"
-              style={{ backgroundColor: "#998431", border: "none" }}
-            >
-              CART
-            </Button>
+            <Button className="preview__button">CATALOGUE</Button>
+            <Button className="preview__button">CART</Button>
           </div>
         </div>
       </section>
@@ -48,12 +38,7 @@ const MainPage: React.FC = () => {
                 GET <span className="text__bold">10%</span> OFF WITH OUR
                 CHRISTMAS COUPON
               </p>
-              <Button
-                className="coupon__button"
-                style={{ backgroundColor: "#998431", border: "none" }}
-              >
-                COPY COUPON
-              </Button>
+              <Button className="coupon__button">COPY COUPON</Button>
             </div>
           </div>
           <hr className="break-line" />
@@ -82,42 +67,10 @@ const MainPage: React.FC = () => {
               />
             </div>
             <div className="categories__buttons">
-              <Button
-                className="categories__button"
-                style={{
-                  backgroundColor: "#e5e5e5",
-                  border: "1px solid black",
-                }}
-              >
-                RED WINE
-              </Button>
-              <Button
-                className="categories__button"
-                style={{
-                  backgroundColor: "#e5e5e5",
-                  border: "1px solid black",
-                }}
-              >
-                WHITE WINE
-              </Button>
-              <Button
-                className="categories__button"
-                style={{
-                  backgroundColor: "#e5e5e5",
-                  border: "1px solid black",
-                }}
-              >
-                SPARKLING WINE
-              </Button>
-              <Button
-                className="categories__button"
-                style={{
-                  backgroundColor: "#e5e5e5",
-                  border: "1px solid black",
-                }}
-              >
-                ROSÉ WINE
-              </Button>
+              <Button className="categories__button">RED WINE</Button>
+              <Button className="categories__button">WHITE WINE</Button>
+              <Button className="categories__button">SPARKLING WINE</Button>
+              <Button className="categories__button">ROSÉ WINE</Button>
             </div>
           </div>
         </div>
@@ -141,15 +94,7 @@ const MainPage: React.FC = () => {
                 we can certainly have a look at some of the highlights for the
                 2021 harvest.
               </p>
-              <Button
-                className="harvest__button"
-                style={{
-                  backgroundColor: "#998431",
-                  border: "none",
-                }}
-              >
-                LEARN MORE
-              </Button>
+              <Button className="harvest__button">LEARN MORE</Button>
             </div>
             <img
               src={harvestImg}
