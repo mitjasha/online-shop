@@ -1,5 +1,8 @@
 import React from "react";
+// import data from "../../assets/data/data.json";
 import "./CataloguePage.scss";
+
+const wineTypes = ["Red wine", "White wine", "Sparkling wine", "Rosé wine"];
 
 const CataloguePage: React.FC = () => {
   return (
@@ -8,7 +11,17 @@ const CataloguePage: React.FC = () => {
         <div className="settings">1</div>
         <div className="filters-goods-wrapper">
           <div className="filters">
-            <input type="checkbox" className="filters__type" />
+            <fieldset>
+              <legend>TYPE OF WINE</legend>
+              {wineTypes.map((elem) => (
+                <div className="option">
+                  <label htmlFor="type">
+                    <input type="checkbox" id="type" name="type" />
+                    {elem}
+                  </label>
+                </div>
+              ))}
+            </fieldset>
           </div>
           <div className="goods">1</div>
         </div>
