@@ -187,12 +187,24 @@
 
   &__text {
     line-height: 1.5;
+    margin-bottom: 10%;
+    font-size: 20px;
   }
 
   &__button {
     width: 240px;
     height: 62px;
     color: white;
+    border: none;
+    cursor: pointer;
+    background-color: #998431;
+  }
+
+  &__button:hover {
+    background-color: transparent;
+    border: 1px solid #333333;
+    color: #333333;
+    transition: 0.3s;
   }
 
   &__image {
@@ -206,4 +218,5 @@
   height: 1px;
   border-style: none;
   background-color: #333333;
+  margin-bottom: 10%;
 }
