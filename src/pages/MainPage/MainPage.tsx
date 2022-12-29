@@ -20,7 +20,7 @@ const MainPage: React.FC = () => {
   return (
     <main className="main">
       <section className="preview">
-        <div className="container">
+        <div className="container main__container">
           <h1 className="preview__quote">
             I drink wine and
             <br />I know things
@@ -33,7 +33,7 @@ const MainPage: React.FC = () => {
         </div>
       </section>
       <section className="coupon">
-        <div className="container">
+        <div className="container main__container">
           <hr className="break-line" />
           <div className="coupon__wrapper">
             <img src={couponImg} alt="sparkling wine" className="coupon__img" />
@@ -55,7 +55,7 @@ const MainPage: React.FC = () => {
         </div>
       </section>
       <section className="categories">
-        <div className="container">
+        <div className="container main__container">
           <div className="categories__wrapper">
             <h2 className="categories__title">SHOP BY CATEGORY</h2>
             <div className="categories__images">
@@ -78,7 +78,7 @@ const MainPage: React.FC = () => {
         </div>
       </section>
       <section className="harvest">
-        <div className="container">
+        <div className="container main__container">
           <hr className="break-line" />
           <div className="harvest__wrapper">
             <div className="harvest__info">
