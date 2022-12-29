@@ -12,15 +12,17 @@ const CataloguePage: React.FC = () => {
         <div className="settings">
           <Button className="settings__reset">Reset Filters</Button>
           <div className="settings__found">Found 0 items</div>
-          <label htmlFor="sorting">
-            <select id="sorting">
-              <option value="">Sort options</option>
-              <option value="">Sort by price</option>
-              <option value="">Sort by rating</option>
-              <option value="">Sort by quantity</option>
-              <option value="">Sort by year</option>
-            </select>
-          </label>
+          <select id="sorting" className="settings__sort">
+            <option>Sort options</option>
+            <option>Sort by price</option>
+            <option>Sort by rating</option>
+            <option>Sort by quantity</option>
+            <option>Sort by year</option>
+          </select>
+          <div className="display-mode">
+            <div className="display-mode__more">1</div>
+            <div className="display-mode__less">1</div>
+          </div>
         </div>
         <div className="filters-goods-wrapper">
           <div className="filters">
