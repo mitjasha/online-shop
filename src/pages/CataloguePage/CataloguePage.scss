@@ -38,13 +38,17 @@
   }
 }
 
-.display-mode {
+.layout-mode {
   display: flex;
+  gap: 10px;
 
-  &__more,
-  &__less {
-    width: 50px;
-    height: 100%;
+  &__two,
+  &__three,
+  &__four {
+    display: block;
+    text-align: center;
+    width: 40px;
+    height: 40px;
   }
 }
 

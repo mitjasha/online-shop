@@ -1,6 +1,9 @@
 import React from "react";
 import data from "../../assets/data/data.json";
 import Button from "../../components/Buttons/Button/Button";
+import twoGrid from "../../assets/img/png/two.png";
+import threeGrid from "../../assets/img/png/three.png";
+import fourGrid from "../../assets/img/png/four.png";
 import "./CataloguePage.scss";
 
 const wineTypes = ["Red wine", "White wine", "Sparkling wine", "Rosé wine"];
@@ -19,9 +22,14 @@ const CataloguePage: React.FC = () => {
             <option>Sort by quantity</option>
             <option>Sort by year</option>
           </select>
-          <div className="display-mode">
-            <div className="display-mode__more">1</div>
-            <div className="display-mode__less">1</div>
+          <div className="layout-mode">
+            <img src={twoGrid} alt="two grid" className="layout-mode__two" />
+            <img
+              src={threeGrid}
+              alt="three grid"
+              className="layout-mode__three"
+            />
+            <img src={fourGrid} alt="four grid" className="layout-mode__four" />
           </div>
         </div>
         <div className="filters-goods-wrapper">
