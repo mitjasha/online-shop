@@ -75,10 +75,15 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: calc(68px / 3);
-}
 
-.goods__image {
-  width: 260px;
-  height: 384px;
-  cursor: pointer;
+  &__image {
+    width: 260px;
+    height: 384px;
+    cursor: pointer;
+  }
+
+  &__price,
+  &__rating {
+    margin: 0 0 10px 0;
+  }
 }
