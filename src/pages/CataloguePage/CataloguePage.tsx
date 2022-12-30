@@ -3,6 +3,7 @@ import data from "../../assets/data/data.json";
 import Button from "../../components/Buttons/Button/Button";
 import RangeInput from "../../components/RangeInput/RangeInput";
 import CheckboxInput from "../../components/CheckboxInput/CheckboxInput";
+import { WineType } from "../../utils/helpers/interfaces";
 import twoGrid from "../../assets/img/png/two.png";
 import threeGrid from "../../assets/img/png/three.png";
 import fourGrid from "../../assets/img/png/four.png";
@@ -11,7 +12,7 @@ import cartIcon from "../../assets/img/svg/cart-icon.svg";
 import searchIcon from "../../assets/img/svg/search-icon.svg";
 import "./CataloguePage.scss";
 
-const wineTypes = ["Red wine", "White wine", "Sparkling wine", "Rosé wine"];
+const types = Object.values(WineType);
 
 const CataloguePage: React.FC = () => {
   return (
@@ -39,7 +40,7 @@ const CataloguePage: React.FC = () => {
         </div>
         <div className="filters-goods-wrapper">
           <div className="filters">
-            <CheckboxInput legend="TYPE OF WINE" arr={wineTypes} id="type" />
+            <CheckboxInput legend="TYPE OF WINE" arr={types} id="type" />
             <fieldset className="filters__checkbox filters__checkbox_brand">
               <legend>BRAND</legend>
               {data.goods.map((elem) => (
