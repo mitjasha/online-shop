@@ -16,17 +16,16 @@
   align-items: center;
 
   &__reset {
-    width: 150px;
-    height: 50px;
-    background-color: #f9f9f9;
-    color: #333333;
-    border: 1px solid #333333;
+    width: 248px;
+    height: 100%;
+    background-color: #333333;
+    color: #f9f9f9;
   }
 
   &__reset:hover {
-    background-color: #333333;
-    color: #f9f9f9;
-    border: 1px solid #f9f9f9;
+    background-color: #f9f9f9;
+    color: #333333;
+    border: 1px solid #333333;
     transition: 0.5s;
   }
 
@@ -34,7 +33,10 @@
     width: 200px;
     height: 100%;
     font-size: 16px;
-    background-color: #f9f9f9;
+    background-color: #333333;
+    color: #f9f9f9;
+    padding: 0 0 0 25px;
+    cursor: pointer;
   }
 }
 
@@ -49,6 +51,14 @@
     text-align: center;
     width: 40px;
     height: 40px;
+    cursor: pointer;
+  }
+
+  &__two:hover,
+  &__three:hover,
+  &__four:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
   }
 }
 
