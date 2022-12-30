@@ -104,6 +104,10 @@
   column-gap: calc(68px / 3);
   padding: 20px 0 20px 20px;
 
+  &__item {
+    position: relative;
+  }
+
   &__image {
     width: 260px;
     height: 384px;
@@ -120,13 +124,16 @@
   }
 
   &__actions {
-    display: flex;
-    margin-bottom: 30px;
+    position: absolute;
+    top: 0;
+    right: 14px;
   }
 }
 
 .action-btn {
-  width: 100%;
+  width: 150%;
   border: 0;
   height: 35px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 0.5s;
 }
