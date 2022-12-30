@@ -21,14 +21,14 @@ const CheckboxInput: React.FC<CheckboxProps> = ({
       <legend>{legend}</legend>
       {arr.map((elem: string) => (
         <div className="option">
-          <label htmlFor={id}>
+          <label className="checkbox-label" htmlFor={id}>
             <input
               type="checkbox"
               id={id}
               name={id}
               className="checkbox-input"
             />
-            {elem}
+            <span>{elem}</span>
           </label>
         </div>
       ))}
