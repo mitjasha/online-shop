@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import Header from "./containers/Header/Header";
 import Footer from "./containers/Footer/Footer";
 import MainPage from "./pages/MainPage/MainPage";
@@ -8,15 +9,19 @@ import CartPage from "./pages/CartPage/CartPage";
 import Page404 from "./pages/Page404/Page404";
 
 const App: React.FC = () => (
-  <div className="App">
+  <>
     <Header />
-    <MainPage />
-    <CataloguePage />
-    <ProductCardPage />
-    <CartPage />
-    <Page404 />
+    <main className="main-app">
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/catalogue" element={<CataloguePage />} />
+        <Route path="/product" element={<ProductCardPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/404" element={<Page404 />} />
+      </Routes>
+    </main>
     <Footer />
-  </div>
+  </>
 );
 
 export default App;
