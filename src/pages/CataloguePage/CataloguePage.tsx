@@ -34,7 +34,7 @@ const CataloguePage: React.FC = () => {
             <img
               src={threeGrid}
               alt="three grid"
-              className="layout-mode__three"
+              className="layout-mode__three active-layout"
             />
             <img src={fourGrid} alt="four grid" className="layout-mode__four" />
           </div>
