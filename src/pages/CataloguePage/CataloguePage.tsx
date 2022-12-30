@@ -4,6 +4,9 @@ import Button from "../../components/Buttons/Button/Button";
 import twoGrid from "../../assets/img/png/two.png";
 import threeGrid from "../../assets/img/png/three.png";
 import fourGrid from "../../assets/img/png/four.png";
+import heartIcon from "../../assets/img/svg/heart-icon.svg";
+import cartIcon from "../../assets/img/svg/cart-icon.svg";
+import searchIcon from "../../assets/img/svg/search-icon.svg";
 import "./CataloguePage.scss";
 
 const wineTypes = ["Red wine", "White wine", "Sparkling wine", "Rosé wine"];
@@ -92,6 +95,21 @@ const CataloguePage: React.FC = () => {
                 <h3>{elem.title}</h3>
                 <p className="goods__rating">Rating: ★{elem.rating}</p>
                 <p className="goods__price">{elem.price}</p>
+                <div className="goods__actions">
+                  <Button className="action-btn">
+                    <img src={cartIcon} alt="cart" className="cart" />
+                  </Button>
+                  <Button className="action-btn">
+                    <img
+                      src={heartIcon}
+                      alt="favorities"
+                      className="favorities"
+                    />
+                  </Button>
+                  <Button className="action-btn">
+                    <img src={searchIcon} alt="modal" className="modal" />
+                  </Button>
+                </div>
               </div>
             ))}
           </div>
