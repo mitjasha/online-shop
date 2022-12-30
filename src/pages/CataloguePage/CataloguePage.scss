@@ -70,6 +70,17 @@
   scrollbar-width: thin;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f9f9f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333333;
+  border-radius: 9em;
+  box-shadow: inset 1px 1px 10px #333333;
+}
+
 .goods {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
