@@ -3,7 +3,7 @@ import data from "../../assets/data/data.json";
 import Button from "../../components/Buttons/Button/Button";
 import RangeInput from "../../components/RangeInput/RangeInput";
 import CheckboxInput from "../../components/CheckboxInput/CheckboxInput";
-import { WineType } from "../../utils/helpers/interfaces";
+import { WineType, Titles } from "../../utils/helpers/interfaces";
 import twoGrid from "../../assets/img/png/two.png";
 import threeGrid from "../../assets/img/png/three.png";
 import fourGrid from "../../assets/img/png/four.png";
@@ -13,6 +13,7 @@ import searchIcon from "../../assets/img/svg/search-icon.svg";
 import "./CataloguePage.scss";
 
 const types = Object.values(WineType);
+const titles = Object.values(Titles);
 
 const CataloguePage: React.FC = () => {
   return (
@@ -41,17 +42,12 @@ const CataloguePage: React.FC = () => {
         <div className="filters-goods-wrapper">
           <div className="filters">
             <CheckboxInput legend="TYPE OF WINE" arr={types} id="type" />
-            <fieldset className="filters__checkbox filters__checkbox_brand">
-              <legend>BRAND</legend>
-              {data.goods.map((elem) => (
-                <div className="option">
-                  <label htmlFor="brand">
-                    <input type="checkbox" id="brand" name="brand" />
-                    {elem.title}
-                  </label>
-                </div>
-              ))}
-            </fieldset>
+            <CheckboxInput
+              legend="BRAND"
+              arr={titles}
+              id="brand"
+              className="filters__checkbox_brand"
+            />
             <RangeInput
               title="Price"
               id="price"
