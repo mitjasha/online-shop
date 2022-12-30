@@ -2,6 +2,7 @@ import React from "react";
 import data from "../../assets/data/data.json";
 import Button from "../../components/Buttons/Button/Button";
 import RangeInput from "../../components/RangeInput/RangeInput";
+import CheckboxInput from "../../components/CheckboxInput/CheckboxInput";
 import twoGrid from "../../assets/img/png/two.png";
 import threeGrid from "../../assets/img/png/three.png";
 import fourGrid from "../../assets/img/png/four.png";
@@ -38,17 +39,7 @@ const CataloguePage: React.FC = () => {
         </div>
         <div className="filters-goods-wrapper">
           <div className="filters">
-            <fieldset className="filters__checkbox">
-              <legend>TYPE OF WINE</legend>
-              {wineTypes.map((elem) => (
-                <div className="option">
-                  <label htmlFor="type">
-                    <input type="checkbox" id="type" name="type" />
-                    {elem}
-                  </label>
-                </div>
-              ))}
-            </fieldset>
+            <CheckboxInput legend="TYPE OF WINE" arr={wineTypes} id="type" />
             <fieldset className="filters__checkbox filters__checkbox_brand">
               <legend>BRAND</legend>
               {data.goods.map((elem) => (
@@ -60,7 +51,13 @@ const CataloguePage: React.FC = () => {
                 </div>
               ))}
             </fieldset>
-            <RangeInput title="Price" id="price" minVal="5.99" maxVal="56" />
+            <RangeInput
+              title="Price"
+              id="price"
+              minVal="5.99"
+              maxVal="56"
+              className="price-range"
+            />
             <RangeInput title="Quantity" id="quantity" minVal="4" maxVal="22" />
           </div>
           <div className="goods">
