@@ -58,8 +58,11 @@
 }
 
 .filters {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   padding: 10px;
+  gap: 20px;
 }
 
 .filters__checkbox_brand {
