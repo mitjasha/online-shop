@@ -31,6 +31,10 @@ const RangeInput: React.FC<RangeProps> = ({
           className={classes}
         />
       </label>
+      <div className="values">
+        <span className="values__min">MIN: {minVal}</span>
+        <span className="values__max">MAX: {maxVal}</span>
+      </div>
     </div>
   );
 };

@@ -50,8 +50,8 @@ const CataloguePage: React.FC = () => {
             <RangeInput
               title="PRICE"
               id="price"
-              minVal="5.99"
-              maxVal="56"
+              minVal="$5.99"
+              maxVal="$56"
               className="price-range"
             />
             <RangeInput title="QUANTITY" id="quantity" minVal="4" maxVal="22" />
