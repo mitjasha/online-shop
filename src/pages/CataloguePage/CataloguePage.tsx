@@ -1,6 +1,7 @@
 import React from "react";
 import data from "../../assets/data/data.json";
 import Button from "../../components/Buttons/Button/Button";
+import RangeInput from "../../components/RangeInput/RangeInput";
 import twoGrid from "../../assets/img/png/two.png";
 import threeGrid from "../../assets/img/png/three.png";
 import fourGrid from "../../assets/img/png/four.png";
@@ -59,30 +60,8 @@ const CataloguePage: React.FC = () => {
                 </div>
               ))}
             </fieldset>
-            <div className="filters__radio">
-              <p>Price</p>
-              <label htmlFor="price">
-                <input
-                  type="range"
-                  id="price"
-                  name="price"
-                  min="5.99"
-                  max="56"
-                />
-              </label>
-            </div>
-            <div className="filters__radio">
-              <p>Quantity</p>
-              <label htmlFor="quantity">
-                <input
-                  type="range"
-                  id="quantity"
-                  name="quantity"
-                  min="4"
-                  max="22"
-                />
-              </label>
-            </div>
+            <RangeInput title="Price" id="price" minVal="5.99" maxVal="56" />
+            <RangeInput title="Quantity" id="quantity" minVal="4" maxVal="22" />
           </div>
           <div className="goods">
             {data.goods.map((elem) => (
