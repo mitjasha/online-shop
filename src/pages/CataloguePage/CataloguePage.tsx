@@ -48,13 +48,13 @@ const CataloguePage: React.FC = () => {
               className="filters__checkbox_brand"
             />
             <RangeInput
-              title="Price"
+              title="PRICE"
               id="price"
               minVal="5.99"
               maxVal="56"
               className="price-range"
             />
-            <RangeInput title="Quantity" id="quantity" minVal="4" maxVal="22" />
+            <RangeInput title="QUANTITY" id="quantity" minVal="4" maxVal="22" />
           </div>
           <div className="goods">
             {data.goods.map((elem) => (

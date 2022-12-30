@@ -15,12 +15,15 @@ const CheckboxInput: React.FC<CheckboxProps> = ({ legend, arr, className }) => {
       <legend>{legend}</legend>
       {arr.map((elem: string, index) => (
         <div className="option">
-          <label className="checkbox-label" htmlFor={index.toString()}>
+          <label
+            className="checkbox-label"
+            htmlFor={index.toString().concat(elem)}
+          >
             <input
               key={elem}
               type="checkbox"
-              id={index.toString()}
-              name={index.toString()}
+              id={index.toString().concat(elem)}
+              name={index.toString().concat(elem)}
               className="checkbox-input"
             />
             <span>{elem}</span>
