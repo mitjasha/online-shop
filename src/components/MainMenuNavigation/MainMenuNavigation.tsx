@@ -7,16 +7,24 @@ const MainMenuNavigation: React.FC = () => {
     <nav className="nav">
       <ul className="nav__list">
         <li className="list__item">
-          <Button to="/">HOME</Button>
+          <Button to="/" className="main-menu-btn">
+            HOME
+          </Button>
         </li>
         <li className="list__item">
-          <Button to="/catalogue">CATALOGUE</Button>
+          <Button to="/catalogue" className="main-menu-btn">
+            CATALOGUE
+          </Button>
         </li>
         <li className="list__item">
-          <Button to="/contacts">CONTACTS</Button>
+          <Button to="/contacts" className="main-menu-btn">
+            CONTACTS
+          </Button>
         </li>
         <li className="list__item">
-          <Button to="/cart">CART</Button>
+          <Button to="/cart" className="main-menu-btn">
+            CART
+          </Button>
         </li>
       </ul>
     </nav>
