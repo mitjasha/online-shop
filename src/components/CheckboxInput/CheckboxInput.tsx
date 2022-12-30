@@ -15,14 +15,19 @@ const CheckboxInput: React.FC<CheckboxProps> = ({
   id,
   className,
 }) => {
-  const classes = cn("checkbox-range", className);
+  const classes = cn("checkbox-input-wrapper", className);
   return (
     <fieldset className={classes}>
       <legend>{legend}</legend>
       {arr.map((elem: string) => (
         <div className="option">
           <label htmlFor={id}>
-            <input type="checkbox" id={id} name={id} />
+            <input
+              type="checkbox"
+              id={id}
+              name={id}
+              className="checkbox-input"
+            />
             {elem}
           </label>
         </div>
