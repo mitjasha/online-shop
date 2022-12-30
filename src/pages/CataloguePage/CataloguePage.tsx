@@ -41,11 +41,10 @@ const CataloguePage: React.FC = () => {
         </div>
         <div className="filters-goods-wrapper">
           <div className="filters">
-            <CheckboxInput legend="TYPE OF WINE" arr={types} id="type" />
+            <CheckboxInput legend="TYPE OF WINE" arr={types} />
             <CheckboxInput
               legend="BRAND"
               arr={titles}
-              id="brand"
               className="filters__checkbox_brand"
             />
             <RangeInput

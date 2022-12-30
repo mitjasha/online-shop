@@ -5,27 +5,22 @@ import "./CheckboxInput.scss";
 interface CheckboxProps {
   legend: string;
   arr: string[];
-  id: string;
   className?: string;
 }
 
-const CheckboxInput: React.FC<CheckboxProps> = ({
-  legend,
-  arr,
-  id,
-  className,
-}) => {
+const CheckboxInput: React.FC<CheckboxProps> = ({ legend, arr, className }) => {
   const classes = cn("checkbox-input-wrapper", className);
   return (
     <fieldset className={classes}>
       <legend>{legend}</legend>
-      {arr.map((elem: string) => (
+      {arr.map((elem: string, index) => (
         <div className="option">
-          <label className="checkbox-label" htmlFor={id}>
+          <label className="checkbox-label" htmlFor={index.toString()}>
             <input
+              key={elem}
               type="checkbox"
-              id={id}
-              name={id}
+              id={index.toString()}
+              name={index.toString()}
               className="checkbox-input"
             />
             <span>{elem}</span>
