@@ -85,6 +85,9 @@ const CataloguePage: React.FC = () => {
               </div>
             ))}
           </div>
+          <div className="not-found">
+            <p>No products found</p>
+          </div>
         </div>
       </div>
     </div>
