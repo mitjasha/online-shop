@@ -126,14 +126,26 @@
   &__actions {
     position: absolute;
     top: 0;
-    right: 14px;
+    right: 25px;
   }
 }
 
 .action-btn {
-  width: 150%;
+  width: 200%;
   border: 0;
-  height: 35px;
+  height: 40px;
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.action-btn:hover {
   transition: 0.5s;
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.cart,
+.favorities,
+.modal {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%)
+    contrast(103%);
 }
