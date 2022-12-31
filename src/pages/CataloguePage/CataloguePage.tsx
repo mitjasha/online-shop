@@ -64,7 +64,7 @@ const CataloguePage: React.FC = () => {
                   alt={elem.title}
                   className="goods__image"
                 />
-                <h3>{elem.title}</h3>
+                <h3 className="goods__title">{elem.title}</h3>
                 <p className="goods__rating">Rating: ★{elem.rating}</p>
                 <p className="goods__price">{elem.price}</p>
                 <div className="goods__actions">
