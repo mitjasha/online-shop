@@ -55,6 +55,7 @@ const CataloguePage: React.FC = () => {
               className="price-range"
             />
             <RangeInput title="QUANTITY" id="quantity" minVal="4" maxVal="22" />
+            <Button className="filters__copy-link">Copy Link</Button>
           </div>
           <div className="goods">
             {data.goods.map((elem) => (
