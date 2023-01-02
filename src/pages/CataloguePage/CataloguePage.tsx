@@ -1,12 +1,10 @@
 import React from "react";
 import data from "../../assets/data/data.json";
 import Button from "../../components/Buttons/Button/Button";
+import CatalogueSettings from "../../components/CatalogueSettings/CatalogueSettings";
 import RangeInput from "../../components/RangeInput/RangeInput";
 import CheckboxInput from "../../components/CheckboxInput/CheckboxInput";
 import { WineType, Titles } from "../../utils/helpers/interfaces";
-import twoGrid from "../../assets/img/png/two.png";
-import threeGrid from "../../assets/img/png/three.png";
-import fourGrid from "../../assets/img/png/four.png";
 import heartIcon from "../../assets/img/svg/heart-icon.svg";
 import cartIcon from "../../assets/img/svg/cart-icon.svg";
 import searchIcon from "../../assets/img/svg/search-icon.svg";
@@ -19,26 +17,7 @@ const CataloguePage: React.FC = () => {
   return (
     <div className="catalogue">
       <div className="container">
-        <div className="settings">
-          <Button className="settings__reset">Reset Filters</Button>
-          <div className="settings__found">Found 0 items</div>
-          <select id="sorting" className="settings__sort">
-            <option>Sort options</option>
-            <option>Sort by price</option>
-            <option>Sort by rating</option>
-            <option>Sort by quantity</option>
-            <option>Sort by year</option>
-          </select>
-          <div className="layout-mode">
-            <img src={twoGrid} alt="two grid" className="layout-mode__two" />
-            <img
-              src={threeGrid}
-              alt="three grid"
-              className="layout-mode__three active-layout"
-            />
-            <img src={fourGrid} alt="four grid" className="layout-mode__four" />
-          </div>
-        </div>
+        <CatalogueSettings />
         <div className="filters-goods-wrapper">
           <div className="filters">
             <CheckboxInput legend="TYPE OF WINE" optionsArray={types} />
