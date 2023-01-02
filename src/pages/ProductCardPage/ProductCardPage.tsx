@@ -1,4 +1,5 @@
 import React from "react";
+import { Navigate, useParams } from "react-router-dom";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import ProductImageSlider from "../../components/ProductImageSlider/ProductImageSlider";
 import data from "../../assets/data/data.json";
@@ -9,27 +10,38 @@ import heartIcon from "../../assets/img/svg/heart-icon.svg";
 import "./ProductCardPage.scss";
 
 const ProductCardPage: React.FC = () => {
+  const { id } = useParams();
+  console.log(Number(id));
+  if (!Number(id) || Number(id) >= data.goods.length) {
+    console.log(id);
+    return <Navigate to="/404" />;
+  }
+
   return (
     <main className="product-page">
       <div className="container product-page__container">
         <ProductImageSlider
           className="product__images-slider"
-          imagesData={data.goods[21].images}
+          imagesData={data.goods[Number(id)].images}
         />
         <div className="product-info">
           <Breadcrumbs
             className="product-info__breadcrumbs"
-            data={data.goods[1]}
+            data={data.goods[Number(id)]}
           />
-          <h2 className="product-info__title">{data.goods[1].title}</h2>
+          <h2 className="product-info__title">
+            {data.goods[Number(id)].title}
+          </h2>
           <RaitingStars
             className="product-info__raiting"
-            stars={data.goods[1].rating}
+            stars={data.goods[Number(id)].rating}
           />
           <div className="product-info__line"> </div>
-          <div className="product-info__price">{data.goods[1].price}</div>
+          <div className="product-info__price">
+            {data.goods[Number(id)].price}
+          </div>
           <div className="product-info__description">
-            {data.goods[1].description}
+            {data.goods[Number(id)].description}
           </div>
           <div className="product-info__actions">
             <QuantityInput className="product-info__quantity" cartValue={1} />

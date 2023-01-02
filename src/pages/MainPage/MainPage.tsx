@@ -27,8 +27,12 @@ const MainPage: React.FC = () => {
           </h1>
           <p className="quote-author">Tyrion Lannister</p>
           <div className="preview__buttons">
-            <Button className="preview__button">CATALOGUE</Button>
-            <Button className="preview__button">CART</Button>
+            <Button className="preview__button" to="/catalogue">
+              CATALOGUE
+            </Button>
+            <Button className="preview__button" to="/cart">
+              CART
+            </Button>
           </div>
         </div>
       </section>

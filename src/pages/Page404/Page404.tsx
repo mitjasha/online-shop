@@ -16,7 +16,7 @@ const Page404: React.FC = () => {
           <br /> page you are looking for.
         </p>
         <div className="page-404__homepage-button_wrapper">
-          <Button className="page-404__homepage-button">
+          <Button className="page-404__homepage-button" to="/">
             Back to the Homepage →
           </Button>
         </div>
