@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import ProductImageSlider from "../../components/ProductImageSlider/ProductImageSlider";
 import data from "../../assets/data/data.json";
@@ -11,7 +11,11 @@ import "./ProductCardPage.scss";
 
 const ProductCardPage: React.FC = () => {
   const { id } = useParams();
-  console.log(id);
+  console.log(Number(id));
+  if (!Number(id) || Number(id) >= data.goods.length) {
+    console.log(id);
+    return <Navigate to="/404" />;
+  }
 
   return (
     <main className="product-page">
