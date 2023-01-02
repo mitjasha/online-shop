@@ -8,6 +8,7 @@
 
   &:hover {
     background-color: transparent;
-    transform: scale(1.15);
+    transition: all 0.6s;
+    transform: scale(1.2) rotate(360deg);
   }
 }
