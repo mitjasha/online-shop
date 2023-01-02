@@ -22,13 +22,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const classes = cn("product-card", classNames);
   return (
     <div className={classes}>
-      <div className="product-card__image-container">
-        <img
-          className="product-card__image"
-          src={images ? images[1] : ""}
-          alt="product"
-        />
-      </div>
+      <img
+        className="product-card__image"
+        src={images ? images[1] : ""}
+        alt="product"
+      />
       <div className="product-card__content">
         <RaitingStars
           className="product-card__raiting"

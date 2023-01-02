@@ -8,13 +8,9 @@
   border: 1px solid #000;
 
   &__image {
-    height: 100%;
-
-    &-container {
-      display: flex;
-      justify-content: center;
-      height: 60%;
-    }
+    height: 60%;
+    max-width: 280px;
+    object-fit: cover;
   }
 
   &__content {
