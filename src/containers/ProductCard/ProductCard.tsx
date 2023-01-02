@@ -38,13 +38,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </div>
       <Button className="product-card__price">{price}</Button>
       <div className="product-card__actions">
-        <Button className="action-btn">
+        <Button className="product-card__action-btn">
           <img src={cartIcon} alt="cart" className="cart" />
         </Button>
-        <Button className="action-btn">
+        <Button className="product-card__action-btn">
           <img src={heartIcon} alt="favorities" className="favorities" />
         </Button>
-        <Button className="action-btn">
+        <Button className="product-card__action-btn">
           <img src={searchIcon} alt="modal" className="modal" />
         </Button>
       </div>
