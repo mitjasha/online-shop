@@ -4,16 +4,20 @@ import "./CheckboxInput.scss";
 
 interface CheckboxProps {
   legend: string;
-  arr: string[];
+  optionsArray: string[];
   className?: string;
 }
 
-const CheckboxInput: React.FC<CheckboxProps> = ({ legend, arr, className }) => {
+const CheckboxInput: React.FC<CheckboxProps> = ({
+  legend,
+  optionsArray,
+  className,
+}) => {
   const classes = cn("checkbox-input-wrapper", className);
   return (
     <fieldset className={classes}>
       <legend>{legend}</legend>
-      {arr.map((elem: string, index) => (
+      {optionsArray.map((elem: string, index) => (
         <div className="option">
           <label
             className="checkbox-label"
@@ -23,7 +27,6 @@ const CheckboxInput: React.FC<CheckboxProps> = ({ legend, arr, className }) => {
               key={elem}
               type="checkbox"
               id={index.toString().concat(elem)}
-              name={index.toString().concat(elem)}
               className="checkbox-input"
             />
             <span>{elem}</span>

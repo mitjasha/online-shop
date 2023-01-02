@@ -25,7 +25,6 @@ const RangeInput: React.FC<RangeProps> = ({
         <input
           type="range"
           id={id}
-          name={id}
           min={minVal}
           max={maxVal}
           className={classes}
