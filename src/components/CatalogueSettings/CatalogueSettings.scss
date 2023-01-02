@@ -42,13 +42,11 @@
     width: 40px;
     height: 40px;
     cursor: pointer;
-  }
 
-  &__two:hover,
-  &__three:hover,
-  &__four:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.5s;
+    }
   }
 }
 
