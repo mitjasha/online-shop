@@ -1,7 +1,8 @@
 import React from "react";
 import CatalogueSettings from "../../components/CatalogueSettings/CatalogueSettings";
 import CatalogueFilters from "../../components/CatalogueFilters/CatalogueFilters";
-import CatalogueGoods from "../../components/CatalogueGoods/CatalogueGoods";
+import CatalogueGoods from "../../containers/CatalogueGoods/CatalogueGoods";
+import data from "../../assets/data/data.json";
 import "./CataloguePage.scss";
 
 const CataloguePage: React.FC = () => {
@@ -11,7 +12,7 @@ const CataloguePage: React.FC = () => {
         <CatalogueSettings />
         <div className="filters-goods-wrapper">
           <CatalogueFilters />
-          <CatalogueGoods />
+          <CatalogueGoods data={data.goods} />
           <div className="not-found">
             <p>No products found</p>
           </div>
