@@ -21,8 +21,8 @@ const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
 }) => {
   const classes = cn("goods-card", classname);
   return (
-    <>
-      <Link className={classes} to={`/product/${id}`}>
+    <div className={classes}>
+      <Link className="goods-card__link-container" to={`/product/${id}`}>
         <img
           src={data.images?.[0]}
           alt={data.title}
@@ -43,7 +43,7 @@ const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
           <img src={searchIcon} alt="modal" className="modal" />
         </Button>
       </div>
-    </>
+    </div>
   );
 };
 
