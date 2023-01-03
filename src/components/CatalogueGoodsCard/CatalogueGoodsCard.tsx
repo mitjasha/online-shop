@@ -1,5 +1,6 @@
 import React from "react";
 import cn from "classnames";
+import { Link } from "react-router-dom";
 import Button from "../Buttons/Button/Button";
 import heartIcon from "../../assets/img/svg/heart-icon.svg";
 import cartIcon from "../../assets/img/svg/cart-icon.svg";
@@ -10,15 +11,17 @@ import "./CatalogueGoodsCard.scss";
 interface CatalogueGoodsCardProps {
   data: WineInfo;
   classname?: string;
+  id: string;
 }
 
 const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
   data,
   classname,
+  id,
 }) => {
   const classes = cn("goods-card", classname);
   return (
-    <div className={classes}>
+    <Link className={classes} to={`/product/${id}`}>
       <img
         src={data.images?.[0]}
         alt={data.title}
@@ -38,7 +41,7 @@ const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
           <img src={searchIcon} alt="modal" className="modal" />
         </Button>
       </div>
-    </div>
+    </Link>
   );
 };
 

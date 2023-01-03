@@ -14,6 +14,7 @@ const CatalogueGoods: React.FC<CatalogueGoodsProps> = ({ data }) => {
         <CatalogueGoodsCard
           classname="goods__item"
           data={elem}
+          id={index.toString()}
           key={elem.title + index.toString()}
         />
       ))}
