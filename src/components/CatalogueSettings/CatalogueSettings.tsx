@@ -1,4 +1,5 @@
 import React from "react";
+import data from "../../assets/data/data.json";
 import Button from "../Buttons/Button/Button";
 import twoGrid from "../../assets/img/png/two.png";
 import threeGrid from "../../assets/img/png/three.png";
@@ -13,12 +14,12 @@ const CatalogueSettings: React.FC<SettingsProps> = ({ sortFunction }) => {
   return (
     <div className="settings">
       <Button className="settings__reset">Reset Filters</Button>
-      <div className="settings__found">Found 0 items</div>
+      <div className="settings__found">Found {data.goods.length} items</div>
       <select
         id="sorting"
         className="settings__sort"
-        onChange={(data) => {
-          sortFunction(data);
+        onChange={(wineData) => {
+          sortFunction(wineData);
         }}
       >
         <option value="default">Sort options</option>
