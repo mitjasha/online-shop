@@ -1,17 +1,36 @@
 import React from "react";
-import data from "../../assets/data/data.json";
 import Button from "../Buttons/Button/Button";
 import heartIcon from "../../assets/img/svg/heart-icon.svg";
 import cartIcon from "../../assets/img/svg/cart-icon.svg";
 import searchIcon from "../../assets/img/svg/search-icon.svg";
 import "./CatalogueGoods.scss";
 
-const CatalogueGoods: React.FC = () => {
+export interface GoodsProps {
+  goodsArr: {
+    title: string;
+    type: string;
+    country: string;
+    region: string;
+    grapes: string;
+    rating: number;
+    images: string[];
+    price: string;
+    quantity: number;
+    year: number;
+    description: string;
+  }[];
+}
+
+const CatalogueGoods: React.FC<GoodsProps> = ({ goodsArr }) => {
   return (
     <div className="goods">
-      {data.goods.map((elem, index) => (
+      {goodsArr.map((elem, index) => (
         <div className="goods__item" key={elem.title + index.toString()}>
-          <img src={elem.images[0]} alt={elem.title} className="goods__image" />
+          <img
+            src={elem.images ? elem.images[0] : ""}
+            alt={elem.title}
+            className="goods__image"
+          />
           <h3 className="goods__title">{elem.title}</h3>
           <p className="goods__rating">Rating: ★{elem.rating}</p>
           <p className="goods__price">{elem.price}</p>

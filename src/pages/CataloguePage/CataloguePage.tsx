@@ -32,7 +32,7 @@ const CataloguePage: React.FC = () => {
         <CatalogueSettings sortFunction={sortItems} />
         <div className="filters-goods-wrapper">
           <CatalogueFilters />
-          <CatalogueGoods />
+          <CatalogueGoods goodsArr={goodsArr} />
           <div className="not-found">
             <p>No products found</p>
           </div>
