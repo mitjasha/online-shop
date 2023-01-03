@@ -5,11 +5,13 @@ import "./ProductInfoModal.scss";
 interface ProductInfoModalProps {
   isVisible: boolean;
   setIsVisible: (value: boolean) => void;
+  id: number;
 }
 
 const ProductInfoModal: React.FC<ProductInfoModalProps> = ({
   isVisible,
   setIsVisible,
+  id,
 }) => {
   return (
     <BaseModalComponent
@@ -17,7 +19,7 @@ const ProductInfoModal: React.FC<ProductInfoModalProps> = ({
       setIsVisible={setIsVisible}
       header="place to order"
     >
-      {" "}
+      {`${id}`}
     </BaseModalComponent>
   );
 };

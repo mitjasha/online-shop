@@ -2,6 +2,7 @@ import React from "react";
 import cn from "classnames";
 import { Link } from "react-router-dom";
 import Button from "../Buttons/Button/Button";
+import ProductInfoButton from "../Buttons/ProductInfoButton/ProductInfoButton";
 import heartIcon from "../../assets/img/svg/heart-icon.svg";
 import cartIcon from "../../assets/img/svg/cart-icon.svg";
 import searchIcon from "../../assets/img/svg/search-icon.svg";
@@ -39,9 +40,9 @@ const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
         <Button className="goods-card__action-btn">
           <img src={heartIcon} alt="favorities" className="favorities" />
         </Button>
-        <Button className="goods-card__action-btn">
+        <ProductInfoButton className="goods-card__action-btn" id={Number(id)}>
           <img src={searchIcon} alt="modal" className="modal" />
-        </Button>
+        </ProductInfoButton>
       </div>
     </div>
   );
