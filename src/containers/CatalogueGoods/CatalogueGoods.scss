@@ -1,0 +1,23 @@
+.goods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: calc(68px / 3);
+  padding: 20px 0 20px 20px;
+
+  &__item {
+    margin-bottom: 20px;
+  }
+}
+
+.action-btn {
+  width: 200%;
+  border: 0;
+  height: 40px;
+  background-color: rgba(51, 51, 51, 0.5);
+
+  &:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+    background-color: #333333;
+  }
+}
