@@ -1,14 +1,14 @@
 export interface WineInfo {
   title: string;
-  type?: WineType;
-  country?: Countries;
+  type?: string;
+  country?: string;
   region?: string;
   grapes?: string;
   rating?: number;
   images?: string[];
   price: string;
   quantity?: number;
-  year?: Years;
+  year?: number;
   description?: string;
 }
 
