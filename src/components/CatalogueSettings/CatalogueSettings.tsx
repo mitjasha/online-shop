@@ -12,10 +12,10 @@ const CatalogueSettings: React.FC = () => {
       <div className="settings__found">Found 0 items</div>
       <select id="sorting" className="settings__sort">
         <option>Sort options</option>
-        <option>Sort by price</option>
-        <option>Sort by rating</option>
-        <option>Sort by quantity</option>
-        <option>Sort by year</option>
+        <option>Sort by price ↓</option>
+        <option>Sort by price ↑</option>
+        <option>Sort by rating ↓</option>
+        <option>Sort by rating ↑</option>
       </select>
       <div className="layout-mode">
         <img src={twoGrid} alt="two grid" className="layout-mode__two" />
