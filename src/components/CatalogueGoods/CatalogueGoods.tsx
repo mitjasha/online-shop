@@ -9,8 +9,8 @@ import "./CatalogueGoods.scss";
 const CatalogueGoods: React.FC = () => {
   return (
     <div className="goods">
-      {data.goods.map((elem) => (
-        <div className="goods__item">
+      {data.goods.map((elem, index) => (
+        <div className="goods__item" key={elem.title + index.toString()}>
           <img src={elem.images[0]} alt={elem.title} className="goods__image" />
           <h3 className="goods__title">{elem.title}</h3>
           <p className="goods__rating">Rating: ★{elem.rating}</p>

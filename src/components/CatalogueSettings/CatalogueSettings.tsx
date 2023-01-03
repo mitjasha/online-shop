@@ -6,6 +6,8 @@ import fourGrid from "../../assets/img/png/four.png";
 import "./CatalogueSettings.scss";
 
 const CatalogueSettings: React.FC = () => {
+  const sortOptions = document.querySelector(".settings__sort");
+  console.log(sortOptions);
   return (
     <div className="settings">
       <Button className="settings__reset">Reset Filters</Button>
