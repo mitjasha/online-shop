@@ -21,7 +21,10 @@ const Header: React.FC<HeaderProps> = ({ cartCount }) => {
             <div className="shopping-info" style={{ content: `${cartCount}` }}>
               <div className="total-sum">Total: $0.00</div>
               <img src={heartIcon} alt="favorities" className="favorities" />
-              <img src={cartIcon} alt="cart" className="cart" />
+              <div className="cart__container">
+                <img src={cartIcon} alt="cart" className="cart" />
+                <span className="cart__count">{cartCount}</span>
+              </div>
             </div>
           </div>
         </div>
