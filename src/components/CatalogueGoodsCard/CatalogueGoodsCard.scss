@@ -36,13 +36,13 @@
   &__actions {
     position: absolute;
     top: 0;
-    right: 25px;
+    right: 0;
   }
 
   &__action-btn {
-    width: 200%;
+    width: 60px;
     border: 0;
-    height: 40px;
+    height: 50px;
     background-color: rgba(51, 51, 51, 0.5);
 
     &:hover {
@@ -51,4 +51,10 @@
       background-color: #333333;
     }
   }
+}
+
+.is-modal {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
 }

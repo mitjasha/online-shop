@@ -18,12 +18,11 @@ const ProductInfoButton: React.FC<ProductInfoButtonProps> = ({
 
   const toggleModal = () => {
     setIsModalVisible((wasModalVisible) => !wasModalVisible);
-    console.log(id);
   };
 
   const classes = cn("info-button", className);
   return (
-    <>
+    <div>
       <button type="button" className={classes} onClick={toggleModal}>
         {children}
       </button>
@@ -32,7 +31,7 @@ const ProductInfoButton: React.FC<ProductInfoButtonProps> = ({
         setIsVisible={setIsModalVisible}
         id={id}
       />
-    </>
+    </div>
   );
 };
 

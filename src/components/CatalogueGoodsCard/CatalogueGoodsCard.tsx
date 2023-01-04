@@ -41,7 +41,7 @@ const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
           <img src={heartIcon} alt="favorities" className="favorities" />
         </Button>
         <ProductInfoButton className="goods-card__action-btn" id={Number(id)}>
-          <img src={searchIcon} alt="modal" className="modal" />
+          <img src={searchIcon} alt="modal" className="is-modal" />
         </ProductInfoButton>
       </div>
     </div>
