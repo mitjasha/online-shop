@@ -1,7 +1,6 @@
 import React from "react";
 import cn from "classnames";
 import { Link } from "react-router-dom";
-import Button from "../Buttons/Button/Button";
 import ProductInfoButton from "../Buttons/ProductInfoButton/ProductInfoButton";
 import heartIcon from "../../assets/img/svg/heart-icon.svg";
 import cartIcon from "../../assets/img/svg/cart-icon.svg";
@@ -9,6 +8,7 @@ import searchIcon from "../../assets/img/svg/search-icon.svg";
 import { CardsState, WineInfo } from "../../utils/helpers/interfaces";
 import "./CatalogueGoodsCard.scss";
 import CartButton from "../Buttons/CartButton/CartButton";
+import FavouritesButton from "../Buttons/FavouritesButton/FavouritesButton";
 
 interface CatalogueGoodsCardProps {
   data: WineInfo;
@@ -40,9 +40,13 @@ const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
         <CartButton className="goods-card__action-btn" id={id} state={state}>
           <img src={cartIcon} alt="cart" className="cart" />
         </CartButton>
-        <Button className="goods-card__action-btn">
+        <FavouritesButton
+          className="goods-card__action-btn"
+          id={id}
+          state={state}
+        >
           <img src={heartIcon} alt="favorities" className="favorities" />
-        </Button>
+        </FavouritesButton>
         <ProductInfoButton className="goods-card__action-btn" id={Number(id)}>
           <img src={searchIcon} alt="modal" className="is-modal" />
         </ProductInfoButton>
