@@ -29,6 +29,8 @@ const CataloguePage: React.FC = () => {
         return a.rating - b.rating;
       });
       setSortData(goodsArr);
+    } else if (event.target.value === "default") {
+      setSortData(goodsArr);
     }
   };
   return (
