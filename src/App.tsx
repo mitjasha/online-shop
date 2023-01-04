@@ -13,7 +13,7 @@ import data from "./assets/data/data.json";
 let state: CardsState = {
   currentCards: [],
   favourites: [],
-  cart: [],
+  cart: [1, 2, 3],
 };
 
 const App: React.FC = () => {
@@ -25,7 +25,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Header />
+      <Header cartCount={state.cart.length.toString()} />
       <main className="main-app">
         <Routes>
           <Route path="/" element={<MainPage />} />
