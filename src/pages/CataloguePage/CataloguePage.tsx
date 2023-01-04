@@ -33,12 +33,21 @@ const CataloguePage: React.FC = () => {
       setSortData(goodsArr);
     }
   };
+  const filterCheckbox = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const typesArr = ["Red wine", "White wine", "Rosé wine", "Sparkling wine"];
+    if (event.target.checked && typesArr.includes(event.target.id)) {
+      goodsArr = goodsArr.filter((elem) => elem.type === event.target.id);
+    } else if (event.target.checked) {
+      goodsArr = goodsArr.filter((elem) => elem.title === event.target.id);
+    }
+    return setSortData(goodsArr);
+  };
   return (
     <div className="catalogue">
       <div className="container">
         <CatalogueSettings sortFunction={sortItems} />
         <div className="filters-goods-wrapper">
-          <CatalogueFilters />
+          <CatalogueFilters filterFunction={filterCheckbox} />
           <CatalogueGoods data={sortData} />
           <div className="not-found">
             <p>No products found</p>
