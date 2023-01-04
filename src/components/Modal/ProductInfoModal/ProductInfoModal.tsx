@@ -17,7 +17,7 @@ const ProductInfoModal: React.FC<ProductInfoModalProps> = ({
     <BaseModalComponent
       isVisible={isVisible}
       setIsVisible={setIsVisible}
-      header="place to order"
+      header="place an order"
     >
       {`${id}`}
     </BaseModalComponent>
