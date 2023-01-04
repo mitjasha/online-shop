@@ -3,7 +3,6 @@ import data from "../../assets/data/data.json";
 import CatalogueSettings from "../../components/CatalogueSettings/CatalogueSettings";
 import CatalogueFilters from "../../components/CatalogueFilters/CatalogueFilters";
 import CatalogueGoods from "../../containers/CatalogueGoods/CatalogueGoods";
-import data from "../../assets/data/data.json";
 import "./CataloguePage.scss";
 
 const CataloguePage: React.FC = () => {
