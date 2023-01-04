@@ -7,7 +7,7 @@ import MainMenuNavigation from "../../components/MainMenuNavigation/MainMenuNavi
 import "./Header.scss";
 
 interface HeaderProps {
-  cartCount: string;
+  cartCount: { [key: string]: number };
 }
 
 const Header: React.FC<HeaderProps> = ({ cartCount }) => {
@@ -18,12 +18,14 @@ const Header: React.FC<HeaderProps> = ({ cartCount }) => {
           <LogoComponent />
           <div className="wrapper__items">
             <SearchComponent />
-            <div className="shopping-info" style={{ content: `${cartCount}` }}>
+            <div className="shopping-info">
               <div className="total-sum">Total: $0.00</div>
               <img src={heartIcon} alt="favorities" className="favorities" />
               <div className="cart__container">
                 <img src={cartIcon} alt="cart" className="cart" />
-                <span className="cart__count">{cartCount}</span>
+                <span className="cart__count">
+                  {Object.keys(cartCount).length}
+                </span>
               </div>
             </div>
           </div>
