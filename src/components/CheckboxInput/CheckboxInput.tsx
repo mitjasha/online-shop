@@ -19,16 +19,13 @@ const CheckboxInput: React.FC<CheckboxProps> = ({
   return (
     <fieldset className={classes}>
       <legend>{legend}</legend>
-      {optionsArray.map((elem: string, index) => (
+      {optionsArray.map((elem: string) => (
         <div className="option" key={elem}>
-          <label
-            className="checkbox-label"
-            htmlFor={index.toString().concat(elem)}
-          >
+          <label className="checkbox-label" htmlFor={elem}>
             <input
               key={elem}
               type="checkbox"
-              id={index.toString().concat(elem)}
+              id={elem}
               className="checkbox-input"
               onChange={(data) => {
                 handleChange(data);
