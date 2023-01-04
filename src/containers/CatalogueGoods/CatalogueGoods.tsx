@@ -1,13 +1,14 @@
 import React from "react";
 import CatalogueGoodsCard from "../../components/CatalogueGoodsCard/CatalogueGoodsCard";
-import { WineInfo } from "../../utils/helpers/interfaces";
+import { CardsState, WineInfo } from "../../utils/helpers/interfaces";
 import "./CatalogueGoods.scss";
 
 interface CatalogueGoodsProps {
   data: WineInfo[];
+  state: CardsState;
 }
 
-const CatalogueGoods: React.FC<CatalogueGoodsProps> = ({ data }) => {
+const CatalogueGoods: React.FC<CatalogueGoodsProps> = ({ data, state }) => {
   return (
     <div className="goods">
       {data.map((elem, index) => (
@@ -16,6 +17,7 @@ const CatalogueGoods: React.FC<CatalogueGoodsProps> = ({ data }) => {
           data={elem}
           id={index.toString()}
           key={elem.title + index.toString()}
+          state={state}
         />
       ))}
     </div>

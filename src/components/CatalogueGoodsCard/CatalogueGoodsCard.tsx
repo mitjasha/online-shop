@@ -6,19 +6,22 @@ import ProductInfoButton from "../Buttons/ProductInfoButton/ProductInfoButton";
 import heartIcon from "../../assets/img/svg/heart-icon.svg";
 import cartIcon from "../../assets/img/svg/cart-icon.svg";
 import searchIcon from "../../assets/img/svg/search-icon.svg";
-import { WineInfo } from "../../utils/helpers/interfaces";
+import { CardsState, WineInfo } from "../../utils/helpers/interfaces";
 import "./CatalogueGoodsCard.scss";
+import CartButton from "../Buttons/CartButton/CartButton";
 
 interface CatalogueGoodsCardProps {
   data: WineInfo;
   classname?: string;
   id: string;
+  state: CardsState;
 }
 
 const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
   data,
   classname,
   id,
+  state,
 }) => {
   const classes = cn("goods-card", classname);
   return (
@@ -34,9 +37,9 @@ const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
         <p className="goods-card__price">{data.price}</p>
       </Link>
       <div className="goods-card__actions">
-        <Button className="goods-card__action-btn">
+        <CartButton className="goods-card__action-btn" id={id} state={state}>
           <img src={cartIcon} alt="cart" className="cart" />
-        </Button>
+        </CartButton>
         <Button className="goods-card__action-btn">
           <img src={heartIcon} alt="favorities" className="favorities" />
         </Button>

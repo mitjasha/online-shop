@@ -29,7 +29,7 @@ const App: React.FC = () => {
       <main className="main-app">
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/catalogue" element={<CataloguePage />} />
+          <Route path="/catalogue" element={<CataloguePage state={state} />} />
           <Route path="/product/:id" element={<ProductCardPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="*" element={<Page404 />} />
