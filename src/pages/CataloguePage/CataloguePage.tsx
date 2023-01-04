@@ -7,7 +7,7 @@ import "./CataloguePage.scss";
 
 const CataloguePage: React.FC = () => {
   const [sortData, setSortData] = useState(data.goods);
-  let goodsArr = data.goods;
+  let goodsArr = [...data.goods];
   const sortItems = (event: React.ChangeEvent<HTMLSelectElement>) => {
     if (event.target.value === "priceDown") {
       goodsArr = goodsArr.sort((a, b) => {
