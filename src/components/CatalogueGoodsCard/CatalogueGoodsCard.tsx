@@ -45,7 +45,15 @@ const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
           id={id}
           state={state}
         >
-          <img src={heartIcon} alt="favorities" className="favorities" />
+          <img
+            src={heartIcon}
+            alt="favorities"
+            className={
+              state.favourites.includes(Number(id))
+                ? "favorities like"
+                : "favorities"
+            }
+          />
         </FavouritesButton>
         <ProductInfoButton className="goods-card__action-btn" id={Number(id)}>
           <img src={searchIcon} alt="modal" className="is-modal" />

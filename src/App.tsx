@@ -12,7 +12,7 @@ import data from "./assets/data/data.json";
 
 let state: CardsState = {
   currentCards: [],
-  favourites: [],
+  favourites: [1, 4, 6],
   cart: { 1: 2, 2: 3, 3: 4 },
 };
 

@@ -15,10 +15,16 @@ const FavouritesButton: React.FC<FavouritesButtonProps> = ({
   children,
 }) => {
   const addFavourite = () => {
+    const cardList = document.querySelectorAll(
+      ".goods-card__action-btn img.favorities",
+    );
+
     if (state.favourites.includes(Number(id))) {
       state.favourites.splice(state.favourites.indexOf(Number(id), 0), 1);
+      cardList[Number(id)].classList.remove("like");
     } else {
       state.favourites.push(Number(id));
+      cardList[Number(id)].classList.add("like");
     }
   };
 

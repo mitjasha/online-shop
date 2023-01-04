@@ -60,3 +60,8 @@
   width: 25px;
   height: 25px;
 }
+
+.like {
+  filter: invert(90%) sepia(74%) saturate(7259%) hue-rotate(359deg)
+    brightness(88%) contrast(110%);
+}
