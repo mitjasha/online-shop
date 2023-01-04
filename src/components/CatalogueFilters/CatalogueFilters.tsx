@@ -8,14 +8,23 @@ import "./CatalogueFilters.scss";
 const types = Object.values(WineType);
 const titles = Object.values(Titles);
 
-const CatalogueFilters: React.FC = () => {
+interface FilterProps {
+  filterFunction: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const CatalogueFilters: React.FC<FilterProps> = ({ filterFunction }) => {
   return (
     <div className="filters">
-      <CheckboxInput legend="TYPE OF WINE" optionsArray={types} />
+      <CheckboxInput
+        legend="TYPE OF WINE"
+        optionsArray={types}
+        handleChange={filterFunction}
+      />
       <CheckboxInput
         legend="BRAND"
         optionsArray={titles}
         className="filters__checkbox_brand"
+        handleChange={filterFunction}
       />
       <RangeInput
         title="PRICE"
