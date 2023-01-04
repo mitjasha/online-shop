@@ -6,12 +6,14 @@ interface CheckboxProps {
   legend: string;
   optionsArray: string[];
   className?: string;
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const CheckboxInput: React.FC<CheckboxProps> = ({
   legend,
   optionsArray,
   className,
+  handleChange,
 }) => {
   const classes = cn("checkbox-input-wrapper", className);
   return (
@@ -28,6 +30,9 @@ const CheckboxInput: React.FC<CheckboxProps> = ({
               type="checkbox"
               id={index.toString().concat(elem)}
               className="checkbox-input"
+              onChange={(data) => {
+                handleChange(data);
+              }}
             />
             <span>{elem}</span>
           </label>
