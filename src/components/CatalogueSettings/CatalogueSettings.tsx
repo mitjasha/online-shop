@@ -6,7 +6,7 @@ import threeGrid from "../../assets/img/png/three.png";
 import fourGrid from "../../assets/img/png/four.png";
 import "./CatalogueSettings.scss";
 
-export interface SettingsProps {
+interface SettingsProps {
   sortFunction: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
