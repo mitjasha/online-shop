@@ -2,7 +2,9 @@ import React from "react";
 import Button from "../../components/Buttons/Button/Button";
 import data from "../../assets/data/data.json";
 import PurchasesTable from "../../containers/PurchasesTable/PurchasesTable";
+import OrderButton from "../../components/Buttons/OrderButton/OrderButton";
 import "./CartPage.scss";
+
 
 const CartPage: React.FC = () => {
   return (
@@ -27,9 +29,9 @@ const CartPage: React.FC = () => {
               </tr>
               <tr className="total-table__submit">
                 <td>
-                  <Button className="total-table__submit-button">
-                    <span>Place an order</span>
-                  </Button>
+                  <OrderButton className="total-table__submit-button">
+                    Place an order
+                  </OrderButton>
                 </td>
               </tr>
             </tbody>
