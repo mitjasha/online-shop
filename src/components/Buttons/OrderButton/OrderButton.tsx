@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import cn from "classnames";
 import OrderModal from "../../Modal/OrderModal/OrderModal";
 
 interface OrderButtonProps {
@@ -12,9 +13,10 @@ const OrderButton: React.FC<OrderButtonProps> = ({ children, className }) => {
   const toggleModal = () => {
     setIsModalVisible((wasModalVisible) => !wasModalVisible);
   };
+  const classes = cn("button", className);
   return (
     <>
-      <button type="button" className={className} onClick={toggleModal}>
+      <button type="button" className={classes} onClick={toggleModal}>
         {children}
       </button>
       <OrderModal isVisible={isModalVisible} setIsVisible={setIsModalVisible} />

@@ -3,6 +3,7 @@ import Button from "../../components/Buttons/Button/Button";
 import PurchasesTableRow from "../../components/PurchasesTableRow/PurchasesTableRow";
 import "./CartPage.scss";
 import data from "../../assets/data/data.json";
+import OrderButton from "../../components/Buttons/OrderButton/OrderButton";
 
 const CartPage: React.FC = () => {
   return (
@@ -52,7 +53,7 @@ const CartPage: React.FC = () => {
                     placeholder="Coupon code"
                   />
                   <Button className="purchases-table__promo-button">
-                    <span>Apply coupon</span>
+                    Apply coupon
                   </Button>
                 </td>
               </tr>
@@ -72,9 +73,9 @@ const CartPage: React.FC = () => {
               </tr>
               <tr className="total-table__submit">
                 <td>
-                  <Button className="total-table__submit-button">
-                    <span>Place an order</span>
-                  </Button>
+                  <OrderButton className="total-table__submit-button">
+                    Place an order
+                  </OrderButton>
                 </td>
               </tr>
             </tbody>
