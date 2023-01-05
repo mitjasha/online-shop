@@ -18,9 +18,9 @@ const CataloguePage: React.FC = () => {
         let products = [...data.goods];
         if (filters.size) {
           products = [...data.goods].filter((product) => {
-            return filters.has(product.type);
-          });
-          products = [...data.goods].filter((product) => {
+            if (filters.has(product.type)) {
+              return filters.has(product.type);
+            }
             return filters.has(product.title);
           });
         }
