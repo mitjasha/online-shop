@@ -57,12 +57,6 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
 
   const filterCheckbox = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      const typesArr = [
-        "Red wine",
-        "White wine",
-        "Rosé wine",
-        "Sparkling wine",
-      ];
       setSortData((previousState) => {
         const filters = new Set(previousState.filters);
         let products = [...data.goods];
@@ -73,14 +67,23 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
           filters.delete(event.target.id);
         }
 
-        if (filters.size && typesArr.includes(event.target.id)) {
-          products = products.filter((product) => {
-            return filters.has(product.type);
-          });
-        } else if (filters.size) {
-          products = products.filter((product) => {
-            return filters.has(product.title);
-          });
+        if (filters.size) {
+          // eslint-disable-next-line no-restricted-syntax
+          for (const product of products) {
+            if (filters.has(product.type && product.title)) {
+              products = products.filter((elem) => {
+                return filters.has(elem.type && elem.title);
+              });
+            } else if (filters.has(product.type)) {
+              products = products.filter((elem) => {
+                return filters.has(elem.type);
+              });
+            } else if (filters.has(product.title)) {
+              products = products.filter((elem) => {
+                return filters.has(elem.title);
+              });
+            }
+          }
         }
         return {
           filters,
