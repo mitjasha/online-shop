@@ -50,7 +50,10 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
   return (
     <div className="catalogue">
       <div className="container">
-        <CatalogueSettings sortFunction={sortItems} />
+        <CatalogueSettings
+          sortFunction={sortItems}
+          itemsFound={sortData.length}
+        />
         <div className="filters-goods-wrapper">
           <CatalogueFilters filterFunction={filterCheckbox} />
           <CatalogueGoods data={sortData} state={state} />

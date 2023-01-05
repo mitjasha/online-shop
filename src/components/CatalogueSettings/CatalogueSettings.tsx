@@ -1,5 +1,4 @@
 import React from "react";
-import data from "../../assets/data/data.json";
 import Button from "../Buttons/Button/Button";
 import twoGrid from "../../assets/img/png/two.png";
 import threeGrid from "../../assets/img/png/three.png";
@@ -8,18 +7,22 @@ import "./CatalogueSettings.scss";
 
 interface SettingsProps {
   sortFunction: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  itemsFound: number;
 }
 
-const CatalogueSettings: React.FC<SettingsProps> = ({ sortFunction }) => {
+const CatalogueSettings: React.FC<SettingsProps> = ({
+  sortFunction,
+  itemsFound,
+}) => {
   return (
     <div className="settings">
       <Button className="settings__reset">Reset Filters</Button>
-      <div className="settings__found">Found {data.goods.length} items</div>
+      <div className="settings__found">Found {itemsFound} items</div>
       <select
         id="sorting"
         className="settings__sort"
-        onChange={(wineData) => {
-          sortFunction(wineData);
+        onChange={(data) => {
+          sortFunction(data);
         }}
       >
         <option value="default">Sort options</option>
