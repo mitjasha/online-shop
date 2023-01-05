@@ -104,7 +104,12 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
         <div className="filters-goods-wrapper">
           <CatalogueFilters filterFunction={filterCheckbox} />
           <CatalogueGoods data={sortData.products} state={state} />
-          <div className="not-found">
+          <div
+            className="not-found"
+            style={{
+              display: sortData.products.length === 0 ? "block" : "none",
+            }}
+          >
             <p>No products found</p>
           </div>
         </div>
