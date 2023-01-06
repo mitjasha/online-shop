@@ -10,12 +10,13 @@ interface IValidation {
 }
 
 export const orderModal: OrderForm = {
-  PLACEHOLDER_PERSON: "Name",
+  PLACEHOLDER_NAME: "Name",
   PLACEHOLDER_PHONE: "Phone number",
   PLACEHOLDER_ADDRESS: "Delivery address",
   PLACEHOLDER_EMAIL: "E-mail",
   PLACEHOLDER_CARD_NUMBER: "Card number",
-  PLACEHOLDER_CARD_NAME: "Name",
+  PLACEHOLDER_CARD_NAME: "Cardholder Name",
+  PLACEHOLDER_CARD_DATE: "Date",
   PLACEHOLDER_CARD_CVV: "CVV",
 };
 
