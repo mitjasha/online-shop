@@ -9,6 +9,7 @@ interface InputFormProps {
   type: string;
   name?: string;
   register: UseFormRegisterReturn;
+  onchange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const InputForm: React.FC<InputFormProps> = ({
@@ -16,12 +17,14 @@ const InputForm: React.FC<InputFormProps> = ({
   placeholder,
   type,
   register,
+  onchange,
 }) => (
   <input
     className={cn("input-form", className)}
     type={type}
     placeholder={placeholder}
     {...register}
+    onChange={onchange}
   />
 );
 
