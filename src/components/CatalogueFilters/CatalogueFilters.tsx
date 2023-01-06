@@ -10,9 +10,13 @@ const titles = Object.values(Titles);
 
 interface FilterProps {
   filterFunction: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  filterRangeFn: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const CatalogueFilters: React.FC<FilterProps> = ({ filterFunction }) => {
+const CatalogueFilters: React.FC<FilterProps> = ({
+  filterFunction,
+  filterRangeFn,
+}) => {
   return (
     <div className="filters">
       <CheckboxInput
@@ -29,11 +33,18 @@ const CatalogueFilters: React.FC<FilterProps> = ({ filterFunction }) => {
       <RangeInput
         title="PRICE"
         id="price"
-        minVal="$5.99"
-        maxVal="$56"
+        min={5.99}
+        max={56}
         className="price-range"
+        handleChange={filterRangeFn}
       />
-      <RangeInput title="QUANTITY" id="quantity" minVal="4" maxVal="22" />
+      <RangeInput
+        title="QUANTITY"
+        id="quantity"
+        min={4}
+        max={22}
+        handleChange={filterRangeFn}
+      />
       <Button className="filters__copy-link">Copy Link</Button>
     </div>
   );
