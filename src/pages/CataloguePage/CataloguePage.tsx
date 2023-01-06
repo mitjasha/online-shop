@@ -104,6 +104,22 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
     [setSortData],
   );
 
+  const filterRange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      setSortData((previousState) => {
+        const filters = new Set(previousState.filters);
+        const products = [...data.goods];
+        console.log(event.target);
+        console.log(products);
+        return {
+          filters,
+          products,
+        };
+      });
+    },
+    [setSortData],
+  );
+
   return (
     <div className="catalogue">
       <div className="container">
@@ -112,7 +128,10 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
           itemsFound={sortData.products.length}
         />
         <div className="filters-goods-wrapper">
-          <CatalogueFilters filterFunction={filterCheckbox} />
+          <CatalogueFilters
+            filterFunction={filterCheckbox}
+            filterRangeFn={filterRange}
+          />
           <CatalogueGoods data={sortData.products} state={state} />
           <div
             className="not-found"
