@@ -17,7 +17,7 @@ const CatalogueSettings: React.FC<SettingsProps> = ({
   return (
     <div className="settings">
       <Button className="settings__reset">Reset Filters</Button>
-      <div className="settings__found">Found {itemsFound} items</div>
+      <div className="settings__found">Found {itemsFound} item(s)</div>
       <select
         id="sorting"
         className="settings__sort"
