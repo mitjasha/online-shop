@@ -22,12 +22,22 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
         const filters = new Set(previousState.filters);
         let products = [...data.goods];
         if (filters.size) {
-          products = [...data.goods].filter((product) => {
-            if (filters.has(product.type)) {
-              return filters.has(product.type);
+          // eslint-disable-next-line no-restricted-syntax
+          for (const product of products) {
+            if (filters.has(product.type && product.title)) {
+              products = products.filter((elem) => {
+                return filters.has(elem.type && elem.title);
+              });
+            } else if (filters.has(product.type)) {
+              products = products.filter((elem) => {
+                return filters.has(elem.type);
+              });
+            } else if (filters.has(product.title)) {
+              products = products.filter((elem) => {
+                return filters.has(elem.title);
+              });
             }
-            return filters.has(product.title);
-          });
+          }
         }
         if (event.target.value === "priceDown") {
           products.sort((a, b) => {
