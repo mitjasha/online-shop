@@ -1,10 +1,8 @@
 import React from "react";
-import Button from "../../components/Buttons/Button/Button";
 import data from "../../assets/data/data.json";
 import PurchasesTable from "../../containers/PurchasesTable/PurchasesTable";
 import OrderButton from "../../components/Buttons/OrderButton/OrderButton";
 import "./CartPage.scss";
-
 
 const CartPage: React.FC = () => {
   return (
