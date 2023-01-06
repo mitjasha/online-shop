@@ -99,21 +99,48 @@ const CataloguePage: React.FC = () => {
     [setSortData],
   );
 
-  // const filterRange = useCallback(
-  //   (event: React.ChangeEvent<HTMLInputElement>) => {
-  //     setSortData((previousState) => {
-  //       const filters = new Set(previousState.filters);
-  //       const products = [...data.goods];
-  //       console.log(event.target);
-  //       console.log(products);
-  //       return {
-  //         filters,
-  //         products,
-  //       };
-  //     });
-  //   },
-  //   [setSortData],
-  // );
+  const getMaxMinValues = ({ min, max }: { min: number; max: number }) => {
+    const MinMaxObj = { min, max };
+    console.log(MinMaxObj);
+    return MinMaxObj;
+  };
+
+  const filterRange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      setSortData((previousState) => {
+        const filters = new Set(previousState.filters);
+        let products = [...data.goods];
+        if (event.target.id === "price" && event.target.name === "a") {
+          products = products.filter((elem) => {
+            return Number(event.target.value) <= Number(elem.price.slice(1));
+          });
+        } else if (event.target.id === "price" && event.target.name === "b") {
+          products = products.filter((elem) => {
+            return Number(event.target.value) >= Number(elem.price.slice(1));
+          });
+        } else if (
+          event.target.id === "quantity" &&
+          event.target.name === "a"
+        ) {
+          products = products.filter((elem) => {
+            return Number(event.target.value) <= elem.quantity;
+          });
+        } else if (
+          event.target.id === "quantity" &&
+          event.target.name === "b"
+        ) {
+          products = products.filter((elem) => {
+            return Number(event.target.value) >= elem.quantity;
+          });
+        }
+        return {
+          filters,
+          products,
+        };
+      });
+    },
+    [setSortData],
+  );
 
   return (
     <div className="catalogue">
@@ -125,7 +152,8 @@ const CataloguePage: React.FC = () => {
         <div className="filters-goods-wrapper">
           <CatalogueFilters
             filterFunction={filterCheckbox}
-            // filterRangeFn={filterRange}
+            rangeFilterFn={filterRange}
+            receiveValues={getMaxMinValues}
           />
           <CatalogueGoods data={sortData.products} />
           <div

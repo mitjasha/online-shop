@@ -10,12 +10,14 @@ const titles = Object.values(Titles);
 
 interface FilterProps {
   filterFunction: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  // filterRangeFn: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  receiveValues: ({ min, max }: { min: number; max: number }) => void;
+  rangeFilterFn: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const CatalogueFilters: React.FC<FilterProps> = ({
   filterFunction,
-  // filterRangeFn,
+  receiveValues,
+  rangeFilterFn,
 }) => {
   return (
     <div className="filters">
@@ -36,16 +38,20 @@ const CatalogueFilters: React.FC<FilterProps> = ({
         min={5.99}
         max={56}
         className="price-range"
-        onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
-        // handleChange={filterRangeFn}
+        onChange={({ min, max }) => {
+          receiveValues({ min, max });
+        }}
+        handleChange={rangeFilterFn}
       />
       <RangeInput
         title="QUANTITY"
         id="quantity"
         min={4}
         max={22}
-        onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
-        // handleChange={filterRangeFn}
+        onChange={({ min, max }) => {
+          receiveValues({ min, max });
+        }}
+        handleChange={rangeFilterFn}
       />
       <Button className="filters__copy-link">Copy Link</Button>
     </div>
