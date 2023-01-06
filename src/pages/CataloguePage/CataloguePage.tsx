@@ -104,21 +104,21 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
     [setSortData],
   );
 
-  const filterRange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      setSortData((previousState) => {
-        const filters = new Set(previousState.filters);
-        const products = [...data.goods];
-        console.log(event.target);
-        console.log(products);
-        return {
-          filters,
-          products,
-        };
-      });
-    },
-    [setSortData],
-  );
+  // const filterRange = useCallback(
+  //   (event: React.ChangeEvent<HTMLInputElement>) => {
+  //     setSortData((previousState) => {
+  //       const filters = new Set(previousState.filters);
+  //       const products = [...data.goods];
+  //       console.log(event.target);
+  //       console.log(products);
+  //       return {
+  //         filters,
+  //         products,
+  //       };
+  //     });
+  //   },
+  //   [setSortData],
+  // );
 
   return (
     <div className="catalogue">
@@ -130,7 +130,7 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
         <div className="filters-goods-wrapper">
           <CatalogueFilters
             filterFunction={filterCheckbox}
-            filterRangeFn={filterRange}
+            // filterRangeFn={filterRange}
           />
           <CatalogueGoods data={sortData.products} state={state} />
           <div

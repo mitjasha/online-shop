@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import cn from "classnames";
 import "./RangeInput.scss";
 
@@ -8,7 +8,8 @@ interface RangeProps {
   min: number;
   max: number;
   className?: string;
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: ({ min, max }: { min: number; max: number }) => void;
+  // handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const RangeInput: React.FC<RangeProps> = ({
@@ -17,28 +18,53 @@ const RangeInput: React.FC<RangeProps> = ({
   min,
   max,
   className,
-  handleChange,
+  onChange,
+  // handleChange,
 }) => {
   const classes = cn("input-range", className);
+  const [minVal, setMinVal] = useState(min);
+  const [maxVal, setMaxVal] = useState(max);
+  const minValRef = useRef(min);
+  const maxValRef = useRef(max);
+
+  useEffect(() => {
+    onChange({ min: minVal, max: maxVal });
+  }, [minVal, maxVal, onChange]);
 
   return (
     <div className="filters__radio">
       <p>{title}</p>
-      <label htmlFor={id}>
+      <label className="range-label" htmlFor={id}>
+        <input
+          type="range"
+          id={id}
+          className={classes}
+          min={min}
+          max={max}
+          value={minVal}
+          onChange={(event) => {
+            const value = Math.min(Number(event.target.value), maxVal - 1);
+            setMinVal(value);
+            minValRef.current = value;
+          }}
+        />
         <input
           type="range"
           id={id}
           min={min}
           max={max}
+          value={maxVal}
           className={classes}
-          onChange={(data) => {
-            handleChange(data);
+          onChange={(event) => {
+            const value = Math.max(Number(event.target.value), minVal + 1);
+            setMaxVal(value);
+            maxValRef.current = value;
           }}
         />
       </label>
       <div className="values">
-        <span className="values__min">MIN: {min}</span>
-        <span className="values__max">MAX: {max}</span>
+        <span className="values__min">MIN: {minVal}</span>
+        <span className="values__max">MAX: {maxVal}</span>
       </div>
     </div>
   );

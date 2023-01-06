@@ -9,12 +9,24 @@
 }
 
 .input-range::-webkit-slider-thumb {
+  position: relative;
+  z-index: 1;
   background: #333333;
   border-radius: 50%;
   cursor: pointer;
   width: 15px;
   height: 15px;
   -webkit-appearance: none;
+}
+
+.range-label {
+  position: relative;
+}
+
+.input-range:last-child {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
 }
 
 .values {
