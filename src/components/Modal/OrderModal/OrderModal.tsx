@@ -11,7 +11,7 @@ const OrderModal: React.FC<OrderModalProps> = ({ isVisible, setIsVisible }) => {
     <BaseModalComponent
       isVisible={isVisible}
       setIsVisible={setIsVisible}
-      header="place to order"
+      header="place an order"
     >
       {" "}
     </BaseModalComponent>
