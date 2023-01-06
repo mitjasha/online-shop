@@ -6,7 +6,6 @@ import CatalogueGoods from "../../containers/CatalogueGoods/CatalogueGoods";
 import "./CataloguePage.scss";
 import { CardsState } from "../../utils/helpers/interfaces";
 
-
 interface CataloguePageProps {
   state: CardsState;
 }
