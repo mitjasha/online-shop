@@ -40,8 +40,7 @@
   height: 25px;
 }
 
-.shopping-info::after {
-  content: "0";
+.cart__count {
   display: flex;
   justify-content: center;
   align-items: center;

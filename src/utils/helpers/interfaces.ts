@@ -12,6 +12,12 @@ export interface WineInfo {
   description?: string;
 }
 
+export interface CardsState {
+  currentCards: number[];
+  favourites: number[];
+  cart: { [key: string]: number };
+}
+
 export enum WineType {
   RedWine = "Red wine",
   WhiteWine = "White wine",

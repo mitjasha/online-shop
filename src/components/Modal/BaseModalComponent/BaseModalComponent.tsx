@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import "./BaseModalComponent.scss";
 
 interface ModalProps {
@@ -14,7 +15,7 @@ const BaseModalComponent: React.FC<ModalProps> = ({
   setIsVisible,
   children,
 }) => {
-  return (
+  return ReactDOM.createPortal(
     <div>
       {isVisible && (
         <div
@@ -39,7 +40,8 @@ const BaseModalComponent: React.FC<ModalProps> = ({
           </div>
         </div>
       )}
-    </div>
+    </div>,
+    document.getElementById("modal-root")!,
   );
 };
 

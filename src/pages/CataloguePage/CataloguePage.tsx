@@ -4,8 +4,14 @@ import CatalogueSettings from "../../components/CatalogueSettings/CatalogueSetti
 import CatalogueFilters from "../../components/CatalogueFilters/CatalogueFilters";
 import CatalogueGoods from "../../containers/CatalogueGoods/CatalogueGoods";
 import "./CataloguePage.scss";
+import { CardsState } from "../../utils/helpers/interfaces";
 
-const CataloguePage: React.FC = () => {
+
+interface CataloguePageProps {
+  state: CardsState;
+}
+
+const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
   const [sortData, setSortData] = useState(data.goods);
   let goodsArr = [...data.goods];
   const sortItems = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -39,7 +45,7 @@ const CataloguePage: React.FC = () => {
         <CatalogueSettings sortFunction={sortItems} />
         <div className="filters-goods-wrapper">
           <CatalogueFilters />
-          <CatalogueGoods data={sortData} />
+          <CatalogueGoods data={sortData} state={state} />
           <div className="not-found">
             <p>No products found</p>
           </div>

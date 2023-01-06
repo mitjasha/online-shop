@@ -11,9 +11,7 @@ import "./ProductCardPage.scss";
 
 const ProductCardPage: React.FC = () => {
   const { id } = useParams();
-  console.log(Number(id));
-  if (!Number(id) || Number(id) >= data.goods.length) {
-    console.log(id);
+  if ((!Number(id) && Number(id) !== 0) || Number(id) >= data.goods.length) {
     return <Navigate to="/404" />;
   }
 
