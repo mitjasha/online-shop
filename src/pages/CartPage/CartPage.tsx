@@ -1,9 +1,10 @@
 import React from "react";
 import Button from "../../components/Buttons/Button/Button";
-import PurchasesTableRow from "../../components/PurchasesTableRow/PurchasesTableRow";
-import "./CartPage.scss";
 import data from "../../assets/data/data.json";
+import PurchasesTable from "../../containers/PurchasesTable/PurchasesTable";
 import OrderButton from "../../components/Buttons/OrderButton/OrderButton";
+import "./CartPage.scss";
+
 
 const CartPage: React.FC = () => {
   return (
@@ -13,52 +14,7 @@ const CartPage: React.FC = () => {
           <span className="cart-page__title-text">Shopping Cart ({4})</span>
         </div>
         <div className="purchases">
-          <table className="purchases-table">
-            <thead className="purchases-table__header">
-              <tr>
-                <th colSpan={2}>Product</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th colSpan={2}>Subtotal</th>
-              </tr>
-            </thead>
-            <tbody className="purchases-table__body">
-              <PurchasesTableRow
-                title={data.goods[0].title}
-                images={data.goods[0].images}
-                price={data.goods[0].price}
-              />
-              <PurchasesTableRow
-                title={data.goods[1].title}
-                images={data.goods[1].images}
-                price={data.goods[1].price}
-              />
-              <PurchasesTableRow
-                title={data.goods[2].title}
-                images={data.goods[2].images}
-                price={data.goods[2].price}
-              />
-              <PurchasesTableRow
-                title={data.goods[3].title}
-                images={data.goods[3].images}
-                price={data.goods[3].price}
-              />
-            </tbody>
-            <tfoot>
-              <tr>
-                <td className="purchases-table__promo">
-                  <input
-                    className="purchases-table__promo-input"
-                    type="text"
-                    placeholder="Coupon code"
-                  />
-                  <Button className="purchases-table__promo-button">
-                    Apply coupon
-                  </Button>
-                </td>
-              </tr>
-            </tfoot>
-          </table>
+          <PurchasesTable data={data.goods} />
           <table className="total-table">
             <thead className="total-table__header">
               <tr>
