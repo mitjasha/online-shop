@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./containers/Header/Header";
 import Footer from "./containers/Footer/Footer";
@@ -31,10 +31,6 @@ const App: React.FC = () => {
 
   const [currentState, setCurrentState] =
     useState<AppContextType["currentState"]>(cartState);
-
-  useEffect(() => {
-    console.log(currentState);
-  }, [currentState]);
 
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
