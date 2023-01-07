@@ -5,12 +5,14 @@ import LogoComponent from "../../components/LogoComponent/LogoComponent";
 import SearchComponent from "../../components/SearchComponent/SearchComponent";
 import MainMenuNavigation from "../../components/MainMenuNavigation/MainMenuNavigation";
 import "./Header.scss";
+import { AppContextType, useAppContext } from "../../context";
 
-interface HeaderProps {
-  cart: { [key: string]: number };
-}
-
-const Header: React.FC<HeaderProps> = ({ cart }) => {
+const Header: React.FC = () => {
+  const appContext = useAppContext();
+  const cart: { [key: string]: number } = Object.assign(
+    {},
+    ...(appContext as AppContextType).currentState,
+  );
   const cartArr = Object.entries(cart).map((e) => ({ [e[0]]: e[1] }));
   const [total, setTotal] = useState({
     price: 500,
@@ -18,17 +20,15 @@ const Header: React.FC<HeaderProps> = ({ cart }) => {
       return prev + Number(Object.values(curr)[0]);
     }, 0),
   });
-  console.log(Object.keys(cart));
 
   useEffect(() => {
     setTotal({
       price: 500,
       count: cartArr.reduce((prev, curr) => {
-        return prev + Object.values(curr)[0];
+        return prev + Number(Object.values(curr)[0]);
       }, 0),
     });
-    console.log("eff");
-  }, [cart]);
+  }, [appContext]);
 
   return (
     <header className="header">
@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({ cart }) => {
               <img src={heartIcon} alt="favorities" className="favorities" />
               <div className="cart__container">
                 <img src={cartIcon} alt="cart" className="cart" />
-                <span className="cart__count">{total.count}</span>
+                <span className="cart__count">{total.count.toString()}</span>
               </div>
             </div>
           </div>

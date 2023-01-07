@@ -15,8 +15,6 @@ export interface WineInfo {
 export interface CardsState {
   currentCards: number[];
   favourites: number[];
-  cart: { [key: string]: number };
-  total: number;
 }
 
 export enum WineType {

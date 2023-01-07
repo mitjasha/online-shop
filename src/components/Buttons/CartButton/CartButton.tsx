@@ -1,29 +1,34 @@
 import React from "react";
-import { CardsState } from "../../../utils/helpers/interfaces";
+import { AppContextType, useAppContext } from "../../../context";
 
 interface CartButtonProps {
   className?: string;
-  state: CardsState;
-  id: string;
+  id: number;
   children?: React.ReactNode;
 }
 
-const CartButton: React.FC<CartButtonProps> = ({
-  className,
-  state,
-  id,
-  children,
-}) => {
+const CartButton: React.FC<CartButtonProps> = ({ className, id, children }) => {
+  const appContext = useAppContext();
   const addCart = () => {
-    if (id in state.cart) {
-      // eslint-disable-next-line no-param-reassign
-      state.cart[id] = state.cart[id] + 1 || 1;
-      console.log(state.cart[id]);
-    } else {
-      // eslint-disable-next-line no-param-reassign
-      state.cart[id] = 1;
-      console.log(state.cart);
+    const state: { [key: string]: number } = Object.assign(
+      {},
+      ...(appContext as AppContextType).currentState,
+    );
+    console.log(state);
+
+    if (appContext) {
+      if (id.toString() in state) {
+        // eslint-disable-next-line no-param-reassign
+        state[id] = state[id] + 1 || 1;
+        console.log("1", state);
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        state[id] = 1;
+        console.log(state);
+      }
+      // appContext.setCurrentState(state);
     }
+    appContext?.setCurrentState([state]);
   };
   return (
     <button type="button" className={className} onClick={addCart}>
