@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import heartIcon from "../../assets/img/svg/heart-icon.svg";
 import cartIcon from "../../assets/img/svg/cart-icon.svg";
 import LogoComponent from "../../components/LogoComponent/LogoComponent";
@@ -7,10 +7,29 @@ import MainMenuNavigation from "../../components/MainMenuNavigation/MainMenuNavi
 import "./Header.scss";
 
 interface HeaderProps {
-  cartCount: { [key: string]: number };
+  cart: { [key: string]: number };
 }
 
-const Header: React.FC<HeaderProps> = ({ cartCount }) => {
+const Header: React.FC<HeaderProps> = ({ cart }) => {
+  const cartArr = Object.entries(cart).map((e) => ({ [e[0]]: e[1] }));
+  const [total, setTotal] = useState({
+    price: 500,
+    count: cartArr.reduce((prev, curr) => {
+      return prev + Number(Object.values(curr)[0]);
+    }, 0),
+  });
+  console.log(Object.keys(cart));
+
+  useEffect(() => {
+    setTotal({
+      price: 500,
+      count: cartArr.reduce((prev, curr) => {
+        return prev + Object.values(curr)[0];
+      }, 0),
+    });
+    console.log("eff");
+  }, [cart]);
+
   return (
     <header className="header">
       <div className="container">
@@ -23,9 +42,7 @@ const Header: React.FC<HeaderProps> = ({ cartCount }) => {
               <img src={heartIcon} alt="favorities" className="favorities" />
               <div className="cart__container">
                 <img src={cartIcon} alt="cart" className="cart" />
-                <span className="cart__count">
-                  {Object.keys(cartCount).length}
-                </span>
+                <span className="cart__count">{total.count}</span>
               </div>
             </div>
           </div>
