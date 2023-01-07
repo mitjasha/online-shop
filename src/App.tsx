@@ -29,13 +29,13 @@ const App: React.FC = () => {
     cartState = JSON.parse(localStorage.getItem("cartState") as string);
   }
 
-  const [currentState, setCurrentState] =
-    useState<AppContextType["currentState"]>(cartState);
+  const [currentCartState, setCurrentCartState] =
+    useState<AppContextType["currentCartState"]>(cartState);
 
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <AppContext.Provider value={{ currentState, setCurrentState }}>
-      <Header />
+    <AppContext.Provider value={{ currentCartState, setCurrentCartState }}>
+      <Header data={data.goods} />
       <main className="main-app">
         <Routes>
           <Route path="/" element={<MainPage />} />

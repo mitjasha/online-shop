@@ -1,8 +1,8 @@
 import { createContext, useContext } from "react";
 
 export type AppContextType = {
-  currentState: { [key: string]: number }[];
-  setCurrentState: (value: { [key: string]: number }[]) => void;
+  currentCartState: { [key: string]: number }[];
+  setCurrentCartState: (value: { [key: string]: number }[]) => void;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);

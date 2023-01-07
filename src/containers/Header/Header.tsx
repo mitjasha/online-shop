@@ -1,21 +1,31 @@
 import React, { useEffect, useState } from "react";
+import { AppContextType, useAppContext } from "../../context";
 import heartIcon from "../../assets/img/svg/heart-icon.svg";
 import cartIcon from "../../assets/img/svg/cart-icon.svg";
 import LogoComponent from "../../components/LogoComponent/LogoComponent";
 import SearchComponent from "../../components/SearchComponent/SearchComponent";
 import MainMenuNavigation from "../../components/MainMenuNavigation/MainMenuNavigation";
 import "./Header.scss";
-import { AppContextType, useAppContext } from "../../context";
+import { WineInfo } from "../../utils/helpers/interfaces";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  data: WineInfo[];
+}
+
+const Header: React.FC<HeaderProps> = ({ data }) => {
   const appContext = useAppContext();
   const cart: { [key: string]: number } = Object.assign(
     {},
-    ...(appContext as AppContextType).currentState,
+    ...(appContext as AppContextType).currentCartState,
   );
+  const totalSolver = (): number => {
+    return data.reduce((prev, curr) => {
+      return prev + Number(curr.price.slice(1));
+    }, 0);
+  };
   const cartArr = Object.entries(cart).map((e) => ({ [e[0]]: e[1] }));
   const [total, setTotal] = useState({
-    price: 500,
+    price: totalSolver(),
     count: cartArr.reduce((prev, curr) => {
       return prev + Number(Object.values(curr)[0]);
     }, 0),
@@ -23,7 +33,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     setTotal({
-      price: 500,
+      price: totalSolver(),
       count: cartArr.reduce((prev, curr) => {
         return prev + Number(Object.values(curr)[0]);
       }, 0),
@@ -38,7 +48,7 @@ const Header: React.FC = () => {
           <div className="wrapper__items">
             <SearchComponent />
             <div className="shopping-info">
-              <div className="total-sum">Total: $0.00</div>
+              <div className="total-sum">Total: ${total.price.toFixed(2)}</div>
               <img src={heartIcon} alt="favorities" className="favorities" />
               <div className="cart__container">
                 <img src={cartIcon} alt="cart" className="cart" />

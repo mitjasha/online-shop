@@ -12,7 +12,7 @@ const CartButton: React.FC<CartButtonProps> = ({ className, id, children }) => {
   const addCart = () => {
     const state: { [key: string]: number } = Object.assign(
       {},
-      ...(appContext as AppContextType).currentState,
+      ...(appContext as AppContextType).currentCartState,
     );
 
     if (appContext) {
@@ -24,7 +24,7 @@ const CartButton: React.FC<CartButtonProps> = ({ className, id, children }) => {
         state[id] = 1;
       }
     }
-    appContext?.setCurrentState([state]);
+    appContext?.setCurrentCartState([state]);
   };
   return (
     <button type="button" className={className} onClick={addCart}>
