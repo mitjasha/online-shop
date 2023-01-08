@@ -17,22 +17,29 @@ const PurchasesTable: React.FC<PurchasesTableProps> = ({
   rowsPerPage = 4,
 }) => {
   const appContext = useAppContext();
-  const [cartSlice, setCart] = useState<number[]>();
+  const [cartCountSlice, setCartCount] = useState<number[]>();
+  const [cartIndexSlice, setCartIndex] = useState<string[]>();
   const [page, setPage] = useState(1);
   const { slice, range } = useTable(data, page, rowsPerPage);
 
-  const cartSlicer = (): number[] => {
-    const cartInfoSlice = appContext?.currentCartState;
-    if (cartInfoSlice![0] !== undefined) {
-      const cart = Object.entries(cartInfoSlice![0])
+  const cartSlicer = (): [number[], string[]] => {
+    const cartInfo = appContext?.currentCartState;
+    if (cartInfo![0] !== undefined) {
+      const cartCount = Object.entries(cartInfo![0])
         .slice((page - 1) * rowsPerPage, page * rowsPerPage)
         .map((entry) => entry[1]);
-      return cart;
+      const cartIndex = Object.entries(cartInfo![0])
+        .slice((page - 1) * rowsPerPage, page * rowsPerPage)
+        .map((entry) => entry[0]);
+
+      console.log(cartIndex);
+      return [cartCount, cartIndex];
     }
-    return [];
+    return [[], []];
   };
   useEffect(() => {
-    setCart(cartSlicer());
+    setCartCount(cartSlicer()[0]);
+    setCartIndex(cartSlicer()[1]);
   }, [page]);
 
   return (
@@ -52,9 +59,9 @@ const PurchasesTable: React.FC<PurchasesTableProps> = ({
             images={product.images}
             price={product.price}
             key={product.title.slice(0, 2) + index.toString()}
-            cartValue={cartSlice![index]}
+            cartValue={cartCountSlice![index]}
             classKey={product.title.slice(0, 2) + index.toString()}
-            id={index}
+            id={Number(cartIndexSlice![index])}
           />
         ))}
       </tbody>
