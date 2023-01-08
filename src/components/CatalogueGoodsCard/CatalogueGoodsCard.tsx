@@ -44,7 +44,7 @@ const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
       </Link>
       <div className="goods-card__actions">
         <CartButton className="goods-card__action-btn" id={id} action>
-          {id.toString() in cartIndex ? (
+          {cartIndex.includes(id.toString()) ? (
             <span className="cart cart-check">☑</span>
           ) : (
             <img src={cartIcon} alt="cart" className="cart" />
