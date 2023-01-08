@@ -9,7 +9,6 @@ interface RangeProps {
   max: number;
   className?: string;
   onChange: ({ min, max }: { min: number; max: number }) => void;
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const RangeInput: React.FC<RangeProps> = ({
@@ -19,7 +18,6 @@ const RangeInput: React.FC<RangeProps> = ({
   max,
   className,
   onChange,
-  handleChange,
 }) => {
   const classes = cn("input-range", className);
   const [minVal, setMinVal] = useState(min);
@@ -28,8 +26,13 @@ const RangeInput: React.FC<RangeProps> = ({
   const maxValRef = useRef(max);
 
   useEffect(() => {
-    onChange({ min: minVal, max: maxVal });
-  }, [minVal, maxVal, onChange]);
+    onChange({
+      min: minVal,
+      max: maxVal,
+    });
+  }, [minVal, maxVal]);
+
+  // minVal, maxVal, onChange
 
   return (
     <div className="filters__radio">
@@ -47,7 +50,6 @@ const RangeInput: React.FC<RangeProps> = ({
             const value = Math.min(Number(event.target.value), maxVal - 1);
             setMinVal(value);
             minValRef.current = value;
-            handleChange(event);
           }}
         />
         <input
@@ -62,7 +64,6 @@ const RangeInput: React.FC<RangeProps> = ({
             const value = Math.max(Number(event.target.value), minVal + 1);
             setMaxVal(value);
             maxValRef.current = value;
-            handleChange(event);
           }}
         />
       </label>
