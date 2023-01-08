@@ -26,10 +26,7 @@ const RangeInput: React.FC<RangeProps> = ({
   const maxValRef = useRef(max);
 
   useEffect(() => {
-    onChange({
-      min: minVal,
-      max: maxVal,
-    });
+    onChange({ min: minVal, max: maxVal });
   }, [minVal, maxVal]);
 
   // minVal, maxVal, onChange
