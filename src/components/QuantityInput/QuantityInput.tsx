@@ -39,8 +39,6 @@ const QuantityInput: React.FC<QuantityInputProps> = ({
           state[id] = 1;
         }
       }
-      console.log(id);
-
       appContext?.setCurrentCartState([state]);
     }
   };
@@ -58,12 +56,9 @@ const QuantityInput: React.FC<QuantityInputProps> = ({
 
           if (state[id] === 0) {
             delete state[id];
-            console.log("del");
           }
         }
       }
-
-      console.log("d", id);
       appContext?.setCurrentCartState([state]);
     }
   };

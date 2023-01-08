@@ -31,8 +31,6 @@ const PurchasesTable: React.FC<PurchasesTableProps> = ({
       const cartIndex = Object.entries(cartInfo![0])
         .slice((page - 1) * rowsPerPage, page * rowsPerPage)
         .map((entry) => entry[0]);
-
-      console.log(cartIndex);
       return [cartCount, cartIndex];
     }
     return [[], []];
