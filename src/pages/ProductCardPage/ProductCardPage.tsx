@@ -42,7 +42,12 @@ const ProductCardPage: React.FC = () => {
             {data.goods[Number(id)].description}
           </div>
           <div className="product-info__actions">
-            <QuantityInput className="product-info__quantity" cartValue={1} />
+            <QuantityInput
+              className="product-info__quantity"
+              cartValue={1}
+              classKey="product-card"
+              id={Number(id)}
+            />
             <Button className="product-info__add-button">Add to cart</Button>
             <Button className="product-info__favourites">
               <img

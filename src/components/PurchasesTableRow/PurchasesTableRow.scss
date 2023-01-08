@@ -6,19 +6,35 @@
   &__img {
     padding-left: 40px;
     object-fit: cover;
+    max-height: 100px;
   }
 
   &__img-cell {
-    display: flex;
-    height: 100px;
+    max-height: 100px;
   }
 
   &__quantity {
     width: 140px;
   }
 
-  &__trash-icon {
-    text-align: right;
-    padding-right: 20px;
+  &__trash {
+    &-icon {
+      text-align: right;
+      padding-right: 20px;
+    }
+
+    &-button {
+      width: 50px;
+
+      height: 50px;
+      border: none;
+      background-color: #f9f9f9;
+
+      &:hover {
+        transition: 0.5s;
+        transform: scale(1.1);
+        background-color: #7d7d7d;
+      }
+    }
   }
 }
