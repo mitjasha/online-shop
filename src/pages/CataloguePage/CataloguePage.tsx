@@ -1,51 +1,172 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import data from "../../assets/data/data.json";
 import CatalogueSettings from "../../components/CatalogueSettings/CatalogueSettings";
 import CatalogueFilters from "../../components/CatalogueFilters/CatalogueFilters";
 import CatalogueGoods from "../../containers/CatalogueGoods/CatalogueGoods";
 import "./CataloguePage.scss";
-import { CardsState } from "../../utils/helpers/interfaces";
+import { WineInfo, CardsState } from "../../utils/helpers/interfaces";
 
 interface CataloguePageProps {
   state: CardsState;
 }
 
+interface SortActionTypes {
+  products: WineInfo[];
+  filters: Set<unknown>;
+  sort: string;
+}
+
 const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
-  const [sortData, setSortData] = useState(data.goods);
-  let goodsArr = [...data.goods];
-  const sortItems = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    if (event.target.value === "priceDown") {
-      goodsArr = goodsArr.sort((a, b) => {
+  const [sortData, setSortData] = useState<SortActionTypes>({
+    products: data.goods as WineInfo[],
+    filters: new Set(),
+    sort: "default",
+  });
+
+  const sortAction = (sortType: string, products: WineInfo[]) => {
+    if (sortType === "priceDown") {
+      products.sort((a, b) => {
         return Number(b.price.slice(1)) - Number(a.price.slice(1));
       });
-      setSortData(goodsArr);
-    } else if (event.target.value === "priceUp") {
-      goodsArr = goodsArr.sort((a, b) => {
+    } else if (sortType === "priceUp") {
+      products.sort((a, b) => {
         return Number(a.price.slice(1)) - Number(b.price.slice(1));
       });
-      setSortData(goodsArr);
-    } else if (event.target.value === "ratingDown") {
-      goodsArr = goodsArr.sort((a, b) => {
-        return b.rating - a.rating;
+    } else if (sortType === "ratingDown") {
+      products.sort((a, b) => {
+        return (b.rating as number) - (a.rating as number);
       });
-      setSortData(goodsArr);
-    } else if (event.target.value === "ratingUp") {
-      goodsArr = goodsArr.sort((a, b) => {
-        return a.rating - b.rating;
+    } else if (sortType === "ratingUp") {
+      products.sort((a, b) => {
+        return (a.rating as number) - (b.rating as number);
       });
-      setSortData(goodsArr);
-    } else if (event.target.value === "default") {
-      setSortData(goodsArr);
     }
+    return products;
   };
+
+  const sortItems = useCallback(
+    (event: React.ChangeEvent<HTMLSelectElement>) => {
+      setSortData((previousState) => {
+        const filters = new Set(previousState.filters);
+        let { products } = previousState;
+        const sort = event.target.value;
+        products = sortAction(sort, products);
+        return {
+          filters,
+          products,
+          sort,
+        };
+      });
+    },
+    [setSortData],
+  );
+
+  const filterCheckboxAction = (
+    filters: Set<unknown>,
+    products: WineInfo[],
+  ) => {
+    let newProducts = products;
+    if (filters.size) {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const product of products) {
+        if (filters.has(product.type && product.title)) {
+          newProducts = newProducts.filter((elem) => {
+            return filters.has(elem.type && elem.title);
+          });
+        } else if (filters.has(product.type)) {
+          newProducts = newProducts.filter((elem) => {
+            return filters.has(elem.type);
+          });
+        } else if (filters.has(product.title)) {
+          newProducts = newProducts.filter((elem) => {
+            return filters.has(elem.title);
+          });
+        }
+      }
+    }
+    return newProducts;
+  };
+
+  const filterCheckbox = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      setSortData((previousState) => {
+        const filters = new Set(previousState.filters);
+        let products = [...data.goods] as WineInfo[];
+        if (event.target.checked) {
+          filters.add(event.target.id);
+        } else {
+          filters.delete(event.target.id);
+        }
+
+        products = filterCheckboxAction(filters, products);
+        const { sort } = previousState;
+        products = sortAction(sort as string, products);
+        return {
+          filters,
+          products,
+          sort,
+        };
+      });
+    },
+    [setSortData],
+  );
+
+  const filterRange = (
+    { min, max }: { min: number; max: number },
+    type: string,
+  ) => {
+    setSortData((previousState) => {
+      const MinMaxObj = { min, max };
+      const filters = new Set(previousState.filters);
+      let products = [...data.goods] as WineInfo[];
+      products = filterCheckboxAction(filters, products);
+      if (type === "price") {
+        products = products.filter((elem) => {
+          return (
+            Number(elem.price.slice(1)) >= MinMaxObj.min &&
+            Number(elem.price.slice(1)) <= MinMaxObj.max
+          );
+        });
+      }
+      if (type === "quantity") {
+        products = products.filter((elem) => {
+          return (
+            (elem.quantity as number) >= MinMaxObj.min &&
+            (elem.quantity as number) <= MinMaxObj.max
+          );
+        });
+      }
+
+      const { sort } = previousState;
+      products = sortAction(sort as string, products);
+      return {
+        filters,
+        products,
+        sort,
+      };
+    });
+  };
+
   return (
     <div className="catalogue">
       <div className="container">
-        <CatalogueSettings sortFunction={sortItems} />
+        <CatalogueSettings
+          sortFunction={sortItems}
+          itemsFound={sortData.products.length}
+        />
         <div className="filters-goods-wrapper">
-          <CatalogueFilters />
-          <CatalogueGoods data={sortData} state={state} />
-          <div className="not-found">
+          <CatalogueFilters
+            filterFunction={filterCheckbox}
+            rangeFilterPrice={filterRange}
+            rangeFilterQuant={filterRange}
+          />
+          <CatalogueGoods data={sortData.products} state={state} />
+          <div
+            className="not-found"
+            style={{
+              display: sortData.products.length === 0 ? "block" : "none",
+            }}
+          >
             <p>No products found</p>
           </div>
         </div>
