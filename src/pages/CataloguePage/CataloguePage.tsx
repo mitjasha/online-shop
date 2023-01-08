@@ -65,6 +65,7 @@ const CataloguePage: React.FC = () => {
       setSortData((previousState) => {
         const filters = new Set(previousState.filters);
         let products = [...data.goods];
+        const filtered = previousState.products;
 
         if (event.target.checked) {
           filters.add(event.target.id);
@@ -74,17 +75,17 @@ const CataloguePage: React.FC = () => {
 
         if (filters.size) {
           // eslint-disable-next-line no-restricted-syntax
-          for (const product of products) {
+          for (const product of filtered) {
             if (filters.has(product.type && product.title)) {
-              products = products.filter((elem) => {
+              products = filtered.filter((elem) => {
                 return filters.has(elem.type && elem.title);
               });
             } else if (filters.has(product.type)) {
-              products = products.filter((elem) => {
+              products = filtered.filter((elem) => {
                 return filters.has(elem.type);
               });
             } else if (filters.has(product.title)) {
-              products = products.filter((elem) => {
+              products = filtered.filter((elem) => {
                 return filters.has(elem.title);
               });
             }
@@ -99,40 +100,40 @@ const CataloguePage: React.FC = () => {
     [setSortData],
   );
 
-  const getMaxMinValues = ({ min, max }: { min: number; max: number }) => {
-    const MinMaxObj = { min, max };
-    console.log(MinMaxObj);
-    return MinMaxObj;
-  };
-
-  const filterRange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
+  const filterRangePrice = useCallback(
+    ({ min, max }: { min: number; max: number }) => {
       setSortData((previousState) => {
+        const MinMaxObj = { min, max };
         const filters = new Set(previousState.filters);
-        let products = [...data.goods];
-        if (event.target.id === "price" && event.target.name === "a") {
-          products = products.filter((elem) => {
-            return Number(event.target.value) <= Number(elem.price.slice(1));
-          });
-        } else if (event.target.id === "price" && event.target.name === "b") {
-          products = products.filter((elem) => {
-            return Number(event.target.value) >= Number(elem.price.slice(1));
-          });
-        } else if (
-          event.target.id === "quantity" &&
-          event.target.name === "a"
-        ) {
-          products = products.filter((elem) => {
-            return Number(event.target.value) <= elem.quantity;
-          });
-        } else if (
-          event.target.id === "quantity" &&
-          event.target.name === "b"
-        ) {
-          products = products.filter((elem) => {
-            return Number(event.target.value) >= elem.quantity;
-          });
-        }
+        const filtered = previousState.products;
+        console.log(filtered);
+        const products = filtered.filter((elem) => {
+          return (
+            Number(elem.price.slice(1)) >= MinMaxObj.min &&
+            Number(elem.price.slice(1)) <= MinMaxObj.max
+          );
+        });
+        return {
+          filters,
+          products,
+        };
+      });
+    },
+    [setSortData],
+  );
+
+  const filterRangeQuant = useCallback(
+    ({ min, max }: { min: number; max: number }) => {
+      setSortData((previousState) => {
+        const MinMaxObj = { min, max };
+        const filters = new Set(previousState.filters);
+        const filtered = previousState.products;
+        console.log(filtered);
+        const products = filtered.filter((elem) => {
+          return (
+            elem.quantity >= MinMaxObj.min && elem.quantity <= MinMaxObj.max
+          );
+        });
         return {
           filters,
           products,
@@ -152,8 +153,8 @@ const CataloguePage: React.FC = () => {
         <div className="filters-goods-wrapper">
           <CatalogueFilters
             filterFunction={filterCheckbox}
-            rangeFilterFn={filterRange}
-            receiveValues={getMaxMinValues}
+            rangeFilterPrice={filterRangePrice}
+            rangeFilterQuant={filterRangeQuant}
           />
           <CatalogueGoods data={sortData.products} />
           <div
