@@ -15,7 +15,9 @@ const CatalogueGoods: React.FC<CatalogueGoodsProps> = ({ data, state }) => {
         <CatalogueGoodsCard
           classname="goods__item"
           data={elem}
-          id={index}
+          id={data.findIndex((object) => {
+            return object === elem;
+          })}
           key={elem.title + index.toString()}
           state={state}
         />

@@ -22,6 +22,8 @@ const ProductCardPage: React.FC = () => {
     (appContext as AppContextType).currentCartState?.[0],
   ).map((entry) => entry[0]);
 
+  console.log(cartIndex);
+
   return (
     <main className="product-page">
       <div className="container product-page__container">
@@ -60,7 +62,9 @@ const ProductCardPage: React.FC = () => {
               action
               id={Number(id)}
             >
-              {(id as string) in cartIndex ? " Product in cart" : "Add to cart"}
+              {cartIndex.includes(id as string)
+                ? " Product in cart"
+                : "Add to cart"}
             </CartButton>
             <Button className="product-info__favourites">
               <img
