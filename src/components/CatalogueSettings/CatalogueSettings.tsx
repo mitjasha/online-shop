@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../Buttons/Button/Button";
 import twoGrid from "../../assets/img/png/two.png";
 import threeGrid from "../../assets/img/png/three.png";
 import fourGrid from "../../assets/img/png/four.png";
@@ -8,15 +7,23 @@ import "./CatalogueSettings.scss";
 interface SettingsProps {
   sortFunction: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   itemsFound: number;
+  resetFiltersFn: () => void;
 }
 
 const CatalogueSettings: React.FC<SettingsProps> = ({
   sortFunction,
   itemsFound,
+  resetFiltersFn,
 }) => {
   return (
     <div className="settings">
-      <Button className="settings__reset">Reset Filters</Button>
+      <button
+        type="button"
+        className="settings__reset"
+        onClick={resetFiltersFn}
+      >
+        Reset Filters
+      </button>
       <div className="settings__found">Found {itemsFound} item(s)</div>
       <select
         id="sorting"
