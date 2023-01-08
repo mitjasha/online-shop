@@ -50,7 +50,7 @@ const App: React.FC = () => {
           <Route path="/" element={<MainPage />} />
           <Route path="/catalogue" element={<CataloguePage state={state} />} />
           <Route path="/product/:id" element={<ProductCardPage />} />
-          <Route path="/cart" element={<CartPage />} />
+          <Route path="/cart" element={<CartPage data={cartFilter()} />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </main>

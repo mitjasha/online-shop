@@ -1,10 +1,14 @@
 import React from "react";
-import data from "../../assets/data/data.json";
 import PurchasesTable from "../../containers/PurchasesTable/PurchasesTable";
 import OrderButton from "../../components/Buttons/OrderButton/OrderButton";
 import "./CartPage.scss";
+import { WineInfo } from "../../utils/helpers/interfaces";
 
-const CartPage: React.FC = () => {
+interface CartPageProps {
+  data: WineInfo[];
+}
+
+const CartPage: React.FC<CartPageProps> = ({ data }) => {
   return (
     <div className="cart-page">
       <div className="container cart-page__container">
@@ -12,7 +16,7 @@ const CartPage: React.FC = () => {
           <span className="cart-page__title-text">Shopping Cart ({4})</span>
         </div>
         <div className="purchases">
-          <PurchasesTable data={data.goods} />
+          <PurchasesTable data={data} />
           <table className="total-table">
             <thead className="total-table__header">
               <tr>
