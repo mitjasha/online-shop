@@ -9,6 +9,7 @@ import { CardsState, WineInfo } from "../../utils/helpers/interfaces";
 import "./CatalogueGoodsCard.scss";
 import CartButton from "../Buttons/CartButton/CartButton";
 import FavouritesButton from "../Buttons/FavouritesButton/FavouritesButton";
+import { AppContextType, useAppContext } from "../../context";
 
 interface CatalogueGoodsCardProps {
   data: WineInfo;
@@ -24,6 +25,11 @@ const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
   state,
 }) => {
   const classes = cn("goods-card", classname);
+  const appContext = useAppContext();
+  const cartIndex = Object.entries(
+    (appContext as AppContextType).currentCartState?.[0],
+  ).map((entry) => entry[0]);
+
   return (
     <div className={classes}>
       <Link className="goods-card__link-container" to={`/product/${id}`}>
@@ -38,7 +44,11 @@ const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
       </Link>
       <div className="goods-card__actions">
         <CartButton className="goods-card__action-btn" id={id} action>
-          <img src={cartIcon} alt="cart" className="cart" />
+          {id.toString() in cartIndex ? (
+            <span className="cart cart-check">☑</span>
+          ) : (
+            <img src={cartIcon} alt="cart" className="cart" />
+          )}
         </CartButton>
         <FavouritesButton
           className="goods-card__action-btn"
