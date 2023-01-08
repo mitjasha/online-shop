@@ -147,6 +147,12 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
     });
   };
 
+  const copyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    // eslint-disable-next-line no-alert
+    alert("the link was copied!");
+  };
+
   return (
     <div className="catalogue">
       <div className="container">
@@ -159,6 +165,7 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
             filterFunction={filterCheckbox}
             rangeFilterPrice={filterRange}
             rangeFilterQuant={filterRange}
+            copyLinkFn={copyLink}
           />
           <CatalogueGoods data={sortData.products} state={state} />
           <div
