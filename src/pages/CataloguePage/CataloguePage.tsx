@@ -4,189 +4,148 @@ import CatalogueSettings from "../../components/CatalogueSettings/CatalogueSetti
 import CatalogueFilters from "../../components/CatalogueFilters/CatalogueFilters";
 import CatalogueGoods from "../../containers/CatalogueGoods/CatalogueGoods";
 import "./CataloguePage.scss";
-import { CardsState } from "../../utils/helpers/interfaces";
+import { WineInfo, CardsState } from "../../utils/helpers/interfaces";
 
 interface CataloguePageProps {
   state: CardsState;
 }
 
+interface SortActionTypes {
+  products: WineInfo[];
+  filters: Set<unknown>;
+  sort: string;
+}
+
 const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
-  const [sortData, setSortData] = useState({
-    products: data.goods,
+  const [sortData, setSortData] = useState<SortActionTypes>({
+    products: data.goods as WineInfo[],
     filters: new Set(),
+    sort: "default",
   });
+
+  const sortAction = (sortType: string, products: WineInfo[]) => {
+    if (sortType === "priceDown") {
+      products.sort((a, b) => {
+        return Number(b.price.slice(1)) - Number(a.price.slice(1));
+      });
+    } else if (sortType === "priceUp") {
+      products.sort((a, b) => {
+        return Number(a.price.slice(1)) - Number(b.price.slice(1));
+      });
+    } else if (sortType === "ratingDown") {
+      products.sort((a, b) => {
+        return (b.rating as number) - (a.rating as number);
+      });
+    } else if (sortType === "ratingUp") {
+      products.sort((a, b) => {
+        return (a.rating as number) - (b.rating as number);
+      });
+    }
+    return products;
+  };
 
   const sortItems = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
       setSortData((previousState) => {
         const filters = new Set(previousState.filters);
-        const filtered = previousState.products;
-        let products = [...data.goods];
-        if (filters.size) {
-          // eslint-disable-next-line no-restricted-syntax
-          for (const product of filtered) {
-            if (filters.has(product.type && product.title)) {
-              products = filtered.filter((elem) => {
-                return filters.has(elem.type && elem.title);
-              });
-            } else if (filters.has(product.type)) {
-              products = filtered.filter((elem) => {
-                return filters.has(elem.type);
-              });
-            } else if (filters.has(product.title)) {
-              products = filtered.filter((elem) => {
-                return filters.has(elem.title);
-              });
-            }
-          }
-        }
-        if (event.target.value === "priceDown") {
-          products = filtered.sort((a, b) => {
-            return Number(b.price.slice(1)) - Number(a.price.slice(1));
-          });
-        } else if (event.target.value === "priceUp") {
-          products = filtered.sort((a, b) => {
-            return Number(a.price.slice(1)) - Number(b.price.slice(1));
-          });
-        } else if (event.target.value === "ratingDown") {
-          products = filtered.sort((a, b) => {
-            return b.rating - a.rating;
-          });
-        } else if (event.target.value === "ratingUp") {
-          products = filtered.sort((a, b) => {
-            return a.rating - b.rating;
-          });
-        }
+        let { products } = previousState;
+        const sort = event.target.value;
+        products = sortAction(sort, products);
         return {
           filters,
           products,
+          sort,
         };
       });
     },
     [setSortData],
   );
 
+  const filterCheckboxAction = (
+    filters: Set<unknown>,
+    products: WineInfo[],
+  ) => {
+    let newProducts = products;
+    if (filters.size) {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const product of products) {
+        if (filters.has(product.type && product.title)) {
+          newProducts = newProducts.filter((elem) => {
+            return filters.has(elem.type && elem.title);
+          });
+        } else if (filters.has(product.type)) {
+          newProducts = newProducts.filter((elem) => {
+            return filters.has(elem.type);
+          });
+        } else if (filters.has(product.title)) {
+          newProducts = newProducts.filter((elem) => {
+            return filters.has(elem.title);
+          });
+        }
+      }
+    }
+    return newProducts;
+  };
+
   const filterCheckbox = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       setSortData((previousState) => {
         const filters = new Set(previousState.filters);
-        let products = [...data.goods];
-        // const filtered = previousState.products;
-
+        let products = [...data.goods] as WineInfo[];
         if (event.target.checked) {
           filters.add(event.target.id);
         } else {
           filters.delete(event.target.id);
         }
 
-        if (filters.size) {
-          // eslint-disable-next-line no-restricted-syntax
-          for (const product of products) {
-            if (filters.has(product.type && product.title)) {
-              products = products.filter((elem) => {
-                return filters.has(elem.type && elem.title);
-              });
-            } else if (filters.has(product.type)) {
-              products = products.filter((elem) => {
-                return filters.has(elem.type);
-              });
-            } else if (filters.has(product.title)) {
-              products = products.filter((elem) => {
-                return filters.has(elem.title);
-              });
-            }
-          }
-        }
+        products = filterCheckboxAction(filters, products);
+        const { sort } = previousState;
+        products = sortAction(sort as string, products);
         return {
           filters,
           products,
+          sort,
         };
       });
     },
     [setSortData],
   );
 
-  const filterRangePrice = useCallback(
-    ({ min, max }: { min: number; max: number }) => {
-      setSortData((previousState) => {
-        const MinMaxObj = { min, max };
-        console.log(MinMaxObj);
-        const filters = new Set(previousState.filters);
-        let products = [...data.goods];
-
-        if (filters.size) {
-          // eslint-disable-next-line no-restricted-syntax
-          for (const product of products) {
-            if (filters.has(product.type && product.title)) {
-              products = products.filter((elem) => {
-                return filters.has(elem.type && elem.title);
-              });
-            } else if (filters.has(product.type)) {
-              products = products.filter((elem) => {
-                return filters.has(elem.type);
-              });
-            } else if (filters.has(product.title)) {
-              products = products.filter((elem) => {
-                return filters.has(elem.title);
-              });
-            }
-          }
-        }
-
+  const filterRange = (
+    { min, max }: { min: number; max: number },
+    type: string,
+  ) => {
+    setSortData((previousState) => {
+      const MinMaxObj = { min, max };
+      const filters = new Set(previousState.filters);
+      let products = [...data.goods] as WineInfo[];
+      products = filterCheckboxAction(filters, products);
+      if (type === "price") {
         products = products.filter((elem) => {
           return (
             Number(elem.price.slice(1)) >= MinMaxObj.min &&
             Number(elem.price.slice(1)) <= MinMaxObj.max
           );
         });
-        return {
-          filters,
-          products,
-        };
-      });
-    },
-    [setSortData],
-  );
-
-  const filterRangeQuant = useCallback(
-    ({ min, max }: { min: number; max: number }) => {
-      setSortData((previousState) => {
-        const MinMaxObj = { min, max };
-        const filters = new Set(previousState.filters);
-        let products = [...data.goods];
-
-        if (filters.size) {
-          // eslint-disable-next-line no-restricted-syntax
-          for (const product of products) {
-            if (filters.has(product.type && product.title)) {
-              products = products.filter((elem) => {
-                return filters.has(elem.type && elem.title);
-              });
-            } else if (filters.has(product.type)) {
-              products = products.filter((elem) => {
-                return filters.has(elem.type);
-              });
-            } else if (filters.has(product.title)) {
-              products = products.filter((elem) => {
-                return filters.has(elem.title);
-              });
-            }
-          }
-        }
-
+      }
+      if (type === "quantity") {
         products = products.filter((elem) => {
           return (
-            elem.quantity >= MinMaxObj.min && elem.quantity <= MinMaxObj.max
+            (elem.quantity as number) >= MinMaxObj.min &&
+            (elem.quantity as number) <= MinMaxObj.max
           );
         });
-        return {
-          filters,
-          products,
-        };
-      });
-    },
-    [setSortData],
-  );
+      }
+
+      const { sort } = previousState;
+      products = sortAction(sort as string, products);
+      return {
+        filters,
+        products,
+        sort,
+      };
+    });
+  };
 
   return (
     <div className="catalogue">
@@ -198,8 +157,8 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
         <div className="filters-goods-wrapper">
           <CatalogueFilters
             filterFunction={filterCheckbox}
-            rangeFilterPrice={filterRangePrice}
-            rangeFilterQuant={filterRangeQuant}
+            rangeFilterPrice={filterRange}
+            rangeFilterQuant={filterRange}
           />
           <CatalogueGoods data={sortData.products} state={state} />
           <div
