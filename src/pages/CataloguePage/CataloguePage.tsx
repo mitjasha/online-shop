@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import { useSearchParams } from "react-router-dom";
 import data from "../../assets/data/data.json";
 import CatalogueSettings from "../../components/CatalogueSettings/CatalogueSettings";
 import CatalogueFilters from "../../components/CatalogueFilters/CatalogueFilters";
@@ -17,11 +18,14 @@ interface SortActionTypes {
 }
 
 const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [sortData, setSortData] = useState<SortActionTypes>({
     products: data.goods as WineInfo[],
     filters: new Set(),
     sort: "default",
   });
+
+  const postQuery = searchParams.get("post") || "";
 
   const sortAction = (sortType: string, products: WineInfo[]) => {
     if (sortType === "priceDown") {
@@ -50,6 +54,10 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
         const filters = new Set(previousState.filters);
         let { products } = previousState;
         const sort = event.target.value;
+        setSearchParams({ post: sort });
+        if (postQuery) {
+          products = sortAction(postQuery, products);
+        }
         products = sortAction(sort, products);
         return {
           filters,
