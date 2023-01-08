@@ -10,6 +10,7 @@ import heartIcon from "../../assets/img/svg/heart-icon.svg";
 import "./ProductCardPage.scss";
 import CartButton from "../../components/Buttons/CartButton/CartButton";
 import { AppContextType, useAppContext } from "../../context";
+import BuyNowButton from "../../components/Buttons/BuyNowButton/BuyNowButton";
 
 const ProductCardPage: React.FC = () => {
   const appContext = useAppContext();
@@ -74,7 +75,7 @@ const ProductCardPage: React.FC = () => {
               />
             </Button>
           </div>
-          <Button className="product-info__buy-now">BUY NOW</Button>
+          <BuyNowButton className="product-info__buy-now">BUY NOW</BuyNowButton>
         </div>
       </div>
       <div className="container related-products__container">
