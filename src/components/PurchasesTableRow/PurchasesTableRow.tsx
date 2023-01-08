@@ -3,6 +3,7 @@ import { WineInfo } from "../../utils/helpers/interfaces";
 import QuantityInput from "../QuantityInput/QuantityInput";
 import "./PurchasesTableRow.scss";
 import trashIcon from "../../assets/img/svg/trash-icon.svg";
+import CartButton from "../Buttons/CartButton/CartButton";
 
 interface PurchasesTableRowProps extends WineInfo {
   cartValue: number;
@@ -40,7 +41,9 @@ const PurchasesTableRow: React.FC<PurchasesTableRowProps> = ({
         <p>{price}</p>
       </td>
       <td className="table-row__trash-icon">
-        <img src={trashIcon} alt="trash" />
+        <CartButton className="table-row__trash-button" id={id} action={false}>
+          <img src={trashIcon} alt="trash" />
+        </CartButton>
       </td>
     </tr>
   );
