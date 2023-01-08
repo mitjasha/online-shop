@@ -7,6 +7,7 @@ import trashIcon from "../../assets/img/svg/trash-icon.svg";
 interface PurchasesTableRowProps extends WineInfo {
   cartValue: number;
   classKey: string;
+  id: number;
 }
 
 const PurchasesTableRow: React.FC<PurchasesTableRowProps> = ({
@@ -15,6 +16,7 @@ const PurchasesTableRow: React.FC<PurchasesTableRowProps> = ({
   price,
   cartValue,
   classKey,
+  id,
 }) => {
   return (
     <tr className="table-row">
@@ -32,7 +34,7 @@ const PurchasesTableRow: React.FC<PurchasesTableRowProps> = ({
         <p>{price}</p>
       </td>
       <td className="table-row__quantity">
-        <QuantityInput cartValue={cartValue} classKey={classKey} />
+        <QuantityInput cartValue={cartValue} classKey={classKey} id={id} />
       </td>
       <td>
         <p>{price}</p>

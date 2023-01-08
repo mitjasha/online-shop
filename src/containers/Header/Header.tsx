@@ -7,6 +7,7 @@ import SearchComponent from "../../components/SearchComponent/SearchComponent";
 import MainMenuNavigation from "../../components/MainMenuNavigation/MainMenuNavigation";
 import "./Header.scss";
 import { WineInfo } from "../../utils/helpers/interfaces";
+import totalSolver from "../../utils/helpers/totalSum";
 
 interface HeaderProps {
   data: WineInfo[];
@@ -18,16 +19,10 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
     {},
     ...(appContext as AppContextType).currentCartState,
   );
-  const totalSolver = (): number => {
-    return data.reduce((prev, curr, index) => {
-      return (
-        prev + Number(curr.price.slice(1)) * cart[Object.keys(cart)[index]]
-      );
-    }, 0);
-  };
+
   const cartArr = Object.entries(cart).map((e) => ({ [e[0]]: e[1] }));
   const [total, setTotal] = useState({
-    price: totalSolver(),
+    price: totalSolver(data, cart),
     count: cartArr.reduce((prev, curr) => {
       return prev + Number(Object.values(curr)[0]);
     }, 0),
@@ -35,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
 
   useEffect(() => {
     setTotal({
-      price: totalSolver(),
+      price: totalSolver(data, cart),
       count: cartArr.reduce((prev, curr) => {
         return prev + Number(Object.values(curr)[0]);
       }, 0),

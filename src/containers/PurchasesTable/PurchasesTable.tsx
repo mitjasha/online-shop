@@ -33,7 +33,6 @@ const PurchasesTable: React.FC<PurchasesTableProps> = ({
   };
   useEffect(() => {
     setCart(cartSlicer());
-    console.log(cartSlice);
   }, [page]);
 
   return (
@@ -55,6 +54,7 @@ const PurchasesTable: React.FC<PurchasesTableProps> = ({
             key={product.title.slice(0, 2) + index.toString()}
             cartValue={cartSlice![index]}
             classKey={product.title.slice(0, 2) + index.toString()}
+            id={index}
           />
         ))}
       </tbody>

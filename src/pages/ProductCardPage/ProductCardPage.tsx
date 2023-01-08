@@ -46,6 +46,7 @@ const ProductCardPage: React.FC = () => {
               className="product-info__quantity"
               cartValue={1}
               classKey="product-card"
+              id={Number(id)}
             />
             <Button className="product-info__add-button">Add to cart</Button>
             <Button className="product-info__favourites">

@@ -37,7 +37,7 @@ const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
         <p className="goods-card__price">{data.price}</p>
       </Link>
       <div className="goods-card__actions">
-        <CartButton className="goods-card__action-btn" id={id}>
+        <CartButton className="goods-card__action-btn" id={id} action>
           <img src={cartIcon} alt="cart" className="cart" />
         </CartButton>
         <FavouritesButton
