@@ -153,12 +153,15 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
     alert("the link was copied!");
   };
 
+  const resetFilters = () => {};
+
   return (
     <div className="catalogue">
       <div className="container">
         <CatalogueSettings
           sortFunction={sortItems}
           itemsFound={sortData.products.length}
+          resetFiltersFn={resetFilters}
         />
         <div className="filters-goods-wrapper">
           <CatalogueFilters
