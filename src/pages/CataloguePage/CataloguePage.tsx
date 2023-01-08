@@ -161,7 +161,27 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
     alert("the link was copied!");
   };
 
-  const resetFilters = () => {};
+  const resetFilters = () => {
+    setSortData(() => {
+      const filters = new Set();
+      const products = [...data.goods];
+      const sort = "default";
+      const checkboxes = document.querySelectorAll(
+        "input[type = 'checkbox']",
+      ) as NodeListOf<HTMLInputElement>;
+      checkboxes.forEach((checkbox) => {
+        const elem = checkbox;
+        if (elem.checked === true) {
+          elem.checked = false;
+        }
+      });
+      return {
+        filters,
+        products,
+        sort,
+      };
+    });
+  };
 
   return (
     <div className="catalogue">
