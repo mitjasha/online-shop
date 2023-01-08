@@ -19,8 +19,10 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
     ...(appContext as AppContextType).currentCartState,
   );
   const totalSolver = (): number => {
-    return data.reduce((prev, curr) => {
-      return prev + Number(curr.price.slice(1));
+    return data.reduce((prev, curr, index) => {
+      return (
+        prev + Number(curr.price.slice(1)) * cart[Object.keys(cart)[index]]
+      );
     }, 0);
   };
   const cartArr = Object.entries(cart).map((e) => ({ [e[0]]: e[1] }));

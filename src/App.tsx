@@ -7,7 +7,7 @@ import CataloguePage from "./pages/CataloguePage/CataloguePage";
 import ProductCardPage from "./pages/ProductCardPage/ProductCardPage";
 import CartPage from "./pages/CartPage/CartPage";
 import Page404 from "./pages/Page404/Page404";
-import { CardsState } from "./utils/helpers/interfaces";
+import { CardsState, WineInfo } from "./utils/helpers/interfaces";
 import data from "./assets/data/data.json";
 import AppContext, { AppContextType } from "./context";
 
@@ -32,10 +32,19 @@ const App: React.FC = () => {
   const [currentCartState, setCurrentCartState] =
     useState<AppContextType["currentCartState"]>(cartState);
 
+  const cartFilter = (): WineInfo[] => {
+    const cartKeys = currentCartState.flatMap(Object.keys);
+    const cartData: WineInfo[] = [];
+    for (let i = 0; i < cartKeys.length; i += 1) {
+      cartData[i] = data.goods[Number(cartKeys[i])];
+    }
+    return cartData;
+  };
+
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AppContext.Provider value={{ currentCartState, setCurrentCartState }}>
-      <Header data={data.goods} />
+      <Header data={cartFilter()} />
       <main className="main-app">
         <Routes>
           <Route path="/" element={<MainPage />} />
