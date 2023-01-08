@@ -6,11 +6,11 @@
   &__img {
     padding-left: 40px;
     object-fit: cover;
+    max-height: 100px;
   }
 
   &__img-cell {
-    display: flex;
-    height: 100px;
+    max-height: 100px;
   }
 
   &__quantity {
