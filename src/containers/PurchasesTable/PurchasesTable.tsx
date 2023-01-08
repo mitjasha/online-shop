@@ -37,10 +37,11 @@ const PurchasesTable: React.FC<PurchasesTableProps> = ({
     }
     return [[], []];
   };
+
   useEffect(() => {
     setCartCount(cartSlicer()[0]);
     setCartIndex(cartSlicer()[1]);
-  }, [page]);
+  }, [page, appContext]);
 
   return (
     <table className="purchases-table">
@@ -53,17 +54,25 @@ const PurchasesTable: React.FC<PurchasesTableProps> = ({
         </tr>
       </thead>
       <tbody className="purchases-table__body">
-        {slice.map((product, index) => (
-          <PurchasesTableRow
-            title={product.title}
-            images={product.images}
-            price={product.price}
-            key={product.title.slice(0, 2) + index.toString()}
-            cartValue={cartCountSlice![index]}
-            classKey={product.title.slice(0, 2) + index.toString()}
-            id={Number(cartIndexSlice![index])}
-          />
-        ))}
+        {slice.length ? (
+          slice.map((product, index) => (
+            <PurchasesTableRow
+              title={product.title}
+              images={product.images}
+              price={product.price}
+              key={product.title.slice(0, 2) + index.toString()}
+              cartValue={cartCountSlice![index]}
+              classKey={product.title.slice(0, 2) + index.toString()}
+              id={Number(cartIndexSlice?.[index])}
+            />
+          ))
+        ) : (
+          <tr>
+            <td className="purchases-table__cell" colSpan={6}>
+              The cart is empty
+            </td>
+          </tr>
+        )}
       </tbody>
       <tfoot>
         <tr>
