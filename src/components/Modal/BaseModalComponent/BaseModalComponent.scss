@@ -11,10 +11,10 @@
 
   &__header {
     color: #333333;
-    font-size: 40px;
+    font-size: 20px;
     text-align: center;
     font-weight: 500;
-    padding-top: 50px;
+    text-transform: uppercase;
   }
 
   &__body {
@@ -22,7 +22,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70%;
+    height: 90%;
     width: 100%;
   }
 
