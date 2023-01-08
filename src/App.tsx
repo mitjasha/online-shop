@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./containers/Header/Header";
 import Footer from "./containers/Footer/Footer";
@@ -13,7 +13,7 @@ import AppContext, { AppContextType } from "./context";
 
 let state: CardsState = {
   currentCards: [],
-  favourites: [1, 4, 6],
+  favourites: [],
 };
 
 let cartState: { [key: string]: number }[] = [];
@@ -40,6 +40,10 @@ const App: React.FC = () => {
     }
     return cartData;
   };
+
+  useEffect(() => {
+    localStorage.setItem("cartState", JSON.stringify(currentCartState));
+  }, [cartFilter()]);
 
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
