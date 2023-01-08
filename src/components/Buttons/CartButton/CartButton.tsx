@@ -5,16 +5,21 @@ interface CartButtonProps {
   className?: string;
   id: number;
   children?: React.ReactNode;
+  action: boolean;
 }
 
-const CartButton: React.FC<CartButtonProps> = ({ className, id, children }) => {
+const CartButton: React.FC<CartButtonProps> = ({
+  className,
+  id,
+  children,
+  action,
+}) => {
   const appContext = useAppContext();
+  const state: { [key: string]: number } = Object.assign(
+    {},
+    ...(appContext as AppContextType).currentCartState,
+  );
   const addCart = () => {
-    const state: { [key: string]: number } = Object.assign(
-      {},
-      ...(appContext as AppContextType).currentCartState,
-    );
-
     if (appContext) {
       if (id.toString() in state) {
         // eslint-disable-next-line no-param-reassign
@@ -26,8 +31,22 @@ const CartButton: React.FC<CartButtonProps> = ({ className, id, children }) => {
     }
     appContext?.setCurrentCartState([state]);
   };
+
+  const delCart = () => {
+    if (appContext) {
+      if (id.toString() in state) {
+        delete state[id];
+      }
+    }
+    appContext?.setCurrentCartState([state]);
+  };
+
   return (
-    <button type="button" className={className} onClick={addCart}>
+    <button
+      type="button"
+      className={className}
+      onClick={action ? addCart : delCart}
+    >
       {children}
     </button>
   );
