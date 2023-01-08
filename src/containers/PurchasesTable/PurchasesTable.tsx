@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../components/Buttons/Button/Button";
 import CartPagination from "../../components/CartPagination/CartPagination";
 import PurchasesTableRow from "../../components/PurchasesTableRow/PurchasesTableRow";
+import { useAppContext } from "../../context";
 import { WineInfo } from "../../utils/helpers/interfaces";
 import useTable from "../../utils/hooks/useTable";
 import "./PurchasesTable.scss";
@@ -15,8 +16,26 @@ const PurchasesTable: React.FC<PurchasesTableProps> = ({
   data,
   rowsPerPage = 4,
 }) => {
+  const appContext = useAppContext();
+  const [cartSlice, setCart] = useState<number[]>();
   const [page, setPage] = useState(1);
   const { slice, range } = useTable(data, page, rowsPerPage);
+
+  const cartSlicer = (): number[] => {
+    const cartInfoSlice = appContext?.currentCartState;
+    if (cartInfoSlice![0] !== undefined) {
+      const cart = Object.entries(cartInfoSlice![0])
+        .slice((page - 1) * rowsPerPage, page * rowsPerPage)
+        .map((entry) => entry[1]);
+      return cart;
+    }
+    return [];
+  };
+  useEffect(() => {
+    setCart(cartSlicer());
+    console.log(cartSlice);
+  }, [page]);
+
   return (
     <table className="purchases-table">
       <thead className="purchases-table__header">
@@ -34,7 +53,7 @@ const PurchasesTable: React.FC<PurchasesTableProps> = ({
             images={product.images}
             price={product.price}
             key={product.title.slice(0, 2) + index.toString()}
-            cartValue={1}
+            cartValue={cartSlice![index]}
             classKey={product.title.slice(0, 2) + index.toString()}
           />
         ))}
