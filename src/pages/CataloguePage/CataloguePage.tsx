@@ -15,64 +15,8 @@ const CataloguePage: React.FC = () => {
     (event: React.ChangeEvent<HTMLSelectElement>) => {
       setSortData((previousState) => {
         const filters = new Set(previousState.filters);
-        let products = [...data.goods];
-        if (filters.size) {
-          // eslint-disable-next-line no-restricted-syntax
-          for (const product of products) {
-            if (filters.has(product.type && product.title)) {
-              products = products.filter((elem) => {
-                return filters.has(elem.type && elem.title);
-              });
-            } else if (filters.has(product.type)) {
-              products = products.filter((elem) => {
-                return filters.has(elem.type);
-              });
-            } else if (filters.has(product.title)) {
-              products = products.filter((elem) => {
-                return filters.has(elem.title);
-              });
-            }
-          }
-        }
-        if (event.target.value === "priceDown") {
-          products.sort((a, b) => {
-            return Number(b.price.slice(1)) - Number(a.price.slice(1));
-          });
-        } else if (event.target.value === "priceUp") {
-          products.sort((a, b) => {
-            return Number(a.price.slice(1)) - Number(b.price.slice(1));
-          });
-        } else if (event.target.value === "ratingDown") {
-          products.sort((a, b) => {
-            return b.rating - a.rating;
-          });
-        } else if (event.target.value === "ratingUp") {
-          products.sort((a, b) => {
-            return a.rating - b.rating;
-          });
-        }
-        return {
-          filters,
-          products,
-        };
-      });
-    },
-    [setSortData],
-  );
-
-  const filterCheckbox = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      setSortData((previousState) => {
-        const filters = new Set(previousState.filters);
-        let products = [...data.goods];
         const filtered = previousState.products;
-
-        if (event.target.checked) {
-          filters.add(event.target.id);
-        } else {
-          filters.delete(event.target.id);
-        }
-
+        let products = [...data.goods];
         if (filters.size) {
           // eslint-disable-next-line no-restricted-syntax
           for (const product of filtered) {
@@ -91,6 +35,63 @@ const CataloguePage: React.FC = () => {
             }
           }
         }
+        if (event.target.value === "priceDown") {
+          products = filtered.sort((a, b) => {
+            return Number(b.price.slice(1)) - Number(a.price.slice(1));
+          });
+        } else if (event.target.value === "priceUp") {
+          products = filtered.sort((a, b) => {
+            return Number(a.price.slice(1)) - Number(b.price.slice(1));
+          });
+        } else if (event.target.value === "ratingDown") {
+          products = filtered.sort((a, b) => {
+            return b.rating - a.rating;
+          });
+        } else if (event.target.value === "ratingUp") {
+          products = filtered.sort((a, b) => {
+            return a.rating - b.rating;
+          });
+        }
+        return {
+          filters,
+          products,
+        };
+      });
+    },
+    [setSortData],
+  );
+
+  const filterCheckbox = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      setSortData((previousState) => {
+        const filters = new Set(previousState.filters);
+        let products = [...data.goods];
+        // const filtered = previousState.products;
+
+        if (event.target.checked) {
+          filters.add(event.target.id);
+        } else {
+          filters.delete(event.target.id);
+        }
+
+        if (filters.size) {
+          // eslint-disable-next-line no-restricted-syntax
+          for (const product of products) {
+            if (filters.has(product.type && product.title)) {
+              products = products.filter((elem) => {
+                return filters.has(elem.type && elem.title);
+              });
+            } else if (filters.has(product.type)) {
+              products = products.filter((elem) => {
+                return filters.has(elem.type);
+              });
+            } else if (filters.has(product.title)) {
+              products = products.filter((elem) => {
+                return filters.has(elem.title);
+              });
+            }
+          }
+        }
         return {
           filters,
           products,
@@ -104,10 +105,30 @@ const CataloguePage: React.FC = () => {
     ({ min, max }: { min: number; max: number }) => {
       setSortData((previousState) => {
         const MinMaxObj = { min, max };
+        console.log(MinMaxObj);
         const filters = new Set(previousState.filters);
-        const filtered = previousState.products;
-        console.log(filtered);
-        const products = filtered.filter((elem) => {
+        let products = [...data.goods];
+
+        if (filters.size) {
+          // eslint-disable-next-line no-restricted-syntax
+          for (const product of products) {
+            if (filters.has(product.type && product.title)) {
+              products = products.filter((elem) => {
+                return filters.has(elem.type && elem.title);
+              });
+            } else if (filters.has(product.type)) {
+              products = products.filter((elem) => {
+                return filters.has(elem.type);
+              });
+            } else if (filters.has(product.title)) {
+              products = products.filter((elem) => {
+                return filters.has(elem.title);
+              });
+            }
+          }
+        }
+
+        products = products.filter((elem) => {
           return (
             Number(elem.price.slice(1)) >= MinMaxObj.min &&
             Number(elem.price.slice(1)) <= MinMaxObj.max
@@ -127,9 +148,28 @@ const CataloguePage: React.FC = () => {
       setSortData((previousState) => {
         const MinMaxObj = { min, max };
         const filters = new Set(previousState.filters);
-        const filtered = previousState.products;
-        console.log(filtered);
-        const products = filtered.filter((elem) => {
+        let products = [...data.goods];
+
+        if (filters.size) {
+          // eslint-disable-next-line no-restricted-syntax
+          for (const product of products) {
+            if (filters.has(product.type && product.title)) {
+              products = products.filter((elem) => {
+                return filters.has(elem.type && elem.title);
+              });
+            } else if (filters.has(product.type)) {
+              products = products.filter((elem) => {
+                return filters.has(elem.type);
+              });
+            } else if (filters.has(product.title)) {
+              products = products.filter((elem) => {
+                return filters.has(elem.title);
+              });
+            }
+          }
+        }
+
+        products = products.filter((elem) => {
           return (
             elem.quantity >= MinMaxObj.min && elem.quantity <= MinMaxObj.max
           );
