@@ -4,7 +4,18 @@ import QuantityInput from "../QuantityInput/QuantityInput";
 import "./PurchasesTableRow.scss";
 import trashIcon from "../../assets/img/svg/trash-icon.svg";
 
-const PurchasesTableRow: React.FC<WineInfo> = ({ title, images, price }) => {
+interface PurchasesTableRowProps extends WineInfo {
+  cartValue: number;
+  classKey: string;
+}
+
+const PurchasesTableRow: React.FC<PurchasesTableRowProps> = ({
+  title,
+  images,
+  price,
+  cartValue,
+  classKey,
+}) => {
   return (
     <tr className="table-row">
       <td className="table-row__img-cell">
@@ -21,7 +32,7 @@ const PurchasesTableRow: React.FC<WineInfo> = ({ title, images, price }) => {
         <p>{price}</p>
       </td>
       <td className="table-row__quantity">
-        <QuantityInput cartValue={1} />
+        <QuantityInput cartValue={cartValue} classKey={classKey} />
       </td>
       <td>
         <p>{price}</p>

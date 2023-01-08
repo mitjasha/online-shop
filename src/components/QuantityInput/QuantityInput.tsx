@@ -5,25 +5,30 @@ import "./QuantityInput.scss";
 interface QuantityInputProps {
   className?: string;
   cartValue: number;
+  classKey: string;
 }
 
 const QuantityInput: React.FC<QuantityInputProps> = ({
   className,
   cartValue,
+  classKey,
 }) => {
   const classes = cn("quantity", className);
+  const inputClasses = cn("quantity__input", `js_quantity${classKey}`);
 
   const increaseQuantity = () => {
-    const value: HTMLInputElement | null =
-      document.querySelector(".quantity__input");
+    const value: HTMLInputElement | null = document.querySelector(
+      `.js_quantity${classKey}`,
+    );
     if (value) {
       value.stepUp();
     }
   };
 
   const decreaseQuantity = () => {
-    const value: HTMLInputElement | null =
-      document.querySelector(".quantity__input");
+    const value: HTMLInputElement | null = document.querySelector(
+      `.js_quantity${classKey}`,
+    );
     if (value) {
       value.stepDown();
     }
@@ -39,7 +44,7 @@ const QuantityInput: React.FC<QuantityInputProps> = ({
         -
       </button>
       <input
-        className="quantity__input"
+        className={inputClasses}
         min="0"
         name="quantity"
         defaultValue={cartValue}

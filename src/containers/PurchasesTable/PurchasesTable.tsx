@@ -33,7 +33,9 @@ const PurchasesTable: React.FC<PurchasesTableProps> = ({
             title={product.title}
             images={product.images}
             price={product.price}
-            key={product.title + index.toString()}
+            key={product.title.slice(0, 2) + index.toString()}
+            cartValue={1}
+            classKey={product.title.slice(0, 2) + index.toString()}
           />
         ))}
       </tbody>
