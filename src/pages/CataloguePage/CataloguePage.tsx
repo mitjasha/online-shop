@@ -175,6 +175,15 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
           elem.checked = false;
         }
       });
+      const selectOptions = document.querySelectorAll(
+        "option",
+      ) as NodeListOf<HTMLOptionElement>;
+      selectOptions.forEach((option) => {
+        const elem = option;
+        if (elem.value === "default") {
+          elem.selected = true;
+        }
+      });
       return {
         filters,
         products,
