@@ -184,6 +184,19 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
           elem.selected = true;
         }
       });
+      const ranges = document.querySelectorAll(
+        "input[type = 'range']",
+      ) as NodeListOf<HTMLInputElement>;
+      ranges.forEach((range) => {
+        const elem = range;
+        console.log(elem);
+        if (elem.id === "price" && elem.name === "a") {
+          elem.value = "5.99";
+        }
+        if (elem.id === "price" && elem.name === "b") {
+          elem.value = "56";
+        }
+      });
       return {
         filters,
         products,
