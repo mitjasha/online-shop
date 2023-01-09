@@ -38,18 +38,21 @@
   display: flex;
   gap: 10px;
 
-  &__two,
-  &__three,
-  &__four {
+  &__icon {
     display: block;
     text-align: center;
     width: 40px;
     height: 40px;
     cursor: pointer;
+  }
+
+  &__btn {
+    background-color: #f9f9f9;
 
     &:hover {
       transform: scale(1.1);
       transition: 0.5s;
+      background-color: #f9f9f9;
     }
   }
 }

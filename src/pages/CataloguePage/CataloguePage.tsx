@@ -197,6 +197,8 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
     });
   };
 
+  const setGridLayout = () => {};
+
   return (
     <div className="catalogue">
       <div className="container">
@@ -204,6 +206,7 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
           sortFunction={sortItems}
           itemsFound={sortData.products.length}
           resetFiltersFn={resetFilters}
+          setGrid={setGridLayout}
         />
         <div className="filters-goods-wrapper">
           <CatalogueFilters
