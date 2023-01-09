@@ -10,11 +10,13 @@ import "./PurchasesTable.scss";
 interface PurchasesTableProps {
   data: WineInfo[];
   rowsPerPage?: number;
+  enterCoupon: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const PurchasesTable: React.FC<PurchasesTableProps> = ({
   data,
   rowsPerPage = 4,
+  enterCoupon,
 }) => {
   const appContext = useAppContext();
   const [cartCountSlice, setCartCount] = useState<number[]>();
@@ -88,7 +90,8 @@ const PurchasesTable: React.FC<PurchasesTableProps> = ({
             <input
               className="purchases-table__promo-input"
               type="text"
-              placeholder="Coupon code"
+              placeholder="NewYear2023, RSSchool"
+              onChange={enterCoupon}
             />
             <Button className="purchases-table__promo-button">
               <span>Apply coupon</span>

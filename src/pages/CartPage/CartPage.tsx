@@ -33,6 +33,41 @@ const CartPage: React.FC<CartPageProps> = ({ data }) => {
     });
   }, [appContext]);
 
+  const enterCouponFn = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value === "NewYear2023") {
+      const apply = document.createElement("tr");
+      (document.querySelector(".total-table__body") as HTMLElement).appendChild(
+        apply,
+      );
+      apply.className = "apply-trow";
+      const applyText = document.createElement("p");
+      const applyBtn = document.createElement("button");
+      apply.appendChild(applyText);
+      apply.appendChild(applyBtn);
+      applyText.style.width = "60%";
+      applyBtn.style.width = "40%";
+      applyText.textContent = `Apply ${event.target.value} promo?`;
+      applyBtn.textContent = "Apply";
+      applyBtn.className = "apply-btn";
+    }
+    if (event.target.value === "RSSchool") {
+      const apply = document.createElement("tr");
+      (document.querySelector(".total-table__body") as HTMLElement).appendChild(
+        apply,
+      );
+      apply.className = "apply-trow";
+      const applyText = document.createElement("p");
+      const applyBtn = document.createElement("button");
+      apply.appendChild(applyText);
+      apply.appendChild(applyBtn);
+      applyText.style.width = "60%";
+      applyBtn.style.width = "40%";
+      applyText.textContent = `Apply ${event.target.value} promo?`;
+      applyBtn.textContent = "Apply";
+      applyBtn.className = "apply-btn";
+    }
+  };
+
   return (
     <div className="cart-page">
       <div className="container cart-page__container">
@@ -42,14 +77,14 @@ const CartPage: React.FC<CartPageProps> = ({ data }) => {
           </span>
         </div>
         <div className="purchases">
-          <PurchasesTable data={data} />
+          <PurchasesTable data={data} enterCoupon={enterCouponFn} />
           <table className="total-table">
             <thead className="total-table__header">
               <tr>
                 <th className="total-table__header-title">Cart totals</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="total-table__body">
               <tr className="total-table__total">
                 <td className="total-table__total-text">
                   Total{" "}
