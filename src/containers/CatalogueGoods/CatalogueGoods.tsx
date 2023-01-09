@@ -6,11 +6,16 @@ import "./CatalogueGoods.scss";
 interface CatalogueGoodsProps {
   data: WineInfo[];
   state: CardsState;
+  style?: React.CSSProperties;
 }
 
-const CatalogueGoods: React.FC<CatalogueGoodsProps> = ({ data, state }) => {
+const CatalogueGoods: React.FC<CatalogueGoodsProps> = ({
+  data,
+  state,
+  style,
+}) => {
   return (
-    <div className="goods">
+    <div className="goods" style={style}>
       {data.map((elem, index) => (
         <CatalogueGoodsCard
           classname="goods__item"

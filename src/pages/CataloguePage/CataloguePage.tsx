@@ -251,7 +251,13 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
             rangeFilterQuant={filterRange}
             copyLinkFn={copyLink}
           />
-          <CatalogueGoods data={sortData.products} state={state} />
+          <CatalogueGoods
+            data={sortData.products}
+            state={state}
+            style={{
+              display: sortData.products.length > 0 ? "grid" : "none",
+            }}
+          />
           <div
             className="not-found"
             style={{
