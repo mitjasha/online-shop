@@ -205,7 +205,35 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
     });
   };
 
-  const setGridLayout = () => {};
+  const setGridLayout = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const target = event.target as HTMLElement;
+    const grid = document.querySelector(".goods") as HTMLElement;
+    if (target.className === "layout-mode__two") {
+      document
+        .querySelector(".active-layout")
+        ?.classList.remove("active-layout");
+      target.className = "layout-mode__two active-layout";
+      grid.style.gridTemplateColumns = "repeat(2, 1fr)";
+      grid.style.columnGap = "calc(68px / 2)";
+      grid.style.padding = "20px 50px 20px 50px";
+    } else if (target.className === "layout-mode__three") {
+      document
+        .querySelector(".active-layout")
+        ?.classList.remove("active-layout");
+      target.className = "layout-mode__three active-layout";
+      grid.style.gridTemplateColumns = "repeat(3, 1fr)";
+      grid.style.columnGap = "calc(68px / 3)";
+      grid.style.padding = "20px 0 20px 20px";
+    } else if (target.className === "layout-mode__four") {
+      document
+        .querySelector(".active-layout")
+        ?.classList.remove("active-layout");
+      target.className = "layout-mode__four active-layout";
+      grid.style.gridTemplateColumns = "repeat(4, 1fr)";
+      grid.style.columnGap = "calc(68px / 4)";
+      grid.style.padding = "20px 0 20px 0";
+    }
+  };
 
   return (
     <div className="catalogue">
