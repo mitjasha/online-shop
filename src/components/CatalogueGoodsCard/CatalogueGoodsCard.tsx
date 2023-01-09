@@ -26,9 +26,12 @@ const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
 }) => {
   const classes = cn("goods-card", classname);
   const appContext = useAppContext();
-  const cartIndex = Object.entries(
-    (appContext as AppContextType).currentCartState?.[0],
-  ).map((entry) => entry[0]);
+  let cartIndex = [] as string[];
+  if ((appContext as AppContextType).currentCartState?.[0]) {
+    cartIndex = Object.entries(
+      (appContext as AppContextType).currentCartState?.[0],
+    ).map((entry) => entry[0]);
+  }
 
   return (
     <div className={classes}>
