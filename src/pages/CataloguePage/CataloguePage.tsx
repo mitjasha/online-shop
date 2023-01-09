@@ -147,10 +147,14 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
     });
   };
 
-  const copyLink = () => {
+  const copyLink = (event: React.MouseEvent<HTMLButtonElement>) => {
     navigator.clipboard.writeText(window.location.href);
-    // eslint-disable-next-line no-alert
-    alert("the link was copied!");
+    const target = event.target as HTMLElement;
+    target.textContent = "the link was copied!";
+    const textBack = () => {
+      target.textContent = "Copy Link";
+    };
+    setTimeout(textBack, 1000);
   };
 
   const resetFilters = () => {
