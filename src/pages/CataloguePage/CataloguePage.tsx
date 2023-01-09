@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import data from "../../assets/data/data.json";
 import CatalogueSettings from "../../components/CatalogueSettings/CatalogueSettings";
@@ -24,8 +24,20 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
     filters: new Set(),
     sort: "default",
   });
+  // const wineType = searchParams.get("wineType");
+  // const brands = searchParams.get("brands");
+  // const price = searchParams.get("price");
+  // const quantity = searchParams.get("quantity");
+  const sortValue = searchParams.get("sortValue");
+  const params = [];
+  const searchs: { [key: string]: string } = {};
 
-  const postQuery = searchParams.get("post") || "";
+  // eslint-disable-next-line no-restricted-syntax
+  for (const entry of searchParams.entries()) {
+    params.push(`${entry[0]}=${entry[1]}`);
+    // eslint-disable-next-line prefer-destructuring
+    searchs[entry[0]] = entry[1];
+  }
 
   const sortAction = (sortType: string, products: WineInfo[]) => {
     if (sortType === "priceDown") {
@@ -54,9 +66,9 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
         const filters = new Set(previousState.filters);
         let { products } = previousState;
         const sort = event.target.value;
-        setSearchParams({ post: sort });
-        if (postQuery) {
-          products = sortAction(postQuery, products);
+        setSearchParams({ ...searchs, sortValue: sort });
+        if (sortValue) {
+          products = sortAction(sortValue, products);
         }
         products = sortAction(sort, products);
         return {
@@ -166,6 +178,7 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
   };
 
   const resetFilters = () => {
+    setSearchParams({});
     setSortData(() => {
       const filters = new Set();
       const products = [...data.goods];
@@ -234,6 +247,8 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
       grid.style.padding = "20px 0 20px 0";
     }
   };
+
+  useEffect(() => {}, []);
 
   return (
     <div className="catalogue">
