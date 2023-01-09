@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
 import cn from "classnames";
 import OrderModal from "../../Modal/OrderModal/OrderModal";
 import "./BuyNowButton.scss";
@@ -14,8 +13,8 @@ const BuyNowButton: React.FC<BuyNowButtonProps> = ({ children, className }) => {
 
   const toggleModal = () => {
     setIsModalVisible((wasModalVisible) => !wasModalVisible);
-    <Navigate to="/cart" />;
   };
+
   const classes = cn("button", className);
   return (
     <>
