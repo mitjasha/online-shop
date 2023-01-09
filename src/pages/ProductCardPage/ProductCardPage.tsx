@@ -19,11 +19,12 @@ const ProductCardPage: React.FC = () => {
     return <Navigate to="/404" />;
   }
 
-  const cartIndex = Object.entries(
-    (appContext as AppContextType).currentCartState?.[0],
-  ).map((entry) => entry[0]);
-
-  console.log(cartIndex);
+  let cartIndex = [] as string[];
+  if ((appContext as AppContextType).currentCartState?.[0]) {
+    cartIndex = Object.entries(
+      (appContext as AppContextType).currentCartState?.[0],
+    ).map((entry) => entry[0]);
+  }
 
   return (
     <main className="product-page">

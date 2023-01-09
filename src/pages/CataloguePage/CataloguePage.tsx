@@ -254,6 +254,7 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
           <CatalogueGoods
             data={sortData.products}
             state={state}
+            initData={data.goods}
             style={{
               display: sortData.products.length > 0 ? "grid" : "none",
             }}
