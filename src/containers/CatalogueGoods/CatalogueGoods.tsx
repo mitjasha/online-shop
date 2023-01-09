@@ -5,6 +5,7 @@ import "./CatalogueGoods.scss";
 
 interface CatalogueGoodsProps {
   data: WineInfo[];
+  initData: WineInfo[];
   state: CardsState;
   style?: React.CSSProperties;
 }
@@ -13,6 +14,7 @@ const CatalogueGoods: React.FC<CatalogueGoodsProps> = ({
   data,
   state,
   style,
+  initData,
 }) => {
   return (
     <div className="goods" style={style}>
@@ -20,7 +22,7 @@ const CatalogueGoods: React.FC<CatalogueGoodsProps> = ({
         <CatalogueGoodsCard
           classname="goods__item"
           data={elem}
-          id={data.findIndex((object) => {
+          id={initData.findIndex((object) => {
             return object === elem;
           })}
           key={elem.title + index.toString()}
