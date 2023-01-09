@@ -162,42 +162,38 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
       const filters = new Set();
       const products = [...data.goods];
       const sort = "default";
-      const checkboxes = document.querySelectorAll(
-        "input[type = 'checkbox']",
-      ) as NodeListOf<HTMLInputElement>;
-      checkboxes.forEach((checkbox) => {
-        const elem = checkbox;
-        if (elem.checked === true) {
-          elem.checked = false;
-        }
-      });
-      const selectOptions = document.querySelectorAll(
-        "option",
-      ) as NodeListOf<HTMLOptionElement>;
-      selectOptions.forEach((option) => {
-        const elem = option;
-        if (elem.value === "default") {
-          elem.selected = true;
-        }
-      });
-      const ranges = document.querySelectorAll(
-        "input[type = 'range']",
-      ) as NodeListOf<HTMLInputElement>;
-      ranges.forEach((range) => {
-        const elem = range;
-        console.log(elem);
-        if (elem.id === "price" && elem.name === "a") {
-          elem.value = "5.99";
-        }
-        if (elem.id === "price" && elem.name === "b") {
-          elem.value = "56";
-        }
-      });
       return {
         filters,
         products,
         sort,
       };
+    });
+    const checkboxes = document.querySelectorAll(
+      "input[type = 'checkbox']",
+    ) as NodeListOf<HTMLInputElement>;
+    checkboxes.forEach((checkbox) => {
+      const elem = checkbox;
+      if (elem.checked === true) {
+        elem.checked = false;
+      }
+    });
+    const selectOptions = document.querySelectorAll(
+      "option",
+    ) as NodeListOf<HTMLOptionElement>;
+    selectOptions.forEach((option) => {
+      const elem = option;
+      if (elem.value === "default") {
+        elem.selected = true;
+      }
+    });
+    const ranges = document.querySelectorAll(
+      "input[type = 'range']",
+    ) as NodeListOf<HTMLInputElement>;
+    ranges.forEach((range) => {
+      const elem = range;
+      if (elem.name === "a") {
+        elem.value = elem.min;
+      } else elem.value = elem.max;
     });
   };
 
