@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../Buttons/Button/Button";
 import twoGrid from "../../assets/img/png/two.png";
 import threeGrid from "../../assets/img/png/three.png";
 import fourGrid from "../../assets/img/png/four.png";
@@ -9,7 +8,7 @@ interface SettingsProps {
   sortFunction: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   itemsFound: number;
   resetFiltersFn: () => void;
-  setGrid: () => void;
+  setGrid: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const CatalogueSettings: React.FC<SettingsProps> = ({
@@ -42,19 +41,19 @@ const CatalogueSettings: React.FC<SettingsProps> = ({
         <option value="ratingUp">Sort by rating ↑</option>
       </select>
       <div className="layout-mode">
-        <Button onClick={setGrid} className="layout-mode__btn">
-          <img src={twoGrid} alt="two grid" className="layout-mode__icon" />
-        </Button>
-        <Button onClick={setGrid} className="layout-mode__btn">
+        <button type="button" onClick={setGrid} className="layout-mode__btn">
+          <img src={twoGrid} alt="two grid" className="layout-mode__two" />
+        </button>
+        <button type="button" onClick={setGrid} className="layout-mode__btn">
           <img
             src={threeGrid}
             alt="three grid"
-            className="layout-mode__icon active-layout"
+            className="layout-mode__three active-layout"
           />
-        </Button>
-        <Button onClick={setGrid} className="layout-mode__btn">
-          <img src={fourGrid} alt="four grid" className="layout-mode__icon" />
-        </Button>
+        </button>
+        <button type="button" onClick={setGrid} className="layout-mode__btn">
+          <img src={fourGrid} alt="four grid" className="layout-mode__four" />
+        </button>
       </div>
     </div>
   );
