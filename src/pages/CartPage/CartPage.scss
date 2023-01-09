@@ -84,3 +84,34 @@
     }
   }
 }
+
+.apply-btn {
+  cursor: pointer;
+  background-color: #333333;
+  color: #ededed;
+  height: 40px;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  &:hover {
+    background-color: #a1a1a1;
+    border: 0;
+    transition: 0.4s;
+  }
+}
+
+.new-price-row {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
+.applied-list {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.applied-item {
+  text-align: center;
+}
