@@ -160,7 +160,11 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
             rangeFilterPrice={filterRange}
             rangeFilterQuant={filterRange}
           />
-          <CatalogueGoods data={sortData.products} state={state} />
+          <CatalogueGoods
+            data={sortData.products}
+            state={state}
+            initData={data.goods}
+          />
           <div
             className="not-found"
             style={{
