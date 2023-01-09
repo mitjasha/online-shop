@@ -10,6 +10,7 @@ import Page404 from "./pages/Page404/Page404";
 import { CardsState, WineInfo } from "./utils/helpers/interfaces";
 import data from "./assets/data/data.json";
 import AppContext, { AppContextType } from "./context";
+import ContactsPage from "./pages/ContactsPage/ContactsPage";
 
 let state: CardsState = {
   currentCards: [],
@@ -55,6 +56,7 @@ const App: React.FC = () => {
           <Route path="/catalogue" element={<CataloguePage state={state} />} />
           <Route path="/product/:id" element={<ProductCardPage />} />
           <Route path="/cart" element={<CartPage data={cartFilter()} />} />
+          <Route path="/contacts" element={<ContactsPage />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </main>
