@@ -98,8 +98,12 @@
     }
 
     &__buy-now {
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #ffffff;
       margin: 0 40px;
       max-width: 460px;
+      width: 100%;
       height: 43px;
       color: #fff;
     }

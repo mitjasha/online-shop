@@ -8,12 +8,22 @@ import QuantityInput from "../../components/QuantityInput/QuantityInput";
 import Button from "../../components/Buttons/Button/Button";
 import heartIcon from "../../assets/img/svg/heart-icon.svg";
 import "./ProductCardPage.scss";
+import CartButton from "../../components/Buttons/CartButton/CartButton";
+import { AppContextType, useAppContext } from "../../context";
+import BuyNowButton from "../../components/Buttons/BuyNowButton/BuyNowButton";
 
 const ProductCardPage: React.FC = () => {
+  const appContext = useAppContext();
   const { id } = useParams();
   if ((!Number(id) && Number(id) !== 0) || Number(id) >= data.goods.length) {
     return <Navigate to="/404" />;
   }
+
+  const cartIndex = Object.entries(
+    (appContext as AppContextType).currentCartState?.[0],
+  ).map((entry) => entry[0]);
+
+  console.log(cartIndex);
 
   return (
     <main className="product-page">
@@ -48,7 +58,15 @@ const ProductCardPage: React.FC = () => {
               classKey="product-card"
               id={Number(id)}
             />
-            <Button className="product-info__add-button">Add to cart</Button>
+            <CartButton
+              className="product-info__add-button"
+              action
+              id={Number(id)}
+            >
+              {cartIndex.includes(id as string)
+                ? " Product in cart"
+                : "Add to cart"}
+            </CartButton>
             <Button className="product-info__favourites">
               <img
                 src={heartIcon}
@@ -57,7 +75,7 @@ const ProductCardPage: React.FC = () => {
               />
             </Button>
           </div>
-          <Button className="product-info__buy-now">BUY NOW</Button>
+          <BuyNowButton className="product-info__buy-now">BUY NOW</BuyNowButton>
         </div>
       </div>
       <div className="container related-products__container">
