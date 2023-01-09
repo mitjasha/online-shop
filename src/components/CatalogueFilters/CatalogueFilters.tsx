@@ -17,7 +17,7 @@ interface FilterProps {
     { min, max }: { min: number; max: number },
     type: string,
   ) => void;
-  copyLinkFn: () => void;
+  copyLinkFn: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const CatalogueFilters: React.FC<FilterProps> = ({
