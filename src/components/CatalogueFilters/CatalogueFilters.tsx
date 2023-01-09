@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../Buttons/Button/Button";
 import RangeInput from "../RangeInput/RangeInput";
 import CheckboxInput from "../CheckboxInput/CheckboxInput";
 import { WineType, Titles } from "../../utils/helpers/interfaces";
@@ -18,12 +17,14 @@ interface FilterProps {
     { min, max }: { min: number; max: number },
     type: string,
   ) => void;
+  copyLinkFn: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const CatalogueFilters: React.FC<FilterProps> = ({
   filterFunction,
   rangeFilterPrice,
   rangeFilterQuant,
+  copyLinkFn,
 }) => {
   return (
     <div className="filters">
@@ -57,7 +58,9 @@ const CatalogueFilters: React.FC<FilterProps> = ({
           rangeFilterQuant({ min, max }, type);
         }}
       />
-      <Button className="filters__copy-link">Copy Link</Button>
+      <button type="button" className="filters__copy-link" onClick={copyLinkFn}>
+        Copy Link
+      </button>
     </div>
   );
 };

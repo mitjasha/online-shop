@@ -7,15 +7,17 @@ interface CatalogueGoodsProps {
   data: WineInfo[];
   initData: WineInfo[];
   state: CardsState;
+  style?: React.CSSProperties;
 }
 
 const CatalogueGoods: React.FC<CatalogueGoodsProps> = ({
   data,
   state,
+  style,
   initData,
 }) => {
   return (
-    <div className="goods">
+    <div className="goods" style={style}>
       {data.map((elem, index) => (
         <CatalogueGoodsCard
           classname="goods__item"

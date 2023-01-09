@@ -12,6 +12,10 @@
     height: 100%;
     background-color: #333333;
     color: #f9f9f9;
+    background-color: #333333;
+    transition: all 0.4s ease 0s;
+    font-size: 16px;
+    cursor: pointer;
   }
 
   &__reset:hover {
@@ -39,13 +43,22 @@
   &__four {
     display: block;
     text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__btn {
+    background-color: #f9f9f9;
     width: 40px;
     height: 40px;
+    border: 0;
     cursor: pointer;
+    padding: 0;
 
     &:hover {
       transform: scale(1.1);
       transition: 0.5s;
+      background-color: #f9f9f9;
     }
   }
 }

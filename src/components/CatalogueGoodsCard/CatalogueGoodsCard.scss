@@ -1,6 +1,6 @@
 .goods-card {
   position: relative;
-  width: 260px;
+  width: 100%;
   box-shadow: 0 10px 18px -9px rgb(194, 188, 188);
 
   &:hover {
@@ -13,8 +13,7 @@
   }
 
   &__image {
-    width: 260px;
-    height: 384px;
+    width: 100%;
     cursor: pointer;
   }
 

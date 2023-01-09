@@ -147,23 +147,109 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ state }) => {
     });
   };
 
+  const copyLink = (event: React.MouseEvent<HTMLButtonElement>) => {
+    navigator.clipboard.writeText(window.location.href);
+    const target = event.target as HTMLElement;
+    target.textContent = "the link was copied!";
+    const textBack = () => {
+      target.textContent = "Copy Link";
+    };
+    setTimeout(textBack, 1000);
+  };
+
+  const resetFilters = () => {
+    setSortData(() => {
+      const filters = new Set();
+      const products = [...data.goods];
+      const sort = "default";
+      return {
+        filters,
+        products,
+        sort,
+      };
+    });
+    const checkboxes = document.querySelectorAll(
+      "input[type = 'checkbox']",
+    ) as NodeListOf<HTMLInputElement>;
+    checkboxes.forEach((checkbox) => {
+      const elem = checkbox;
+      if (elem.checked === true) {
+        elem.checked = false;
+      }
+    });
+    const selectOptions = document.querySelectorAll(
+      "option",
+    ) as NodeListOf<HTMLOptionElement>;
+    selectOptions.forEach((option) => {
+      const elem = option;
+      if (elem.value === "default") {
+        elem.selected = true;
+      }
+    });
+    const ranges = document.querySelectorAll(
+      "input[type = 'range']",
+    ) as NodeListOf<HTMLInputElement>;
+    ranges.forEach((range) => {
+      const elem = range;
+      if (elem.name === "a") {
+        elem.value = elem.min;
+      } else elem.value = elem.max;
+    });
+  };
+
+  const setGridLayout = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const target = event.target as HTMLElement;
+    const grid = document.querySelector(".goods") as HTMLElement;
+    if (target.className === "layout-mode__two") {
+      document
+        .querySelector(".active-layout")
+        ?.classList.remove("active-layout");
+      target.className = "layout-mode__two active-layout";
+      grid.style.gridTemplateColumns = "repeat(2, 1fr)";
+      grid.style.columnGap = "calc(68px / 2)";
+      grid.style.padding = "20px 50px 20px 50px";
+    } else if (target.className === "layout-mode__three") {
+      document
+        .querySelector(".active-layout")
+        ?.classList.remove("active-layout");
+      target.className = "layout-mode__three active-layout";
+      grid.style.gridTemplateColumns = "repeat(3, 1fr)";
+      grid.style.columnGap = "calc(68px / 3)";
+      grid.style.padding = "20px 0 20px 20px";
+    } else if (target.className === "layout-mode__four") {
+      document
+        .querySelector(".active-layout")
+        ?.classList.remove("active-layout");
+      target.className = "layout-mode__four active-layout";
+      grid.style.gridTemplateColumns = "repeat(4, 1fr)";
+      grid.style.columnGap = "calc(68px / 4)";
+      grid.style.padding = "20px 0 20px 0";
+    }
+  };
+
   return (
     <div className="catalogue">
       <div className="container">
         <CatalogueSettings
           sortFunction={sortItems}
           itemsFound={sortData.products.length}
+          resetFiltersFn={resetFilters}
+          setGrid={setGridLayout}
         />
         <div className="filters-goods-wrapper">
           <CatalogueFilters
             filterFunction={filterCheckbox}
             rangeFilterPrice={filterRange}
             rangeFilterQuant={filterRange}
+            copyLinkFn={copyLink}
           />
           <CatalogueGoods
             data={sortData.products}
             state={state}
             initData={data.goods}
+            style={{
+              display: sortData.products.length > 0 ? "grid" : "none",
+            }}
           />
           <div
             className="not-found"
