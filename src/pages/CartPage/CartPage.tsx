@@ -33,39 +33,71 @@ const CartPage: React.FC<CartPageProps> = ({ data }) => {
     });
   }, [appContext]);
 
+  const appliedArr: string[] = [];
+
   const enterCouponFn = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.value === "NewYear2023") {
-      const apply = document.createElement("tr");
-      (document.querySelector(".total-table__body") as HTMLElement).appendChild(
-        apply,
+    const applyBtn = document.querySelector(
+      ".purchases-table__promo-button",
+    ) as HTMLButtonElement;
+    const tableBody = document.querySelector(
+      ".total-table__body",
+    ) as HTMLElement;
+    if (
+      (event.target.value === "NewYear2023" ||
+        event.target.value === "RSSchool") &&
+      !appliedArr.includes(event.target.value)
+    ) {
+      applyBtn.disabled = false;
+      applyBtn.addEventListener(
+        "click",
+        () => {
+          if (!document.querySelector(".applied-list")) {
+            const applied = document.createElement("tr");
+            applied.className = "applied-list";
+            applied.textContent = "Applied coupons:";
+            tableBody.appendChild(applied);
+            (
+              document.querySelector(".total-table__total-value") as HTMLElement
+            ).style.textDecoration = "line-through";
+            const newPriceRow = document.createElement("tr");
+            (
+              document.querySelector(".total-table__total") as HTMLElement
+            ).after(newPriceRow);
+            const newPriceText = document.createElement("td");
+            const newPriceTotal = document.createElement("span");
+            newPriceRow.appendChild(newPriceText);
+            newPriceRow.appendChild(newPriceTotal);
+            newPriceText.className = "total-table__total-text";
+            newPriceTotal.className = "total-table__total-value new-price";
+            newPriceRow.className = "new-price-row";
+            newPriceTotal.textContent = `$${(
+              Number(total.price.toFixed(2)) -
+              (Number(total.price.toFixed(2)) / 100) * 10
+            ).toFixed(2)}`;
+            newPriceText.textContent = "NEW PRICE";
+            (
+              document.querySelector(".total-table__submit") as HTMLElement
+            ).style.paddingTop = "20px";
+          }
+          if (!appliedArr.includes(event.target.value)) {
+            if (appliedArr.length !== 0) {
+              (
+                document.querySelector(".new-price") as HTMLElement
+              ).textContent = `$${(
+                Number(total.price.toFixed(2)) -
+                (Number(total.price.toFixed(2)) / 100) * 20
+              ).toFixed(2)}`;
+            }
+            appliedArr.push(event.target.value);
+            const listItem = document.createElement("tr");
+            listItem.className = "applied-item";
+            listItem.textContent = `${event.target.value} -10%`;
+            tableBody.appendChild(listItem);
+          } else applyBtn.disabled = true;
+        },
+        { once: true },
       );
-      apply.className = "apply-trow";
-      const applyText = document.createElement("p");
-      const applyBtn = document.createElement("button");
-      apply.appendChild(applyText);
-      apply.appendChild(applyBtn);
-      applyText.style.width = "60%";
-      applyBtn.style.width = "40%";
-      applyText.textContent = `Apply ${event.target.value} promo?`;
-      applyBtn.textContent = "Apply";
-      applyBtn.className = "apply-btn";
-    }
-    if (event.target.value === "RSSchool") {
-      const apply = document.createElement("tr");
-      (document.querySelector(".total-table__body") as HTMLElement).appendChild(
-        apply,
-      );
-      apply.className = "apply-trow";
-      const applyText = document.createElement("p");
-      const applyBtn = document.createElement("button");
-      apply.appendChild(applyText);
-      apply.appendChild(applyBtn);
-      applyText.style.width = "60%";
-      applyBtn.style.width = "40%";
-      applyText.textContent = `Apply ${event.target.value} promo?`;
-      applyBtn.textContent = "Apply";
-      applyBtn.className = "apply-btn";
-    }
+    } else applyBtn.disabled = true;
   };
 
   return (

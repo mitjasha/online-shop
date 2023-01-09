@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Button from "../../components/Buttons/Button/Button";
 import CartPagination from "../../components/CartPagination/CartPagination";
 import PurchasesTableRow from "../../components/PurchasesTableRow/PurchasesTableRow";
 import { useAppContext } from "../../context";
@@ -93,9 +92,13 @@ const PurchasesTable: React.FC<PurchasesTableProps> = ({
               placeholder="NewYear2023, RSSchool"
               onChange={enterCoupon}
             />
-            <Button className="purchases-table__promo-button">
+            <button
+              type="submit"
+              disabled
+              className="purchases-table__promo-button"
+            >
               <span>Apply coupon</span>
-            </Button>
+            </button>
           </td>
         </tr>
       </tfoot>
