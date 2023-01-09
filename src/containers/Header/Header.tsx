@@ -5,15 +5,17 @@ import cartIcon from "../../assets/img/svg/cart-icon.svg";
 import LogoComponent from "../../components/LogoComponent/LogoComponent";
 import SearchComponent from "../../components/SearchComponent/SearchComponent";
 import MainMenuNavigation from "../../components/MainMenuNavigation/MainMenuNavigation";
+import SearchResult from "../../components/SearchResult/SearchResult";
 import "./Header.scss";
 import { WineInfo } from "../../utils/helpers/interfaces";
 import totalSolver from "../../utils/helpers/totalSum";
 
 interface HeaderProps {
   data: WineInfo[];
+  initData: WineInfo[];
 }
 
-const Header: React.FC<HeaderProps> = ({ data }) => {
+const Header: React.FC<HeaderProps> = ({ data, initData }) => {
   const appContext = useAppContext();
   const cart: { [key: string]: number } = Object.assign(
     {},
@@ -28,6 +30,8 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
     }, 0),
   });
 
+  const [searchedKeyword, setSearchedKeyword] = useState("");
+
   useEffect(() => {
     setTotal({
       price: totalSolver(data, cart),
@@ -37,13 +41,36 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
     });
   }, [appContext]);
 
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchedKeyword(event.target.value);
+  };
+
   return (
     <header className="header">
       <div className="container">
         <div className="header__wrapper">
           <LogoComponent />
           <div className="wrapper__items">
-            <SearchComponent />
+            <SearchComponent
+              onSearchChange={handleSearchChange}
+              searchedKeyword={searchedKeyword}
+            />
+            {searchedKeyword && (
+              <div className="livesearch">
+                {initData
+                  .filter((elem) => elem.title.includes(searchedKeyword))
+                  .map((elem, index) => (
+                    <SearchResult
+                      classname="livesearch__item"
+                      data={elem}
+                      id={initData.findIndex((object) => {
+                        return object === elem;
+                      })}
+                      key={elem.title + index.toString()}
+                    />
+                  ))}
+              </div>
+            )}
             <div className="shopping-info">
               <div className="total-sum">Total: ${total.price.toFixed(2)}</div>
               <img src={heartIcon} alt="favorities" className="favorities" />

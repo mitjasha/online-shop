@@ -35,7 +35,12 @@ const CatalogueGoodsCard: React.FC<CatalogueGoodsCardProps> = ({
 
   return (
     <div className={classes}>
-      <Link className="goods-card__link-container" to={`/product/${id}`}>
+      <Link
+        className="goods-card__link-container"
+        to={`/product/${id}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <img
           src={data.images?.[0]}
           alt={data.title}

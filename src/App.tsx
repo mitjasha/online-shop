@@ -48,7 +48,7 @@ const App: React.FC = () => {
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AppContext.Provider value={{ currentCartState, setCurrentCartState }}>
-      <Header data={cartFilter()} />
+      <Header data={cartFilter()} initData={data.goods} />
       <main className="main-app">
         <Routes>
           <Route path="/" element={<MainPage />} />
