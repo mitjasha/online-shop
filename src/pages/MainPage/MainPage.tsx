@@ -17,6 +17,12 @@ const categoryImageArray = [
 ];
 
 const MainPage: React.FC = () => {
+  const copyCoupon = () => {
+    navigator.clipboard.writeText("NewYear2023");
+    // eslint-disable-next-line no-alert
+    alert("The coupon was copied! Apply it on cart page!");
+  };
+
   return (
     <main className="main">
       <section className="preview">
@@ -50,9 +56,13 @@ const MainPage: React.FC = () => {
                 GET <span className="text__bold">10%</span> OFF WITH OUR
                 CHRISTMAS COUPON
               </p>
-              <Button className="coupon__button">
+              <button
+                type="button"
+                className="coupon__button"
+                onClick={copyCoupon}
+              >
                 <img src={couponBtnImg} alt="coupon" />
-              </Button>
+              </button>
             </div>
           </div>
           <hr className="break-line" />
