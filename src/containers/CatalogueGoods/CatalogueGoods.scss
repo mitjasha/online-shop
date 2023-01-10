@@ -1,0 +1,11 @@
+.goods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  column-gap: calc(68px / 3);
+  padding: 20px 0 20px 20px;
+
+  &__item {
+    margin-bottom: 20px;
+  }
+}

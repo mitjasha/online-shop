@@ -1,0 +1,674 @@
+{
+  "goods": [
+    {
+      "title": "Kristinus",
+      "type": "Red wine",
+      "country": "Hungary",
+      "region": "Balaton",
+      "grapes": "Merlot",
+      "rating": 3.8,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/1.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/1.1.png"
+      ],
+      "price": "$10.44",
+      "quantity": 15,
+      "year": 2012,
+      "description": "Elegant and young Bordeaux blend (Merlot 67%, Cab Franc 19% and Cab Sav 14%) from South Balaton region. Expressed enough aroma of dark/red berries and bright cherry, wood and spices, chocolate, skin and smoked meat. Dry, high acidity, tannins are green and strong, medium body, taste is well structured and balanced, with lots to develop in future and already has good colors, lengthy finish."
+    },
+    {
+      "title": "Eco Terreno",
+      "type": "Red wine",
+      "country": "United States",
+      "region": "California",
+      "grapes": "Cabernet Sauvignon",
+      "rating": 4.1,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/2.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/2.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/2.2.jpg"
+      ],
+      "price": "$28.90",
+      "quantity": 11,
+      "year": 2015,
+      "description": "Deep crimson red colour Bouquet: medium expressed bouquet offering scents of red and dark fruits, liquorice and oak Palate: full bodied, structured wine with a good acidity and firm tannins. It shows notes of blackberries, black currant, vanilla , nutmeg, oak."
+    },
+    {
+      "title": "Layer Cake",
+      "type": "Red wine",
+      "country": "United States",
+      "region": "California",
+      "grapes": "Cabernet Sauvignon",
+      "rating": 3.6,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/3.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/3.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/3.2.jpg"
+      ],
+      "price": "$13.99",
+      "quantity": 19,
+      "year": 2009,
+      "description": "This Cabernet Sauvignon truly expresses the depth and complexity of the grape. Perfumed with violets and wild berries, it shows strong varietal characters and rich, ripe plum fruit. Seamless and elegant, this wine shows big black fruit on the palette, fine grain soft tannins and a long coffee chocolate finish."
+    },
+    {
+      "title": "Avaline",
+      "type": "Red wine",
+      "country": "France",
+      "region": "",
+      "grapes": "Grenache",
+      "rating": 3.6,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/4.0.webp",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/4.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/4.2.webp",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/4.3.webp"
+      ],
+      "price": "$20.99",
+      "quantity": 12,
+      "year": 2020,
+      "description": "Cameron’s favorite Red: it has a light to medium body with hints of cherry and a touch of spice."
+    },
+    {
+      "title": "La Crema",
+      "type": "Red wine",
+      "country": "United States",
+      "region": "California",
+      "grapes": "Pinot Noir",
+      "rating": 4.0,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/5.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/5.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/5.2.jpg"
+      ],
+      "price": "$21.35",
+      "quantity": 19,
+      "year": 2017,
+      "description": "Aromas of blackberry, cherry, leather, and tobacco with ­flavors of red cherry, raspberry, and boysenberry. Subtle hints of espresso and cocoa nib underpin notes of exotic spice and toast. The fine tannins are balanced acidity drive a long finish."
+    },
+    {
+      "title": "Z.Alexander Brown",
+      "type": "Red wine",
+      "country": "United States",
+      "region": "California",
+      "grapes": "Pinot Noir",
+      "rating": 3.9,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/6.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/6.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/6.2.jpg"
+      ],
+      "price": "$16",
+      "quantity": 9,
+      "year": 2020,
+      "description": "This lush and layered Pinot Noir is overflowing with intense aromas of black cherry, vanilla and toasty oak. Smooth with supple tannins, robust flavors of fresh raspberry jam and strawberry are complemented by silky underpinnings of rich mocha and caramel. Jammy and voluminous, rich juicy ripe fruit lingers on through the finish."
+    },
+    {
+      "title": "Casa Gran del Siurana",
+      "type": "Red wine",
+      "country": "Spain",
+      "region": "Priorat",
+      "grapes": "Garnacha",
+      "rating": 4.1,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/7.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/7.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/7.2.jpg"
+      ],
+      "price": "$25",
+      "quantity": 17,
+      "year": 2016,
+      "description": "La Fredat 2016 is a concentrated red wine with aromas of red berries, floral notes and spicy and roasted touches. On the palate it is sweet, deep and round. A wine with soft and elegant tannins and a very good structure."
+    },
+    {
+      "title": "Parker Coonawarra Estate",
+      "type": "Red wine",
+      "country": "Australia",
+      "region": "Coonawarra",
+      "grapes": "Cabernet Sauvignon",
+      "rating": 3.9,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/8.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/8.1.png"
+      ],
+      "price": "$56",
+      "quantity": 7,
+      "year": 2019,
+      "description": "Terra Rossa Cabernet Sauvignon is sourced from a total of seven separate and unique Cabernet Sauvignon blocks on the Parker Estate ‘Abbey’ vineyard. A powerful Red of earthiness, lavish spicy oak seasoning and dark, red fruited appeal. It is `classic` Coonawarra in its depth and slightly rugged, dark fruited flavours and texture, with a tight, firm finish that says `best over the next decade or so`. Shows a heartiness and savouriness at once."
+    },
+    {
+      "title": "Prunotto",
+      "type": "Red wine",
+      "country": "Italy",
+      "region": "Nebbiolo d'Alba",
+      "grapes": "Nebbiolo",
+      "rating": 3.7,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/10.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/10.1.png"
+      ],
+      "price": "$48.99",
+      "quantity": 19,
+      "year": 2016,
+      "description": "Occhetti is ruby red in color with garnet hues, typical of this grape variety. Its nose is elegant with notes of raspberries that smoothly merge with hints of roses and licorice. The palate is full, harmonious with a lengthy tannin-rich finish."
+    },
+    {
+      "title": "Bread & Butter",
+      "type": "Red wine",
+      "country": "United States",
+      "region": "California",
+      "grapes": "Pinot Noir",
+      "rating": 4.0,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/9.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/red/9.1.png"
+      ],
+      "price": "$11.99",
+      "quantity": 11,
+      "year": 2019,
+      "description": "Based in California Napa Valley, Bread & Butter makes easy-going and approachable wines for everyday occasions year round. This pinot noir shows generous fruit with notes of oak toast, mixed berries and red plum. Floral and nutty hints grace a long, silky finish. Serve with grilled salmon, duck breast or mushroom risotto."
+    },
+    {
+      "title": "Toi Toi",
+      "type": "White wine",
+      "country": "New Zealand",
+      "region": "Marlborough",
+      "grapes": "Sauvignon Blanc",
+      "rating": 3.8,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/1.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/1.1.png"
+      ],
+      "price": "$15.99",
+      "quantity": 7,
+      "year": 2020,
+      "description": "Pale straw in colour with intense aromatic notes on the nose consisting of passionfruit, kiwi fruit, feijoa and musk characters, leading to a lively palate that is crisp and flavoursome."
+    },
+    {
+      "title": "Avaline",
+      "type": "White wine",
+      "country": "France",
+      "region": "",
+      "grapes": "Xarel-lo",
+      "rating": 3.7,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/2.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/2.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/2.2.webp",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/2.3.webp",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/2.4.webp"
+      ],
+      "price": "$20.28",
+      "quantity": 15,
+      "year": 2020,
+      "description": "An everyday, easy-drinking White. It’s dry with a touch of citrus and a crisp, fresh finish."
+    },
+    {
+      "title": "Franzen",
+      "type": "White wine",
+      "country": "Germany",
+      "region": "Mosel",
+      "grapes": "Riesling",
+      "rating": 4.3,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/3.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/3.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/3.2.jpg"
+      ],
+      "price": "$22.75",
+      "quantity": 6,
+      "year": 2018,
+      "description": "“Zeit” means “time” and this wine fermented, spontaneously, for 426 days before it could not go further and ended with 16 grams/L residual sugar and 7.6 acid. The label showcases an old photo of the Clamont vineyard, from which all the grapes in this wine harken, but it also is a reminder of a time with this kind of élevage was normal. Kilian explains that “every year, one tank takes forever, and what can we do? We wait and wait and if it doesn’t get dry, it must be where the wine wants to be.” It’s richly textured, leesy, but also crunchy with apples, honeydew and pink peppercorn spice. It’s a throwback wine to former times, but it’s also a fresh and intriguing offering from the Franzens."
+    },
+    {
+      "title": "Plaimont",
+      "type": "White wine",
+      "country": "France",
+      "region": "Pyrenées",
+      "grapes": "Petit Courbu",
+      "rating": 3.9,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/4.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/4.1.png"
+      ],
+      "price": "$7.20",
+      "quantity": 14,
+      "year": 2017,
+      "description": "Intense aromas of yellow fruits. Great freshness with citrus notes. Rich and harmonious taste, which seduces with its aromas of grapefruit, peach, pear and apricot."
+    },
+    {
+      "title": "Toi Toi",
+      "type": "White wine",
+      "country": "New Zealand",
+      "region": "Marlborough",
+      "grapes": "Pinot Gris",
+      "rating": 3.7,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/5.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/5.1.png"
+      ],
+      "price": "$8.49",
+      "quantity": 4,
+      "year": 2019,
+      "description": "Crisp, bright and fresh fruited bouquet with white peach and lemon, apple and soft sweet herb.  Just dry with a little residual sweetness."
+    },
+    {
+      "title": "Ancient Peaks",
+      "type": "White wine",
+      "country": "United States",
+      "region": "California",
+      "grapes": "Sauvignon Blanc",
+      "rating": 3.7,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/6.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/6.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/6.2.jpg"
+      ],
+      "price": "$14.99",
+      "quantity": 14,
+      "year": 2020,
+      "description": "The 2020 Sauvignon Blanc presents fresh, lively aromas of white peach, grapefruit and guava. A clean, punchy texture delivers bright flavors of white grape, apricot, melon, lime zest and tropical fruit. Tangy acidity and hints of stony minerality add lift to a quenching, energetic finish."
+    },
+    {
+      "title": "Dubicz",
+      "type": "White wine",
+      "country": "Hungary",
+      "region": "Mátra",
+      "grapes": "Irsai Oliver",
+      "rating": 3.7,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/7.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/7.1.png"
+      ],
+      "price": "$5.99",
+      "quantity": 19,
+      "year": 2017,
+      "description": "Clear in its appearance, with a hint of green tone. Its scent is typical for this sort of grape: a variety of spring flower and elderflower. Tastes like flowers. Great acids, a little CO2, typical of its kind."
+    },
+    {
+      "title": "Quintarelli Giuseppe",
+      "type": "White wine",
+      "country": "Italy",
+      "region": "Veneto",
+      "grapes": "Garganega",
+      "rating": 4.3,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/8.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/8.1.png"
+      ],
+      "price": "$54.99",
+      "quantity": 10,
+      "year": 2020,
+      "description": "Incredibly, this is the only white wine made by Quintarelli. This is a unique blend of the classic Veneto grape Garganega and a handful of non-indigenous varieties like Chardonnay and Sauvignon Blanc planted in limestone and basalt soils."
+    },
+    {
+      "title": "Domaine Courbis",
+      "type": "White wine",
+      "country": "France",
+      "region": "Saint-Joseph",
+      "grapes": "Marsanne",
+      "rating": 3.9,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/9.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/9.1.png"
+      ],
+      "price": "$54.42",
+      "quantity": 19,
+      "year": 2021,
+      "description": "The wine is fermented in tanks at low temperatures, and aged in one third in new barriques (with weekly batônnage) and two thirds in tanks. It is kept on its fine lees until the Spring after the harvest to develop additional complexity. Courbis assembles and bottles the white after 10-12 months of maturation. It is a lively and intense wine with distinct flavors of tree fruits (apricots, nectarines) and a spicy touch."
+    },
+    {
+      "title": "Amity",
+      "type": "White wine",
+      "country": "United States",
+      "region": "Oregon",
+      "grapes": "Pinot Noir",
+      "rating": 4.1,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/10.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/10.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/white/10.2.jpg"
+      ],
+      "price": "$19.99",
+      "quantity": 22,
+      "year": 2021,
+      "description": "The Amity White Pinot Noir was sourced from a mix of vineyards located in the Eola-Amity Hills AVA of the Willamette Valley. The fruit was picked in the cool early morning and gently pressed to minimize color and tannin extraction yet provide the subtle layers of tart and juicy fruit. After settling for 24 hours, the juice is cleanly racked and fermented in a stainless-steel tank. We age this wine sur lie to create a generous yet soft texture, and provide balance to its mouthwatering finish."
+    },
+    {
+      "title": "Yes Way",
+      "type": "Rosé wine",
+      "country": "France",
+      "region": "Méditerranée",
+      "grapes": "Grenache",
+      "rating": 3.6,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/1.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/1.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/1.2.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/1.3.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/1.4.jpg"
+      ],
+      "price": "$13.86",
+      "quantity": 8,
+      "year": 2018,
+      "description": "Yes Way Rosé is a classic dry rosé from the south of France that’s light-bodied with a bright, vibrant finish. A refreshing Grenache-based blend crafted with grapes from the esteemed IGP Méditérranée Appellation, it’s an elegant rosé to enjoy every day."
+    },
+    {
+      "title": "Côte des Roses",
+      "type": "Rosé wine",
+      "country": "France",
+      "region": "Languedoc",
+      "grapes": "Grenache",
+      "rating": 3.9,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/2.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/2.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/2.2.webp",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/2.3.webp",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/2.4.webp"
+      ],
+      "price": "$24.99",
+      "quantity": 18,
+      "year": 2021,
+      "description": "The robe shows a soft, pale, brilliant pink with bluish tints developing over time towards more orangey nuances. The bouquet releases aromas of summer fruits, cassis and redcurrant. Floral notes of rose along with hints of grapefruit complete the picture."
+    },
+    {
+      "title": "Avaline",
+      "type": "Rosé wine",
+      "country": "France",
+      "region": "",
+      "grapes": "Shiraz",
+      "rating": 3.8,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/3.0.webp",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/3.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/3.2.webp",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/3.3.webp",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/3.4.jpg"
+      ],
+      "price": "$20.28",
+      "quantity": 10,
+      "year": 2020,
+      "description": "Light, fresh (and French) with notes of melon and zest. The best Rosé Katherine has ever had."
+    },
+    {
+      "title": "AVA Grace",
+      "type": "Rosé wine",
+      "country": "United States",
+      "region": "California",
+      "grapes": "Pinot Noir",
+      "rating": 3.6,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/4.0.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/4.1.png"
+      ],
+      "price": "$9.98",
+      "quantity": 11,
+      "year": 2017,
+      "description": "This Rosé is bright with a nose of wild roses. The palate showcases a fresh, crisp, dry style, boasting with flavors of apricot, honeysuckle, and balanced acidity. A silky, medium-bodied mouthfeel is rounded out with a delicately dry finish."
+    },
+    {
+      "title": "Cline",
+      "type": "Rosé wine",
+      "country": "United States",
+      "region": "California",
+      "grapes": "Shiraz",
+      "rating": 3.6,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/5.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/5.1.png"
+      ],
+      "price": "$8.49",
+      "quantity": 9,
+      "year": 2017,
+      "description": "Enjoy the Rosé with generous aromas of fresh strawberry and floral notes leading to bright flavors of ripe berry, cherry and hints of spring flowers. Refreshing, lively and delicious."
+    },
+    {
+      "title": "Kendall-Jackson",
+      "type": "Rosé wine",
+      "country": "United States",
+      "region": "California",
+      "grapes": "Grenache",
+      "rating": 3.5,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/6.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/6.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/6.2.jpg"
+      ],
+      "price": "$10.99",
+      "quantity": 16,
+      "year": 2016,
+      "description": "A gorgeous hue of pale pink jumps out of the glass with crisp grapefruit, strawberry and white floral notes. Aromas of fresh cut watermelon, hibiscus, and apricot."
+    },
+    {
+      "title": "Woodbridge by Robert Mondavi",
+      "type": "Rosé wine",
+      "country": "United States",
+      "region": "California",
+      "grapes": "Zinfandel",
+      "rating": 3.7,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/7.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/7.1.png"
+      ],
+      "price": "$7.99",
+      "quantity": 17,
+      "year": 2018,
+      "description": "Woodbridge by Robert Mondavi White Zinfandel Blush Wine features aromas and flavors of raspberries and strawberries with a hint of citrus complemented by pleasing floral notes. Light-bodied, crisp, and bright with hints of watermelon, cherry, and juicy red fruit, this California wine is made with a proprietary blend of premium grape varieties from the Lodi region."
+    },
+    {
+      "title": "Domaine Houchart",
+      "type": "Rosé wine",
+      "country": "France",
+      "region": "Côtes de Provence",
+      "grapes": "Shiraz",
+      "rating": 3.9,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/8.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/8.1.png"
+      ],
+      "price": "$16.44",
+      "quantity": 20,
+      "year": 2020,
+      "description": "Domaine Houchart 2020 Côtes de Provence Rosé, is a benchmark Provençal blend of Grenache, Syrah, Cinsault and other varieties. Bright, sassy and spicy with notes of watermelon, raspberry and wet stone. This wine has all the right bells and whistles for a high-toned profile."
+    },
+    {
+      "title": "Sandhill",
+      "type": "Rosé wine",
+      "country": "Canada",
+      "region": "Okanagan Valley",
+      "grapes": "Cabernet Franc",
+      "rating": 3.8,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/9.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/9.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/9.2.jpg"
+      ],
+      "price": "$15.65",
+      "quantity": 15,
+      "year": 2020,
+      "description": "Aromas of fresh strawberry, raspberry and tea with bountiful flavours of red berry and watermelon. This wine is beautifully balanced and exceptionally dry."
+    },
+    {
+      "title": "Casa Perini",
+      "type": "Rosé wine",
+      "country": "Brazil",
+      "region": "Serra Gaúcha",
+      "grapes": "Chardonnay",
+      "rating": 3.6,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/10.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/rose/10.1.png"
+      ],
+      "price": "$10.41",
+      "quantity": 12,
+      "year": 2018,
+      "description": "Casa Perini Rosé has a cherry pink color. Its flavor is fruity and fresh with a pleasantly striking finish. Made with Chardonnay, Gamay and Pinot Noir grapes from the Serra Gaucha region."
+    },
+    {
+      "title": "Laetitia",
+      "type": "Sparkling wine",
+      "country": "United States",
+      "region": "California",
+      "grapes": "Chardonnay",
+      "rating": 4.1,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/1.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/1.1.png"
+      ],
+      "price": "$29.81",
+      "quantity": 6,
+      "year": 2016,
+      "description": "Fine-sized bubbles burst from the glass with the aromas of freshly baked apple pie and toasted brioche. A creamy mousse glazes the palate accented by flavours of lemon curd and buttery toast, finishing long and seamless. Pairs well with fried dishes, earthy cheeses, or a freshly baked baguette dipped in olive oil."
+    },
+    {
+      "title": "Avaline",
+      "type": "Sparkling wine",
+      "country": "France",
+      "region": "",
+      "grapes": "Xarel-lo",
+      "rating": 3.8,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/2.0.webp",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/2.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/2.2.webp",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/2.3.webp"
+      ],
+      "price": "$24.56",
+      "quantity": 11,
+      "year": 2020,
+      "description": "A dry and refreshing Sparkling with delicate bubbles. No celebration necessary."
+    },
+    {
+      "title": "Seppelt",
+      "type": "Sparkling wine",
+      "country": "Australia",
+      "region": "Grampians",
+      "grapes": "Chardonnay",
+      "rating": 3.3,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/3.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/3.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/3.2.webp",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/3.3.webp"
+      ],
+      "price": "$15.99",
+      "quantity": 17,
+      "year": 2021,
+      "description": "Seppelt Salinger NV is made with the classic sparkling varietals of Chardonnay and Pinot Noir, sourced from premium vineyards. It is a wine of great finesse and balance with a luscious creamy mouthfeel. Rich yet delicate, it has a fine bead and crisp refreshing finish."
+    },
+    {
+      "title": "Thomson & Scott Skinny",
+      "type": "Sparkling wine",
+      "country": "Spain",
+      "region": "",
+      "grapes": "Chardonnay",
+      "rating": 3.6,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/4.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/4.1.png"
+      ],
+      "price": "$12.47",
+      "quantity": 18,
+      "year": 2021,
+      "description": "Noughty non-alcoholic organic vegan sparkling Chardonnay has been dealcoholized to retain the rich flavour of this beautifully crafted bottle."
+    },
+    {
+      "title": "Bottega",
+      "type": "Sparkling wine",
+      "country": "Italy",
+      "region": "Veneto",
+      "grapes": "Glera",
+      "rating": 3.7,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/5.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/5.1.png",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/5.2.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/5.3.jpg"
+      ],
+      "price": "$25.99",
+      "quantity": 20,
+      "year": 2017,
+      "description": "The elegance, freshness and liveliness of its bubbles stem from the beauty and tradition of its territory, where unmistakable panoramas are shaped by vineyards."
+    },
+    {
+      "title": "Stella Rosa",
+      "type": "Sparkling wine",
+      "country": "Italy",
+      "region": "Piemonte",
+      "grapes": "Moscato",
+      "rating": 4.0,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/6.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/6.1.png"
+      ],
+      "price": "$11.99",
+      "quantity": 16,
+      "year": 2020,
+      "description": "Flirty, fun, and young are the words to describe Stella Rosa Pink, the semi-sweet, semi-sparkling wine that is understated. She’s a tease on the eyes but means business on the palate."
+    },
+    {
+      "title": "Quinta d'Amares",
+      "type": "Sparkling wine",
+      "country": "Portugal",
+      "region": "Vinho Verde",
+      "grapes": "Arinto de Bucelas",
+      "rating": 4.0,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/7.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/7.1.png"
+      ],
+      "price": "$10.47",
+      "quantity": 21,
+      "year": 2018,
+      "description": "Citrus with lemonade tones. Complex aroma with notes white fruits and brioche. Fresh and mineral. Creamy with delicate mousse, thin, persistent bubble."
+    },
+    {
+      "title": "Veuve Clicquot",
+      "type": "Sparkling wine",
+      "country": "France",
+      "region": "Champagne",
+      "grapes": "Pinot Noir",
+      "rating": 4.3,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/8.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/8.1.png"
+      ],
+      "price": "$40.99",
+      "quantity": 16,
+      "year": 2021,
+      "description": "You’ll get the tiny delicious bubbles, the golden yellow color and the elegance of a great nonvintage champagne perfect for a celebration."
+    },
+    {
+      "title": "Beaumont des Crayeres",
+      "type": "Sparkling wine",
+      "country": "France",
+      "region": "Champagne",
+      "grapes": "Pinot Noir",
+      "rating": 3.7,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/9.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/9.1.png"
+      ],
+      "price": "$35.99",
+      "quantity": 11,
+      "year": 2021,
+      "description": "The Champagne is light-yellow in colour with fine sparkling bubbles. The nose is highly fruity with notes of mirabelle plums, pineapple, fresh bread rolls, butter and yeast. The palate displays flavours of honey, fresh plum and cherry stone, which leads on to a long persistent and pleasing finish."
+    },
+    {
+      "title": "Jaume Serra",
+      "type": "Sparkling wine",
+      "country": "Spain",
+      "region": "Cava",
+      "grapes": "Xarel-lo",
+      "rating": 3.5,
+      "images": [
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/10.0.jpg",
+        "https://raw.githubusercontent.com/mitjasha/data-storage/main/goods/sparkling/10.1.png"
+      ],
+      "price": "$25.95",
+      "quantity": 13,
+      "year": 2020,
+      "description": "This soft, fruit-forward Cava has a lovely nose of apples, toast, and cinnamon. The rich flavors of ripe apples and figs finish with a clean citrus note."
+    }
+  ]
+}

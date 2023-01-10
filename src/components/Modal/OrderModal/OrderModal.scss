@@ -1,0 +1,89 @@
+.order-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+.form-item {
+  margin-bottom: 20px;
+}
+
+.person-details {
+  &__title {
+    font-size: 16px;
+  }
+
+  &__item {
+    position: relative;
+  }
+}
+
+.card {
+  &-image {
+    width: 100%;
+  }
+
+  &-data {
+    position: relative;
+    display: flex;
+    max-width: 282px;
+  }
+
+  &-number {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    &__input {
+      width: 120px;
+      height: 16px;
+      font-size: 10px;
+    }
+  }
+
+  &-date {
+    position: absolute;
+    top: 58px;
+    left: 12px;
+    &__input {
+      width: 45px;
+      height: 16px;
+      font-size: 10px;
+    }
+  }
+
+  &-payment {
+    position: absolute;
+    top: 50px;
+    left: 154px;
+    max-width: 50px;
+  }
+
+  &-name {
+    position: absolute;
+    top: 96px;
+    left: 12px;
+    &__input {
+      width: 180px;
+      height: 16px;
+      font-size: 10px;
+    }
+  }
+
+  &-cvv {
+    position: absolute;
+    top: 81px;
+    left: 224px;
+    &__input {
+      width: 30px;
+      height: 16px;
+      font-size: 10px;
+    }
+  }
+}

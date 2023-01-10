@@ -1,0 +1,53 @@
+.footer {
+  width: 100%;
+  font-family: "Marcellus";
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.8);
+  height: 160px;
+  background-color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 85px;
+    width: 100%;
+    font-weight: 600;
+  }
+
+  &__logo,
+  &__phone,
+  &__media,
+  &__authors {
+    font-family: "Roboto";
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1.5px solid rgba(255, 255, 255, 0.8);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.8);
+    width: 100%;
+    height: 100%;
+  }
+
+  &__logo {
+    width: 99.5%;
+  }
+
+  &__phone {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__media {
+    gap: 35px;
+  }
+
+  &__authors {
+    border-right-style: none;
+    margin: 0;
+  }
+}

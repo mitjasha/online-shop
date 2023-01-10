@@ -1,0 +1,14 @@
+.action-btn {
+  width: 30px;
+  height: 30px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%)
+    contrast(103%);
+  background-color: transparent;
+  border: 1px solid #333333;
+
+  &:hover {
+    background-color: transparent;
+    transition: all 0.6s;
+    transform: scale(1.2) rotate(360deg);
+  }
+}
