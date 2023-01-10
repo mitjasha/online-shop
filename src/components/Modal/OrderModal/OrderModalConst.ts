@@ -38,8 +38,9 @@ export const validationPhone: IValidation = {
 
 export const validationAddress: IValidation = {
   required: true,
-  maxLength: 15,
-  pattern: /^[a-z]{5,}( [a-z]{5,})( [a-z]{5,})$/gim,
+  maxLength: 150,
+  pattern:
+    /^([a-zA-Z.,/]{5,})[ ]([a-zA-Z.,/]{5,})[ ]([a-zA-Z.,/]{5,})(([a-zA-Z.,/]{0,}){0,})/gm,
   message:
     "The adress must contain at least three words, each at least 5 characters long",
 };
